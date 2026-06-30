@@ -12,7 +12,7 @@ export const pageThemes = {
   workspaces: {
     label: 'Workspaces',
     color: '#D6BAAE',
-    bg: '#3D4663', // Desaturated Navy
+    bg: '#761020', // Workspaces background
     text: '#F8F5F3',
     heading: '#FFFFFF',
     muted: '#E6DAD5',
@@ -21,13 +21,13 @@ export const pageThemes = {
   },
   incubator: {
     label: 'Wadi Jeddah Incubator',
-    color: '#3B0000',
-    bg: '#D68A51', // Desaturated Orange
-    text: '#3B0000',
-    heading: '#1E2650',
-    muted: '#7A1219',
-    surface: 'rgba(255,255,255,0.2)',
-    border: 'rgba(59,0,0,0.2)',
+    color: '#D6BAAE',
+    bg: '#390100', // Wadi Jeddah Incubator background
+    text: '#F8F5F3',
+    heading: '#FFFFFF',
+    muted: '#E6DAD5',
+    surface: 'rgba(255,255,255,0.05)',
+    border: 'rgba(255,255,255,0.2)',
   },
   softLanding: {
     label: 'Soft Landing Program',
