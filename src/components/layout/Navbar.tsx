@@ -3,10 +3,11 @@ import { NavLink } from 'react-router'
 import { useTranslation } from 'react-i18next'
 
 import { appRoutes } from '../../config/routes'
-import { createWhatsAppUrl } from '../../lib/whatsapp'
-import { buttonClasses } from '../ui/buttonStyles'
+// import { createWhatsAppUrl } from '../../lib/whatsapp'
+// import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
-import { LanguageToggle } from './LanguageToggle'
+// import { LanguageToggle } from './LanguageToggle'
+import logo from '../../assets/images/LogoWijih.png'
 
 const navLinkClassName = ({ isActive }: { isActive: boolean }) =>
   [
@@ -37,17 +38,17 @@ export function Navbar() {
       className={[
         'sticky top-0 z-40 liquid-glass transition-colors',
         isScrolled
-          ? 'border-b border-transparent shadow-sm shadow-[var(--page-color-soft)]'
-          : 'border-b border-[var(--color-border)]',
+          ? 'shadow-2xl shadow-black/10'
+          : 'shadow-lg shadow-black/5',
       ].join(' ')}
     >
       <Container className="flex min-h-16 items-center justify-between gap-4">
         <NavLink
-          className="text-base font-bold text-[var(--page-color)]"
+          className="flex items-center"
           to="/"
           onClick={() => setIsMenuOpen(false)}
         >
-          WJIH
+          <img src={logo} alt="WJIH Logo" className="h-10 w-auto" />
         </NavLink>
 
         <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
@@ -58,6 +59,7 @@ export function Navbar() {
           ))}
         </nav>
 
+        {/*
         <div className="hidden items-center gap-2 md:flex">
           <LanguageToggle />
           <a
@@ -69,6 +71,7 @@ export function Navbar() {
             {t('common.contactWhatsapp')}
           </a>
         </div>
+        */}
 
         <button
           aria-expanded={isMenuOpen}
@@ -96,6 +99,7 @@ export function Navbar() {
                 </NavLink>
               ))}
             </nav>
+            {/*
             <div className="flex flex-col gap-2 sm:flex-row">
               <LanguageToggle />
               <a
@@ -107,6 +111,7 @@ export function Navbar() {
                 {t('common.contactWhatsapp')}
               </a>
             </div>
+            */}
           </Container>
         </div>
       ) : null}

@@ -65,3 +65,11 @@ a {
     border-end-start-radius: 32px;
   }
 }
+
+/* Liquid Glass Navbar Effect */
+header {
+  background: rgba(30, 38, 80, 0.7) !important;
+  backdrop-filter: blur(16px) saturate(200%) !important;
+  -webkit-backdrop-filter: blur(16px) saturate(200%) !important;
+  border-bottom: 1px solid rgba(30, 38, 80, 0.7) !important;
+}
