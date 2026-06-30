@@ -25,6 +25,12 @@ export function PageLayout() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    // If navigating to home page, skip the loading animation entirely
+    if (location.pathname === '/') {
+      setIsLoading(false)
+      return
+    }
+
     setIsLoading(true)
     const timer = setTimeout(() => {
       setIsLoading(false)
