@@ -34,7 +34,7 @@ export function PageLayout() {
     setIsLoading(true)
     const timer = setTimeout(() => {
       setIsLoading(false)
-    }, 800)
+    }, 1400)
 
     return () => clearTimeout(timer)
   }, [location.pathname])
