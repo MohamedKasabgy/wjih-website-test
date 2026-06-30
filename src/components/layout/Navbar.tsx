@@ -12,8 +12,10 @@ import logo from '../../assets/images/LogoWijih.png'
 
 const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [
-    'whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-[var(--page-color)]',
-    isActive ? 'text-[var(--page-color)]' : (isHome ? 'text-[var(--color-text)]' : 'text-navbar-inactive'),
+    'whitespace-nowrap text-sm font-semibold transition-colors flex items-center justify-center',
+    isActive
+      ? `border mask-wadi px-4 py-1.5 ${isHome ? 'border-[var(--color-text)] text-[var(--color-text)]' : 'border-[#390100] text-navbar-inactive'}`
+      : `px-3 py-2 hover:opacity-70 ${isHome ? 'text-[var(--color-text)]' : 'text-navbar-inactive'}`,
   ].join(' ')
 
 export function Navbar({ isLoading }: { isLoading?: boolean }) {
