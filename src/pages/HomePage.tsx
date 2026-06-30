@@ -2,7 +2,6 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { motion, useTransform } from 'framer-motion'
 
-import { pageThemes } from '../config/pageThemes'
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
 import { HeroLogo } from '../components/layout/HeroLogo'
@@ -10,7 +9,6 @@ import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
 export function HomePage() {
   const { t } = useTranslation()
-  const theme = pageThemes.home
 
   const progress = useScrollProgress()
   // Title fades out and lifts as the logo morphs into the navbar.
@@ -35,15 +33,18 @@ export function HomePage() {
         <div className="absolute inset-0 bg-black/50" />
 
         {/* Title sits below the fixed logo.
-            Logo centre = 50vh. Half-height ≈ 72px mobile / 88px desktop.
+            Logo centre = 50vh. Half-height of new logo is approx 128px-160px.
             Tailwind requires underscores for spaces in calc(). */}
         <motion.div
           style={{ opacity: titleOpacity, y: titleY }}
-          className="relative z-10 pt-[calc(50vh_+_112px)] sm:pt-[calc(50vh_+_128px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+          className="relative z-10 pt-[calc(50vh_+_140px)] sm:pt-[calc(50vh_+_180px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
         >
-          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-5xl leading-tight">
-            {t('home.hero.title').replace('# ', '')}
+          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
+            مجمع وادي جدة للابتكار
           </h1>
+          <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
+            مكان رواد الأعمال في قلب جدة
+          </h2>
 
           {/* Buttons temporarily hidden
           <div className="flex flex-wrap gap-4 justify-center mt-8">

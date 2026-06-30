@@ -18,20 +18,12 @@ export function HeroLogo() {
   const progress = useScrollProgress()
 
   // Logo centre Y, in px — updated after mount and on resize.
-  const startTopPx = useMotionValue(window.innerHeight * 0.35)
+  const startTopPx = useMotionValue(window.innerHeight * 0.4)
 
   useLayoutEffect(() => {
     const measure = () => {
-      const title = document.querySelector<HTMLElement>('[data-hero-title]')
-        ?? document.querySelector('h1')
-      if (!title) return
-
-      const logoH   = window.innerWidth >= 640 ? 224 : 176 // h-56 / h-44
-      const gap     = 20
-      const titleTop = title.getBoundingClientRect().top
-      // Place logo centre just above the h1; clamp so it's never off-screen.
-      const logoCenter = Math.max(titleTop - gap - logoH / 2, logoH / 2 + 8)
-      startTopPx.set(logoCenter)
+      // Place logo exactly in the center vertically (adjusting slightly up for optical centering)
+      startTopPx.set(window.innerHeight * 0.45)
     }
 
     measure()
@@ -45,8 +37,8 @@ export function HeroLogo() {
     return `${start + (32 - start) * (p as number)}px`
   })
 
-  // Bigger base size now, so scale down a bit further to keep navbar size right.
-  const scale = useTransform(progress, [0, 1], [1, 0.2])
+  // Much bigger base size now, scale down to 0.15/0.2 to fit the navbar nicely.
+  const scale = useTransform(progress, [0, 1], [1, 0.18])
 
   // Subtle shadow in the hero that fades away as the logo shrinks into the navbar.
   const filter = useTransform(
@@ -58,7 +50,7 @@ export function HeroLogo() {
   // Cross-fade: white logo in the hero → original full-colour logo in the navbar.
   const whiteOpacity = useTransform(progress, [0, 0.6], [1, 0])
 
-  const imgClass = 'h-44 w-auto max-w-[70vw] select-none sm:h-56'
+  const imgClass = 'h-64 w-auto max-w-[80vw] select-none sm:h-80'
 
   return (
     <motion.div

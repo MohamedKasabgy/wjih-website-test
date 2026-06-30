@@ -65,16 +65,21 @@ export function Navbar() {
             borderEndEndRadius: '9',
           }}
         >
-          <div className="grid grid-cols-3 items-center min-h-16 px-6">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side: Language toggle (temporarily disabled — re-enable later) */}
+            {/* Start side: First half of links */}
             <div className="flex justify-start gap-2">
-              {/* <LanguageToggle /> */}
+              <nav aria-label="Primary navigation" className="hidden gap-2 md:flex">
+                {appRoutes.slice(0, 2).map((route) => (
+                  <NavLink className={navLinkClassName} key={route.path} to={route.path}>
+                    {t(route.labelKey)}
+                  </NavLink>
+                ))}
+              </nav>
             </div>
 
-            {/* Center: Logo — hidden on home, where the morphing HeroLogo
-                lands in the top-left corner and acts as the brand mark. */}
-            <div className="flex justify-center">
+            {/* Center: Logo — hidden on home because HeroLogo morphs into this space */}
+            <div className="flex justify-center px-4">
               {!isHome && (
                 <NavLink
                   to="/"
@@ -86,10 +91,10 @@ export function Navbar() {
               )}
             </div>
 
-            {/* End side: Navigation links (Desktop) & Menu button (Mobile) */}
-            <div className="flex justify-end">
-              <nav aria-label="Primary navigation" className="hidden gap-1 md:flex">
-                {appRoutes.map((route) => (
+            {/* End side: Second half of links & Mobile Menu Button */}
+            <div className="flex justify-end gap-2 items-center">
+              <nav aria-label="Primary navigation" className="hidden gap-2 md:flex">
+                {appRoutes.slice(2).map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
@@ -99,7 +104,7 @@ export function Navbar() {
               <button
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors"
+                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors ml-2"
                 type="button"
                 onClick={() => setIsMenuOpen((current) => !current)}
               >
