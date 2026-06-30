@@ -1,0 +1,12 @@
+{
+  "nav": {
+    "home": "Home",
+    "workspaces": "Workspaces",
+    "incubator": "Incubator",
+    "softLanding": "Soft Landing"
+  },
+  "common": {
+    "contactWhatsapp": "Contact on WhatsApp",
+    "language": "Language"
+  }
+}

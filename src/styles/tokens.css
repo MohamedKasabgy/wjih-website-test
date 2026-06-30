@@ -1,0 +1,17 @@
+:root {
+  --color-beige: #D6BAAE;
+  --color-main-red: #7A1219;
+  --color-dark-burgundy: #3B0000;
+  --color-orange: #EE7203;
+  --color-navy: #1E2650;
+
+  --color-bg: #F8F5F3;
+  --color-surface: #FFFFFF;
+  --color-text: #1E2650;
+  --color-muted: #5F647A;
+  --color-heading: #3B0000;
+  --color-border: #E6DAD5;
+
+  --page-color: var(--color-main-red);
+  --page-color-soft: rgb(122 18 25 / 0.1);
+}

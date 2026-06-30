@@ -58,54 +58,54 @@ Suggested page color usage:
 
 ### Priority 0 — Foundation
 
-- [ ] Review or initialize Vite + React + TypeScript project
-- [ ] Install/configure Tailwind CSS
-- [ ] Install/configure React Router
-- [ ] Install/configure Arabic/English language structure
-- [ ] Add RTL support for Arabic
-- [ ] Add LTR support for English
-- [ ] Create base route structure
-- [ ] Create shared Layout component
-- [ ] Create Navbar component
-- [ ] Create Footer component
-- [ ] Create Language Toggle component
-- [ ] Create WhatsApp CTA helper
-- [ ] Organize assets folders:
-  - [ ] logos
-  - [ ] images
-  - [ ] patterns
-- [ ] Create page shell files:
-  - [ ] HomePage
-  - [ ] WorkspacesPage
-  - [ ] IncubatorPage
-  - [ ] SoftLandingPage
-- [ ] Connect page theme colors to route/page config
+- [x] Review or initialize Vite + React + TypeScript project
+- [x] Install/configure Tailwind CSS
+- [x] Install/configure React Router
+- [x] Install/configure Arabic/English language structure
+- [x] Add RTL support for Arabic
+- [x] Add LTR support for English
+- [x] Create base route structure
+- [x] Create shared Layout component
+- [x] Create Navbar component
+- [x] Create Footer component
+- [x] Create Language Toggle component
+- [x] Create WhatsApp CTA helper
+- [x] Organize assets folders:
+  - [x] logos
+  - [x] images
+  - [x] patterns
+- [x] Create page shell files:
+  - [x] HomePage
+  - [x] WorkspacesPage
+  - [x] IncubatorPage
+  - [x] SoftLandingPage
+- [x] Connect page theme colors to route/page config
 - [ ] Prepare deployment setup
 
 ### Priority 1 — Integration
 
-- [ ] Make sure all pages render
-- [ ] Make sure Navbar appears on all pages
-- [ ] Make sure Footer appears on all pages
-- [ ] Make sure language switch works
-- [ ] Make sure WhatsApp links are easy to configure
-- [ ] Run `npm run lint`
-- [ ] Run `npm run build`
+- [x] Make sure all pages render
+- [x] Make sure Navbar appears on all pages
+- [x] Make sure Footer appears on all pages
+- [x] Make sure language switch works
+- [x] Make sure WhatsApp links are easy to configure
+- [x] Run `npm run lint`
+- [x] Run `npm run build`
 - [ ] Final merge/integration check
 
 ### Definition of Done
 
 Mohammed is done when:
 
-- [ ] Routes exist for all 4 pages
-- [ ] Navbar and Footer appear on all pages
-- [ ] Arabic uses RTL
-- [ ] English uses LTR
-- [ ] Language switch works
-- [ ] WhatsApp CTA helper is ready
-- [ ] Assets folders are organized
-- [ ] Page color/theme config exists
-- [ ] Build passes or issues are documented clearly
+- [x] Routes exist for all 4 pages
+- [x] Navbar and Footer appear on all pages
+- [x] Arabic uses RTL
+- [x] English uses LTR
+- [x] Language switch works
+- [x] WhatsApp CTA helper is ready
+- [x] Assets folders are organized
+- [x] Page color/theme config exists
+- [x] Build passes or issues are documented clearly
 
 ---
 
