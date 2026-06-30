@@ -8,7 +8,7 @@ import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
 import aboutImage from '../../src/assets/images/aboutImage.jpeg'
-import bgImage from '../../src/assets/images/BG.png'
+import bgImage from '../../src/assets/images/BG.jpg'
 
 export function HomePage() {
   const { t } = useTranslation()
