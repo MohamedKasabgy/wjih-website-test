@@ -51,7 +51,7 @@ export function PageLayout() {
 
       {/* Loading Overlay */}
       <div
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-white/40 backdrop-blur-md backdrop-saturate-150 transition-all duration-500 ${isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
+        className={`fixed inset-0 z-[60] flex items-center justify-center bg-white/40 backdrop-blur-md backdrop-saturate-150 transition-all duration-500 ${isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
           }`}
       >
         <div className="flex flex-col items-center justify-center">
