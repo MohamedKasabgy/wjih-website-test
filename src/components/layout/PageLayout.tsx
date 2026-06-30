@@ -22,7 +22,7 @@ export function PageLayout() {
   }
 
   return (
-    <div className="min-h-svh bg-[var(--color-bg)] text-[var(--color-text)]" style={themeStyle}>
+    <div className="min-h-svh text-[var(--color-text)]" style={themeStyle}>
       <Navbar />
       <main>
         <Outlet />

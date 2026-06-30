@@ -35,7 +35,7 @@ export function Navbar() {
   return (
     <header
       className={[
-        'sticky top-0 z-40 bg-white/95 backdrop-blur transition-colors',
+        'sticky top-0 z-40 liquid-glass transition-colors',
         isScrolled
           ? 'border-b border-transparent shadow-sm shadow-[var(--page-color-soft)]'
           : 'border-b border-[var(--color-border)]',
@@ -73,7 +73,7 @@ export function Navbar() {
         <button
           aria-expanded={isMenuOpen}
           aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-          className="min-h-11 rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm font-semibold text-[var(--color-text)] md:hidden"
+          className="min-h-11 border border-[var(--color-border)] liquid-glass px-3 py-2 text-sm font-semibold text-[var(--color-text)] md:hidden"
           type="button"
           onClick={() => setIsMenuOpen((current) => !current)}
         >
@@ -82,7 +82,7 @@ export function Navbar() {
       </Container>
 
       {isMenuOpen ? (
-        <div className="border-t border-[var(--color-border)] bg-white md:hidden">
+        <div className="border-t border-[var(--color-border)] liquid-glass md:hidden">
           <Container className="flex flex-col gap-3 py-4">
             <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
               {appRoutes.map((route) => (
