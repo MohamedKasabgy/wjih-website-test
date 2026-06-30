@@ -55,7 +55,7 @@ export function HeroLogo() {
   return (
     <motion.div
       aria-hidden
-      className="pointer-events-none fixed z-50 left-1/2"
+      className="pointer-events-none fixed z-[80] left-1/2"
       style={{ top, x: '-50%', y: '-50%', scale, filter }}
     >
       <div className="relative">
