@@ -94,7 +94,7 @@ export function PageLayout() {
                 animate={{ scaleY: [0.8, 1.2, 1, 0.9, 1] }}
                 exit={{ scaleY: [1, 1.2, 0.8] }}
                 transition={{ 
-                  layout: { type: "spring", damping: 12, stiffness: 90 },
+                  layout: { type: "spring", damping: 18, stiffness: 110 },
                   scaleY: { duration: 0.6, ease: "easeInOut" }
                 }}
               />
@@ -108,10 +108,10 @@ export function PageLayout() {
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.3 }}
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -10 }}
+            transition={{ duration: 0.4, ease: [0.22, 1, 0.36, 1] }}
           >
             <Outlet />
           </motion.div>

@@ -1,4 +1,4 @@
-import { useScroll, useTransform, type MotionValue } from 'framer-motion'
+import { useScroll, useTransform, useSpring, type MotionValue } from 'framer-motion'
 
 const getViewportHeight = () =>
   typeof window === 'undefined' ? 800 : window.innerHeight
@@ -9,9 +9,8 @@ const getViewportHeight = () =>
  * height).
  *
  * The value is derived from the live scroll position via Framer Motion's
- * `useScroll`, so it tracks the scrollbar exactly — pause scrolling halfway and
- * the value stays at its halfway point. No fixed-duration easing is involved,
- * which is what gives the hero its Apple-style scroll-linked feel.
+ * `useScroll`, so it tracks the scrollbar exactly.
+ * We wrap it in a `useSpring` to smooth out any jerky scrolling for a premium feel.
  *
  * Two components reading this hook independently stay in sync because they both
  * observe the same window scroll position and use the same default distance.
@@ -20,5 +19,6 @@ export function useScrollProgress(
   distance = getViewportHeight() * 0.7,
 ): MotionValue<number> {
   const { scrollY } = useScroll()
-  return useTransform(scrollY, [0, distance], [0, 1], { clamp: true })
+  const rawProgress = useTransform(scrollY, [0, distance], [0, 1], { clamp: true })
+  return useSpring(rawProgress, { stiffness: 120, damping: 25, restDelta: 0.0001 })
 }
