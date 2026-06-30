@@ -3,7 +3,7 @@ import { NavLink } from 'react-router'
 import { useTranslation } from 'react-i18next'
 
 import { appRoutes } from '../../config/routes'
-import { createWhatsappUrl } from '../../lib/whatsapp'
+import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
 import { LanguageToggle } from './LanguageToggle'
@@ -62,7 +62,7 @@ export function Navbar() {
           <LanguageToggle />
           <a
             className={buttonClasses('primary')}
-            href={createWhatsappUrl()}
+            href={createWhatsAppUrl()}
             rel="noreferrer"
             target="_blank"
           >
@@ -72,12 +72,12 @@ export function Navbar() {
 
         <button
           aria-expanded={isMenuOpen}
-          aria-label="Toggle navigation"
+          aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
           className="min-h-11 rounded-md border border-[var(--color-border)] bg-white px-3 py-2 text-sm font-semibold text-[var(--color-text)] md:hidden"
           type="button"
           onClick={() => setIsMenuOpen((current) => !current)}
         >
-          Menu
+          {isMenuOpen ? t('common.close') : t('common.menu')}
         </button>
       </Container>
 
@@ -100,7 +100,7 @@ export function Navbar() {
               <LanguageToggle />
               <a
                 className={buttonClasses('primary')}
-                href={createWhatsappUrl()}
+                href={createWhatsAppUrl()}
                 rel="noreferrer"
                 target="_blank"
               >

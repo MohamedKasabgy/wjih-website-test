@@ -14,9 +14,16 @@ export function SoftLandingPage() {
         <h1 className="mt-3 text-3xl font-bold text-[var(--color-heading)] sm:text-4xl">
           {t('nav.softLanding')}
         </h1>
-        <p className="mt-4 max-w-2xl text-[var(--color-muted)]">
-          Placeholder page shell for the Soft Landing route.
-        </p>
+        <dl className="mt-4 grid gap-3 text-sm text-[var(--color-muted)] sm:grid-cols-2">
+          <div>
+            <dt className="font-semibold text-[var(--color-text)]">Route</dt>
+            <dd>/soft-landing</dd>
+          </div>
+          <div>
+            <dt className="font-semibold text-[var(--color-text)]">Primary color</dt>
+            <dd>{theme.color}</dd>
+          </div>
+        </dl>
       </section>
     </Container>
   )
