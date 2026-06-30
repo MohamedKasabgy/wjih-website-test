@@ -54,7 +54,7 @@ export function WorkspacesPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Pricing ──────────────────────────────────────────── */}
       <section className="py-24">
@@ -105,7 +105,7 @@ export function WorkspacesPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Amenities ────────────────────────────────────────── */}
       <section className="bg-[#FAFAF9] py-24">

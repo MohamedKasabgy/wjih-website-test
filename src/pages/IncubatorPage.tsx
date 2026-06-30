@@ -63,7 +63,7 @@ export function IncubatorPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Support Ecosystem ─────────────────────────────────── */}
       <section className="bg-[#FAFAF9] py-24">
@@ -89,7 +89,7 @@ export function IncubatorPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Strategy ──────────────────────────────────────────── */}
       <section className="py-24">
