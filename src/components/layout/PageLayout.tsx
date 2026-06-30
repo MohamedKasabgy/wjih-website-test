@@ -46,7 +46,7 @@ export function PageLayout() {
   }
 
   return (
-    <div className="min-h-svh bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500 relative" style={themeStyle}>
+    <div className="min-h-svh bg-transparent text-[var(--color-text)] transition-colors duration-500 relative" style={themeStyle}>
       
       {/* Loading Overlay */}
       <div 
@@ -62,7 +62,7 @@ export function PageLayout() {
       </div>
 
       <Navbar />
-      <main className="pt-32">
+      <main className="">
         <Outlet />
       </main>
       <Footer />

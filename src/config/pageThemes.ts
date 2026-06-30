@@ -3,7 +3,7 @@ export const pageThemes = {
     label: 'Home',
     color: '#D6BAAE',
     bg: '#4A2C2C', // Desaturated Burgundy
-    text: '#F8F5F3',
+    text: '#FFFFFF',
     heading: '#FFFFFF',
     muted: '#E6DAD5',
     surface: 'rgba(255,255,255,0.05)',

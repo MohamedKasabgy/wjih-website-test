@@ -4,31 +4,47 @@ import { Link } from 'react-router'
 import { pageThemes } from '../config/pageThemes'
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
+import heroImage from '../../src/assets/images/heroImage.jpeg'
 
 export function HomePage() {
   const { t } = useTranslation()
   const theme = pageThemes.home
 
   return (
-    <div className="flex flex-col gap-16 py-16 sm:py-20">
-      <Container>
-        {/* Hero Section */}
-        <section className="border border-[var(--color-border)] liquid-glass mask-wadi p-8 shadow-sm sm:p-12 relative overflow-hidden">
-          <div className="absolute top-0 right-0 w-64 h-64 bg-[var(--page-color)] opacity-10 rounded-full -mr-32 -mt-32 blur-3xl pointer-events-none"></div>
-          <div className="relative z-10 max-w-3xl">
-            <h1 className="text-4xl font-extrabold text-[var(--color-heading)] sm:text-5xl leading-tight mb-6">
-              {t('home.hero.title').replace('# ', '')}
-            </h1>
-            <p className="text-xl text-[var(--color-muted)] leading-relaxed mb-10">
-              {t('home.hero.subtitle')}
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Button variant="primary" className="text-lg px-8 py-3">{t('common.bookNow')}</Button>
-              <Button variant="outline" className="text-lg px-8 py-3">{t('common.requestTour')}</Button>
-            </div>
+    <div className="flex flex-col gap-16 pb-16 sm:pb-20">
+      <section
+        className="border rounded-2xl relative min-h-screen flex items-center overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50"></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-3xl px-8 sm:px-12 ">
+          <h1 className="text-4xl font-extrabold text-white sm:text-5xl leading-tight mb-6">
+            {t('home.hero.title').replace('# ', '')}
+          </h1>
+
+          <p className="text-xl text-white/90 leading-relaxed mb-10">
+            {t('home.hero.subtitle')}
+          </p>
+
+          <div className="flex flex-wrap gap-4">
+            <Button variant="primary" className="text-lg px-8 py-3">
+              {t('common.bookNow')}
+            </Button>
+
+            <Button variant="outline" className="text-lg px-8 py-3">
+              {t('common.requestTour')}
+            </Button>
           </div>
-        </section>
-      </Container>
+        </div>
+      </section>
 
       {/* About Section */}
       <Container>

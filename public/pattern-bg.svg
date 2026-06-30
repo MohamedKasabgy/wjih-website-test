@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1440" height="900" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice">
+  <defs>
+    <!-- WJIH organic leaf/petal shape (local box ~720x390, center ~320,190) -->
+    <path id="leaf" d="M130 95
+      C 250 55, 420 65, 510 120
+      C 525 175, 520 250, 500 300
+      C 360 255, 210 235, 130 95 Z" />
+
+    <!-- Glass sheen: bright highlight fading to transparent -->
+    <linearGradient id="sheen" x1="0" y1="0" x2="0.7" y2="1">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.45"/>
+      <stop offset="0.45" stop-color="#ffffff" stop-opacity="0.12"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0"/>
+    </linearGradient>
+
+    <!-- Soft blur for frosted depth -->
+    <filter id="frost" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6"/>
+    </filter>
+
+    <!-- Reusable glass leaf: colored translucent fill + sheen + light edge -->
+    <g id="glassLeaf">
+      <use href="#leaf" class="fill"/>
+      <use href="#leaf" fill="url(#sheen)"/>
+      <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.35" stroke-width="3"/>
+    </g>
+  </defs>
+
+  <!-- Scattered glass leaves in brand colors -->
+  <g transform="translate(-60 30) scale(0.95) rotate(-8 320 190)">
+    <use href="#leaf" fill="#1E2650" fill-opacity="0.16" filter="url(#frost)"/>
+    <use href="#leaf" fill="#1E2650" fill-opacity="0.18"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(720 -40) scale(1.0) rotate(38 320 190)">
+    <use href="#leaf" fill="#7A1219" fill-opacity="0.16" filter="url(#frost)"/>
+    <use href="#leaf" fill="#7A1219" fill-opacity="0.18"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(1060 240) scale(0.8) rotate(118 320 190)">
+    <use href="#leaf" fill="#EE7203" fill-opacity="0.14" filter="url(#frost)"/>
+    <use href="#leaf" fill="#EE7203" fill-opacity="0.16"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(80 430) scale(0.82) rotate(205 320 190)">
+    <use href="#leaf" fill="#D6BAAE" fill-opacity="0.22" filter="url(#frost)"/>
+    <use href="#leaf" fill="#D6BAAE" fill-opacity="0.26"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(620 440) scale(0.92) rotate(162 320 190)">
+    <use href="#leaf" fill="#3B0000" fill-opacity="0.14" filter="url(#frost)"/>
+    <use href="#leaf" fill="#3B0000" fill-opacity="0.16"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+
+  <g transform="translate(1120 560) scale(0.72) rotate(64 320 190)">
+    <use href="#leaf" fill="#1E2650" fill-opacity="0.16" filter="url(#frost)"/>
+    <use href="#leaf" fill="#1E2650" fill-opacity="0.18"/>
+    <use href="#leaf" fill="url(#sheen)"/>
+    <use href="#leaf" fill="none" stroke="#ffffff" stroke-opacity="0.4" stroke-width="3"/>
+  </g>
+</svg>
