@@ -45,6 +45,11 @@
   box-sizing: border-box;
 }
 
+html,
+body {
+  overscroll-behavior-y: none;
+}
+
 html {
   min-height: 100%;
   background-color: #FFFFFF;

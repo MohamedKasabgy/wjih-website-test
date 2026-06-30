@@ -29,18 +29,23 @@ export function HomePage() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/50 to-black/70" />
 
-        <Container className="relative z-10 py-32">
-          <p className="text-sm font-bold tracking-widest uppercase text-[#D6BAAE] mb-6">
+        {/* Title sits below the fixed logo.
+            Logo centre = 50vh. Half-height of new logo is approx 128px-160px.
+            Tailwind requires underscores for spaces in calc(). */}
+        <motion.div
+          style={{ opacity: titleOpacity, y: titleY }}
+          className="relative z-10 pt-[calc(50vh_+_140px)] sm:pt-[calc(50vh_+_180px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+        >
+          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
             مجمع وادي جدة للابتكار
-          </p>
-          <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-tight mb-8 max-w-4xl">
-            {t('home.hero.title').replace('# ', '')}
           </h1>
-          <p className="text-xl text-white/80 leading-relaxed mb-12 max-w-2xl">
-            {t('home.hero.subtitle')}
-          </p>
-          <div className="flex flex-wrap gap-4">
-            <Button variant="primary" className="text-base px-8 py-4">
+          <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
+            مكان رواد الأعمال في قلب جدة
+          </h2>
+
+          {/* Buttons temporarily hidden
+          <div className="flex flex-wrap gap-4 justify-center mt-8">
+            <Button variant="primary" className="text-lg px-8 py-3">
               {t('common.bookNow')}
             </Button>
             <Button variant="outline" className="text-base px-8 py-4 bg-white/10 border-white/30 text-white hover:bg-white/20">

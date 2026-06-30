@@ -21,7 +21,6 @@ type ThemeStyle = CSSProperties & {
 export function PageLayout() {
   const location = useLocation()
   const [isLoading, setIsLoading] = useState(false)
-  const [prevPath, setPrevPath] = useState(location.pathname)
 
   useEffect(() => {
     setIsLoading(true)
