@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "Home",
+    "workspaces": "Workspaces",
+    "incubator": "Incubator",
+    "softLanding": "Soft Landing"
+  },
+  "common": {
+    "contactWhatsapp": "Contact on WhatsApp",
+    "language": "Language",
+    "menu": "Menu",
+    "close": "Close"
+  },
+  "footer": {
+    "description": "A community platform for entrepreneurship and innovation at Wadi Jeddah."
+  }
+}

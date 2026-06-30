@@ -1,0 +1,17 @@
+{
+  "nav": {
+    "home": "الرئيسية",
+    "workspaces": "مساحات العمل",
+    "incubator": "حاضنة وادي جدة",
+    "softLanding": "Soft Landing"
+  },
+  "common": {
+    "contactWhatsapp": "تواصل عبر واتساب",
+    "language": "اللغة",
+    "menu": "القائمة",
+    "close": "إغلاق"
+  },
+  "footer": {
+    "description": "منصة مجتمعية لريادة الأعمال والابتكار في وادي جدة."
+  }
+}
