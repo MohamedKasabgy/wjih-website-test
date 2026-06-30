@@ -57,7 +57,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
       <Container>
         <div
           className={[
-            'navbar-glass transition-all duration-300',
+            'navbar-glass transition-all duration-500 ease-out',
             isScrolled
               ? 'liquid-glass shadow-md border-transparent rounded-[2rem] mt-2 md:mt-3'
               : 'bg-white/80 backdrop-blur-md border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
