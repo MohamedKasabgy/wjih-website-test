@@ -7,7 +7,8 @@ import { Button } from '../components/ui/Button'
 import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
-import aboutImage from '../../src/assets/images/aboutImage.jpeg'
+import firstImage from '../../src/assets/images/FirstImage.svg'
+import bgPattern from '../../src/assets/images/BG.svg'
 export function HomePage() {
   const { t } = useTranslation()
 
@@ -49,29 +50,33 @@ export function HomePage() {
 
       {/* About Section */}
       <Container>
-        <section className="grid md:grid-cols-2 gap-12 items-center bg-[#7A1219] rounded-[3rem] p-8 md:p-12 overflow-hidden relative shadow-xl">
-          {/* Decorative Background Shapes */}
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[var(--page-color-soft)]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-black/20 rounded-full blur-3xl pointer-events-none" />
+        {/* Top Pattern Divider */}
+        <div className="w-full h-8 sm:h-12 bg-repeat-x mb-10 opacity-90" style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: 'contain' }} />
 
-          <div className="relative z-10 text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-sm">
+        <section className="bg-[#761020] rounded-[2rem] overflow-hidden relative shadow-xl flex flex-col md:flex-row min-h-[450px] md:min-h-[500px]">
+          {/* The Original SVG Graphic - anchored to the physical left */}
+          <img 
+            src={firstImage} 
+            alt="Wadi Jeddah Graphic" 
+            className="absolute top-0 left-0 h-full w-full md:w-[70%] object-cover object-left z-0 opacity-40 md:opacity-100" 
+          />
+
+          {/* Right Side (First in RTL flex-row): Text Area */}
+          <div className="w-full md:w-1/2 relative z-10 text-white p-8 md:p-12 lg:p-16 flex flex-col justify-center">
+            <h2 className="text-3xl md:text-5xl font-bold mb-6 drop-shadow-sm leading-tight">
               {t('home.about.title').replace('## ', '')}
             </h2>
             <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">
               {t('home.about.content')}
             </p>
           </div>
-          
-          <div className="relative z-10 h-80 md:h-[450px] w-full flex items-center justify-center">
-            {/* The image with brand shape */}
-            <div className="w-full h-full overflow-hidden shadow-2xl mask-wadi bg-black/20">
-              <img src={aboutImage} alt="Wadi Jeddah" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            {/* Abstract decorative accent */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-white/20 rounded-[2rem] pointer-events-none -z-10" />
-          </div>
+
+          {/* Left Side (Second in RTL flex-row): Empty Spacer so text doesn't overlap the SVG on Desktop */}
+          <div className="hidden md:block w-full md:w-1/2 h-full relative z-10" />
         </section>
+
+        {/* Bottom Pattern Divider */}
+        <div className="w-full h-8 sm:h-12 bg-repeat-x mt-10 opacity-90" style={{ backgroundImage: `url(${bgPattern})`, backgroundSize: 'contain' }} />
       </Container>
 
       {/* Facilities Section */}
