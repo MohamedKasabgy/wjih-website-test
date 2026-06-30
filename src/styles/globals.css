@@ -40,8 +40,7 @@
   }
 }
 
-/* ─── Reset ──────────────────────────────────────────────────────── */
-*, *::before, *::after {
+* {
   box-sizing: border-box;
 }
 
@@ -54,7 +53,9 @@ html {
   min-height: 100%;
   background-color: #FFFFFF;
   color: var(--color-text);
-  font-family: 'IBM Plex Sans Arabic', Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
+  font-family:
+    'IBM Plex Sans Arabic', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -64,8 +65,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  overscroll-behavior-y: none;
-  background-color: #FFFFFF;
+  background-color: #fff;
 }
 
 button, a { font: inherit; }
@@ -75,17 +75,53 @@ a { color: inherit; text-decoration: none; }
 
 /* ─── Utilities ──────────────────────────────────────────────────── */
 @layer utilities {
-
-  /* WJIH brand shape: flat top, rounded bottom-end corners (RTL-aware) */
+  /* ── Brand corner shape ────────────────────────────────────── */
   .mask-wadi {
     border-start-start-radius: 4px;
     border-start-end-radius:   24px;
     border-end-end-radius:     24px;
     border-end-start-radius:   24px;
     overflow: hidden;
+    border-start-start-radius: 4px;
+    border-start-end-radius: 32px;
+    border-end-end-radius: 32px;
+    border-end-start-radius: 32px;
   }
 
-  /* Subtle glass card — light, minimal */
+  /* ── Navbar glass ──────────────────────────────────────────── */
+  .navbar-glass {
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
+    border-start-start-radius: 4px;
+    border-start-end-radius: 32px;
+    border-end-end-radius: 32px;
+    border-end-start-radius: 32px;
+  }
+
+  /* ── Section card — elevated white card with brand corners ── */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid rgba(234, 228, 224, 0.6);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.03);
+    border-start-start-radius: 4px;
+    border-start-end-radius: 32px;
+    border-end-end-radius: 32px;
+    border-end-start-radius: 32px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .section-card:hover {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.06),
+      0 12px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ── Solid (non-glass) card ─────────────────────────────── */
   .liquid-glass {
     background: rgba(255, 255, 255, 0.70);
     backdrop-filter: blur(16px) saturate(160%);
@@ -94,7 +130,76 @@ a { color: inherit; text-decoration: none; }
     box-shadow: 0 2px 16px 0 rgba(30, 38, 80, 0.06);
   }
 
-  /* Logo animation */
+  /* ── Hero header gradient background ────────────────────── */
+  .hero-header {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+  .hero-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(255,255,255,0.06), transparent);
+    pointer-events: none;
+  }
+
+  /* ── Label accent (small uppercase tag) ─────────────────── */
+  .label-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--page-color, #7A1219);
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Feature number — big accent number for lists ───────── */
+  .feature-number {
+    font-family: 'Thmanyah', serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--page-color, #7A1219);
+    opacity: 0.15;
+    position: absolute;
+    top: 1rem;
+    left: 1.25rem;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── Section divider — gradient line ────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to left,
+      transparent,
+      var(--color-border, #EAE4E0) 20%,
+      var(--color-border, #EAE4E0) 80%,
+      transparent
+    );
+    border: none;
+  }
+
+  /* ── Logo pulse animation ───────────────────────────────── */
   .animate-logo-pulse {
     animation: logo-pulse 1.4s ease-in-out infinite;
   }
