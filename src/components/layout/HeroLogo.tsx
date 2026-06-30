@@ -60,7 +60,7 @@ export function HeroLogo() {
     >
       <div className="relative">
         {/* Base: original full-colour logo (revealed as the white layer fades) */}
-        <img src={logo} alt="" className={imgClass} />
+        <motion.img layoutId="wjih-logo" src={logo} alt="" className={imgClass} />
         {/* Overlay: white version, fades out on scroll */}
         <motion.img
           src={logo}
