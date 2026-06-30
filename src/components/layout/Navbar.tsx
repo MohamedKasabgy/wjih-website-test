@@ -37,17 +37,17 @@ export function Navbar() {
       <Container>
         <div
           className={[
-            'liquid-glass mx-4 transition-all duration-300 overflow-hidden',
+            'liquid-glass transition-all duration-300 overflow-hidden',
             isScrolled
               ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
               : 'border border-[var(--color-border)] shadow-sm',
           ].join(' ')}
           style={{
-            // Both ends (left & right) rounded
-            borderStartStartRadius: '2rem',
-            borderEndStartRadius: '2rem',
-            borderStartEndRadius: '2rem',
-            borderEndEndRadius: '2rem',
+            // Square corners (no rounding)
+            borderStartStartRadius: '0',
+            borderEndStartRadius: '9',
+            borderStartEndRadius: '0',
+            borderEndEndRadius: '9',
           }}
         >
           <div className="grid grid-cols-3 items-center min-h-16 px-6">

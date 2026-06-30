@@ -5,6 +5,7 @@ import { getRouteByPath } from '../../config/routes'
 import { pageThemes } from '../../config/pageThemes'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
+import Logo from '../../assets/images/LogoWijih.png'
 
 type ThemeStyle = CSSProperties & {
   '--page-color': string
@@ -47,25 +48,26 @@ export function PageLayout() {
 
   return (
     <div className="min-h-svh bg-transparent text-[var(--color-text)] transition-colors duration-500 relative" style={themeStyle}>
-      
-      {/* Loading Overlay */}
-      <div 
-        className={`fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-bg)] transition-all duration-500 ${
-          isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
-        }`}
-      >
-        <div className="text-[var(--color-heading)] text-2xl font-bold animate-pulse text-center">
-          {/* Add custom animation here later */}
-          <div className="w-16 h-16 border-4 border-[var(--page-color)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
-          <div>جاري التحميل...</div>
-        </div>
-      </div>
 
-      <Navbar />
-      <main className="">
-        <Outlet />
-      </main>
-      <Footer />
-    </div>
-  )
+      {/* Loading Overlay */}
+      <div
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-white/40 backdrop-blur-md backdrop-saturate-150 transition-all duration-500 ${isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
+          }`}
+      >
+        <div className="flex flex-col items-center justify-center">
+          <img
+            src={Logo}
+            alt="Wijih Logo"
+            className="w-60 h-auto animate-logo-pulse"
+          />
+        </div>
+        </div>
+
+        <Navbar />
+        <main className="">
+          <Outlet />
+        </main>
+        <Footer />
+      </div>
+      )
 }

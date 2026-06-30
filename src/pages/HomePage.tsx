@@ -13,7 +13,7 @@ export function HomePage() {
   return (
     <div className="flex flex-col gap-16 pb-16 sm:pb-20">
       <section
-        className="border rounded-2xl relative min-h-screen flex items-center overflow-hidden"
+        className="relative min-h-screen flex items-center overflow-hidden rounded-b-3xl "
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
