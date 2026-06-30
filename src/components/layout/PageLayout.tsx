@@ -1,5 +1,6 @@
 import { useEffect, useState, type CSSProperties } from 'react'
 import { Outlet, useLocation } from 'react-router'
+import { motion, AnimatePresence } from 'framer-motion'
 
 import { getRouteByPath } from '../../config/routes'
 import { pageThemes } from '../../config/pageThemes'
@@ -61,20 +62,35 @@ export function PageLayout() {
       />
 
       {/* Loading Overlay */}
-      <div
-        className={`fixed inset-0 z-[60] flex items-center justify-center bg-white/40 backdrop-blur-md backdrop-saturate-150 transition-all duration-500 ${isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
-          }`}
-      >
-        <div className="flex flex-col items-center justify-center">
-          <img
-            src={Logo}
-            alt="Wijih Logo"
-            className="w-60 h-auto animate-logo-pulse"
-          />
-        </div>
-      </div>
+      <AnimatePresence>
+        {isLoading && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 0.4 }}
+            className="fixed inset-0 z-[60] flex items-center justify-center bg-white"
+          >
+            <div className="flex flex-col items-center justify-center">
+              <motion.img
+                layoutId="wjih-logo"
+                src={Logo}
+                alt="Wijih Logo"
+                className="w-48 md:w-60 h-auto"
+                initial={{ scaleY: 0.8 }}
+                animate={{ scaleY: [0.8, 1.2, 1, 0.9, 1] }}
+                exit={{ scaleY: [1, 1.2, 0.8] }}
+                transition={{ 
+                  layout: { type: "spring", damping: 12, stiffness: 90 },
+                  scaleY: { duration: 0.6, ease: "easeInOut" }
+                }}
+              />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
-      <Navbar />
+      <Navbar isLoading={isLoading} />
       <main>
         <Outlet />
       </main>
