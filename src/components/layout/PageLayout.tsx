@@ -49,15 +49,15 @@ export function PageLayout() {
   return (
     <div className="min-h-svh bg-white text-[var(--color-text)] transition-colors duration-500 relative z-0" style={themeStyle}>
       {/* Global Background Layer */}
-      <div 
-        className="absolute inset-0 z-[-1] pointer-events-none" 
-        style={{ 
-          backgroundImage: `url(${bgImage})`, 
-          backgroundSize: '100% auto', 
-          backgroundRepeat: 'repeat', 
+      <div
+        className="absolute inset-0 z-[-1] pointer-events-none"
+        style={{
+          backgroundImage: `url(${bgImage})`,
+          backgroundSize: '100% auto',
+          backgroundRepeat: 'repeat',
           backgroundPosition: 'top center',
-          opacity: 0.06
-        }} 
+          opacity: 0.15
+        }}
       />
 
       {/* Loading Overlay */}
@@ -72,13 +72,13 @@ export function PageLayout() {
             className="w-60 h-auto animate-logo-pulse"
           />
         </div>
-        </div>
-
-        <Navbar />
-        <main>
-          <Outlet />
-        </main>
-        <Footer />
       </div>
-      )
+
+      <Navbar />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
+    </div>
+  )
 }
