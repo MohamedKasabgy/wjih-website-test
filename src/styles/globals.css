@@ -189,14 +189,15 @@ a {
 
   /* ── Section divider — image bar ────────────────────── */
   .section-divider {
-    height: 12px;
+    height: 24px;
     background-image: url('/src/assets/images/Bar.png');
-    background-size: contain;
+    background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     border: none;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+    width: 100%;
   }
 
   /* ── Logo pulse animation ───────────────────────────────── */

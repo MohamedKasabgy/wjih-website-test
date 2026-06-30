@@ -90,7 +90,7 @@ export function HomePage() {
             </Container>
           </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Facilities ────────────────────────────────────────── */}
       <section className="py-24">
@@ -124,7 +124,7 @@ export function HomePage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Services ──────────────────────────────────────────── */}
       <section className="py-24 bg-[#FAFAF9]">

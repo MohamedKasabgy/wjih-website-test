@@ -53,7 +53,7 @@ export function SoftLandingPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── What We Offer ─────────────────────────────────────── */}
       <section className="bg-[#FAFAF9] py-24">

@@ -57,7 +57,7 @@ export function EventsPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Event Halls ───────────────────────────────────────── */}
       <section className="bg-[#FAFAF9] py-24">
@@ -102,7 +102,7 @@ export function EventsPage() {
         </Container>
       </section>
 
-      <div className="section-divider mx-8 sm:mx-20" />
+      <div className="section-divider" />
 
       {/* ── Catering ──────────────────────────────────────────── */}
       <section className="py-24">
