@@ -191,9 +191,9 @@ a {
   .section-divider {
     height: 24px;
     background-image: url('/src/assets/images/Bar.png');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+    background-repeat: repeat-x;
     border: none;
     margin-top: 4rem;
     margin-bottom: 4rem;
