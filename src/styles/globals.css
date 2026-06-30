@@ -84,7 +84,7 @@ a {
   inset: 0;
   z-index: -10;
   opacity: 0.25;
-  background-image: url('/src/assets/images/BG.jpg');
+  background-image: url('../assets/images/BG.jpg');
   background-size: auto;
   background-repeat: repeat;
   background-position: top center;
