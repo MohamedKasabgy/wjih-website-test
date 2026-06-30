@@ -49,7 +49,7 @@ export function HomePage() {
       <div className="relative">
         {/* Background Image Container */}
         <div
-          className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+          className="absolute inset-0 z-0 opacity-25 pointer-events-none"
           style={{
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
