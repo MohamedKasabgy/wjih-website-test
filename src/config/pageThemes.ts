@@ -11,13 +11,13 @@ export const pageThemes = {
   },
   workspaces: {
     label: 'Workspaces',
-    color: '#D6BAAE',
-    bg: '#3D4663', // Desaturated Navy
-    text: '#F8F5F3',
-    heading: '#FFFFFF',
-    muted: '#E6DAD5',
-    surface: 'rgba(255,255,255,0.05)',
-    border: 'rgba(255,255,255,0.2)',
+    color: '#1E2650',
+    bg: '#1E2650',
+    text: '#D6BAAE',
+    heading: '#D6BAAE',
+    muted: '#D6BAAE',
+    surface: 'rgba(214,186,174,0.12)',
+    border: 'rgba(214,186,174,0.24)',
   },
   incubator: {
     label: 'Wadi Jeddah Incubator',
