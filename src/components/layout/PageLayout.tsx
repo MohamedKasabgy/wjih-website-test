@@ -25,6 +25,9 @@ export function PageLayout() {
   const [isLoading, setIsLoading] = useState(false)
 
   useEffect(() => {
+    // Scroll to the top of the page on route change
+    window.scrollTo(0, 0)
+    
     // If navigating to home page, skip the loading animation entirely
     if (location.pathname === '/') {
       setIsLoading(false)
