@@ -26,7 +26,7 @@ export function WorkspacesPage() {
   const { t } = useTranslation()
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen">
 
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#1E2650] via-[#1E2650] to-[#2a3368]">

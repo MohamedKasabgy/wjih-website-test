@@ -8,7 +8,6 @@ import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
 import aboutImage from '../../src/assets/images/aboutImage.jpeg'
-import bgImage from '../../src/assets/images/BG.jpg'
 
 export function HomePage() {
   const { t } = useTranslation()
@@ -45,21 +44,7 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      {/* ── Page Content Wrapper with Background ──────────────── */}
-      <div className="relative">
-        {/* Background Image Container */}
-        <div
-          className="absolute inset-0 z-0 opacity-25 pointer-events-none"
-          style={{
-            backgroundImage: `url(${bgImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'top center',
-            backgroundAttachment: 'fixed',
-          }}
-        />
-
-        <div className="relative z-10">
-          {/* ── About ─────────────────────────────────────────────── */}
+      {/* ── About ─────────────────────────────────────────────── */}
           <section className="py-24">
             <Container>
               <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -177,8 +162,6 @@ export function HomePage() {
           </Button>
         </Container>
       </section>
-        </div> {/* End of Page Content Wrapper */}
-      </div>
     </div>
   )
 }
