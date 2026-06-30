@@ -105,6 +105,10 @@ body {
     border-end-start-radius: 32px;
   }
 
+  .text-navbar-inactive {
+    color: #390100 !important;
+  }
+
   /* ── Section card — elevated white card with brand corners ── */
   .section-card {
     background: #ffffff;

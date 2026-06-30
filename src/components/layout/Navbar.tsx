@@ -13,7 +13,7 @@ import logo from '../../assets/images/LogoWijih.png'
 const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [
     'whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-[var(--page-color)]',
-    isActive ? 'text-[var(--page-color)]' : (isHome ? 'text-[var(--color-text)]' : 'text-[#390100]'),
+    isActive ? 'text-[var(--page-color)]' : (isHome ? 'text-[var(--color-text)]' : 'text-navbar-inactive'),
   ].join(' ')
 
 export function Navbar({ isLoading }: { isLoading?: boolean }) {
