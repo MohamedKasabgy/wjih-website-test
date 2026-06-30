@@ -52,7 +52,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
       <Container>
         <div
           className={[
-            'navbar-glass transition-all duration-300 overflow-hidden',
+            'navbar-glass transition-all duration-300',
             isScrolled
               ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
               : 'border border-[var(--color-border)] shadow-sm',
