@@ -5,6 +5,7 @@ import { HomePage } from '../pages/HomePage'
 import { IncubatorPage } from '../pages/IncubatorPage'
 import { SoftLandingPage } from '../pages/SoftLandingPage'
 import { WorkspacesPage } from '../pages/WorkspacesPage'
+import { EventsPage } from '../pages/EventsPage'
 
 export const router = createBrowserRouter([
   {
@@ -25,6 +26,10 @@ export const router = createBrowserRouter([
       {
         path: '/soft-landing',
         element: <SoftLandingPage />,
+      },
+      {
+        path: '/events',
+        element: <EventsPage />,
       },
     ],
   },

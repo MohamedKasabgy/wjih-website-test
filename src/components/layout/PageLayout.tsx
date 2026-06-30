@@ -1,4 +1,4 @@
-import type { CSSProperties } from 'react'
+import { useEffect, useState, type CSSProperties } from 'react'
 import { Outlet, useLocation } from 'react-router'
 
 import { getRouteByPath } from '../../config/routes'
@@ -9,22 +9,60 @@ import { Navbar } from './Navbar'
 type ThemeStyle = CSSProperties & {
   '--page-color': string
   '--page-color-soft': string
+  '--color-bg': string
+  '--color-text': string
+  '--color-heading': string
+  '--color-muted': string
+  '--color-surface': string
+  '--color-border': string
 }
 
 export function PageLayout() {
   const location = useLocation()
+  const [isLoading, setIsLoading] = useState(false)
+  const [prevPath, setPrevPath] = useState(location.pathname)
+
+  useEffect(() => {
+    setIsLoading(true)
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800)
+
+    return () => clearTimeout(timer)
+  }, [location.pathname])
+
   const route = getRouteByPath(location.pathname)
   const theme = pageThemes[route.key]
 
   const themeStyle: ThemeStyle = {
     '--page-color': theme.color,
-    '--page-color-soft': `${theme.color}1A`,
+    '--page-color-soft': `${theme.color}33`,
+    '--color-bg': theme.bg,
+    '--color-text': theme.text,
+    '--color-heading': theme.heading,
+    '--color-muted': theme.muted,
+    '--color-surface': theme.surface,
+    '--color-border': theme.border,
   }
 
   return (
-    <div className="min-h-svh text-[var(--color-text)]" style={themeStyle}>
+    <div className="min-h-svh bg-[var(--color-bg)] text-[var(--color-text)] transition-colors duration-500 relative" style={themeStyle}>
+      
+      {/* Loading Overlay */}
+      <div 
+        className={`fixed inset-0 z-50 flex items-center justify-center bg-[var(--color-bg)] transition-all duration-500 ${
+          isLoading ? 'opacity-100 visible' : 'opacity-0 invisible'
+        }`}
+      >
+        <div className="text-[var(--color-heading)] text-2xl font-bold animate-pulse text-center">
+          {/* Add custom animation here later */}
+          <div className="w-16 h-16 border-4 border-[var(--page-color)] border-t-transparent rounded-full animate-spin mx-auto mb-4"></div>
+          <div>جاري التحميل...</div>
+        </div>
+      </div>
+
       <Navbar />
-      <main>
+      <main className="pt-32">
         <Outlet />
       </main>
       <Footer />
