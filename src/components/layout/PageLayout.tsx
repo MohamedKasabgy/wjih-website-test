@@ -81,7 +81,7 @@ export function PageLayout() {
             />
             
             {/* Centered Logo */}
-            <div className="fixed inset-0 z-[61] flex items-center justify-center pointer-events-none">
+            <div className="fixed inset-0 z-[80] flex items-center justify-center pointer-events-none">
               <motion.img
                 layoutId="wjih-logo"
                 src={Logo}
