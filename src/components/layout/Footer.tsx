@@ -10,8 +10,8 @@ export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="border-t border-[var(--color-border)] bg-white py-6">
-      <Container className="flex flex-col gap-5 text-sm text-[var(--color-muted)] lg:flex-row lg:items-center lg:justify-between">
+    <footer className="border-t border-[var(--color-border)] liquid-glass py-6 relative z-10">
+      <Container className="flex flex-col gap-5 text-sm text-[var(--color-text)] lg:flex-row lg:items-center lg:justify-between">
         <div className="max-w-md">
           <p className="font-bold text-[var(--color-heading)]">Wadi Jeddah Innovation Hub</p>
           <p className="mt-2">{t('footer.description')}</p>

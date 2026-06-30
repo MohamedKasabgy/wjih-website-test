@@ -9,7 +9,7 @@ export function SoftLandingPage() {
 
   return (
     <Container className="py-16 sm:py-20">
-      <section className="rounded-lg border border-[var(--color-border)] bg-white p-6 shadow-sm sm:p-8">
+      <section className="border border-[var(--color-border)] liquid-glass mask-wadi p-6 shadow-sm sm:p-8">
         <p className="text-sm font-semibold text-[var(--page-color)]">{theme.color}</p>
         <h1 className="mt-3 text-3xl font-bold text-[var(--color-heading)] sm:text-4xl">
           {t('nav.softLanding')}
