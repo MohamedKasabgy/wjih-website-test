@@ -3,8 +3,6 @@ import { NavLink } from 'react-router'
 import { useTranslation } from 'react-i18next'
 
 import { appRoutes } from '../../config/routes'
-import { createWhatsAppUrl } from '../../lib/whatsapp'
-import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
 import { LanguageToggle } from './LanguageToggle'
 
@@ -33,83 +31,79 @@ export function Navbar() {
   }, [])
 
   return (
-    <header
-      className={[
-        'sticky top-0 z-40 liquid-glass transition-colors',
-        isScrolled
-          ? 'border-b border-transparent shadow-sm shadow-[var(--page-color-soft)]'
-          : 'border-b border-[var(--color-border)]',
-      ].join(' ')}
-    >
-      <Container className="flex min-h-16 items-center justify-between gap-4">
-        <NavLink
-          className="text-base font-bold text-[var(--page-color)]"
-          to="/"
-          onClick={() => setIsMenuOpen(false)}
+    <header className="fixed top-6 left-0 right-0 z-40 w-full transition-all">
+      <Container>
+        <div
+          className={[
+            'liquid-glass rounded-2xl transition-all duration-300 overflow-hidden',
+            isScrolled
+              ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
+              : 'border border-[var(--color-border)] shadow-sm',
+          ].join(' ')}
         >
-          WJIH
-        </NavLink>
+          <div className="grid grid-cols-3 items-center min-h-16 px-6">
+            
+            {/* Left side: Navigation links (Desktop) & Menu button (Mobile) */}
+            <div className="flex justify-start">
+              <nav aria-label="Primary navigation" className="hidden gap-1 md:flex">
+                {appRoutes.map((route) => (
+                  <NavLink className={navLinkClassName} key={route.path} to={route.path}>
+                    {t(route.labelKey)}
+                  </NavLink>
+                ))}
+              </nav>
 
-        <nav aria-label="Primary navigation" className="hidden items-center gap-1 md:flex">
-          {appRoutes.map((route) => (
-            <NavLink className={navLinkClassName} key={route.path} to={route.path}>
-              {t(route.labelKey)}
-            </NavLink>
-          ))}
-        </nav>
-
-        <div className="hidden items-center gap-2 md:flex">
-          <LanguageToggle />
-          <a
-            className={buttonClasses('primary')}
-            href={createWhatsAppUrl()}
-            rel="noreferrer"
-            target="_blank"
-          >
-            {t('common.contactWhatsapp')}
-          </a>
-        </div>
-
-        <button
-          aria-expanded={isMenuOpen}
-          aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-          className="min-h-11 border border-[var(--color-border)] liquid-glass px-3 py-2 text-sm font-semibold text-[var(--color-text)] md:hidden"
-          type="button"
-          onClick={() => setIsMenuOpen((current) => !current)}
-        >
-          {isMenuOpen ? t('common.close') : t('common.menu')}
-        </button>
-      </Container>
-
-      {isMenuOpen ? (
-        <div className="border-t border-[var(--color-border)] liquid-glass md:hidden">
-          <Container className="flex flex-col gap-3 py-4">
-            <nav aria-label="Mobile navigation" className="flex flex-col gap-1">
-              {appRoutes.map((route) => (
-                <NavLink
-                  className={navLinkClassName}
-                  key={route.path}
-                  to={route.path}
-                  onClick={() => setIsMenuOpen(false)}
-                >
-                  {t(route.labelKey)}
-                </NavLink>
-              ))}
-            </nav>
-            <div className="flex flex-col gap-2 sm:flex-row">
-              <LanguageToggle />
-              <a
-                className={buttonClasses('primary')}
-                href={createWhatsAppUrl()}
-                rel="noreferrer"
-                target="_blank"
+              <button
+                aria-expanded={isMenuOpen}
+                aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
+                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors"
+                type="button"
+                onClick={() => setIsMenuOpen((current) => !current)}
               >
-                {t('common.contactWhatsapp')}
-              </a>
+                {isMenuOpen ? t('common.close') : t('common.menu')}
+              </button>
             </div>
-          </Container>
+
+            {/* Center: Logo */}
+            <div className="flex justify-center">
+              <NavLink
+                className="text-2xl tracking-wider font-extrabold text-[var(--page-color)] hover:opacity-80 transition-opacity"
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                WJIH
+              </NavLink>
+            </div>
+
+            {/* Right side: Language toggle */}
+            <div className="flex justify-end gap-2">
+              <LanguageToggle />
+            </div>
+
+          </div>
+
+          {/* Mobile menu dropdown */}
+          {isMenuOpen && (
+            <div className="border-t border-[var(--color-border)] bg-[var(--color-surface)]/50 md:hidden">
+              <div className="flex flex-col gap-3 p-6">
+                <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
+                  {appRoutes.map((route) => (
+                    <NavLink
+                      className={navLinkClassName}
+                      key={route.path}
+                      to={route.path}
+                      onClick={() => setIsMenuOpen(false)}
+                    >
+                      {t(route.labelKey)}
+                    </NavLink>
+                  ))}
+                </nav>
+              </div>
+            </div>
+          )}
+
         </div>
-      ) : null}
+      </Container>
     </header>
   )
 }

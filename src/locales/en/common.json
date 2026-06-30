@@ -2,16 +2,249 @@
   "nav": {
     "home": "Home",
     "workspaces": "Workspaces",
-    "incubator": "Incubator",
+    "events": "Events",
+    "incubator": "Wadi Jeddah Incubator",
     "softLanding": "Soft Landing"
   },
   "common": {
-    "contactWhatsapp": "Contact on WhatsApp",
+    "contactWhatsapp": "WhatsApp",
     "language": "Language",
     "menu": "Menu",
-    "close": "Close"
+    "close": "Close",
+    "bookNow": "Book Now",
+    "bookMeeting": "Book Meeting",
+    "explorePlans": "Explore Plans",
+    "requestTour": "Request Tour",
+    "joinCommunity": "Join Community",
+    "applyNow": "Apply Now",
+    "downloadGuide": "Download Guide"
   },
   "footer": {
-    "description": "A community platform for entrepreneurship and innovation at Wadi Jeddah."
+    "description": "An entrepreneurial and innovation community platform in Wadi Jeddah.",
+    "quickLinks": "Quick Links",
+    "contactInfo": "Contact Info",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "locationText": "Jeddah, Saudi Arabia."
+  },
+  "home": {
+    "hero": {
+      "title": "Wadi Jeddah Innovation Hub: The Entrepreneurial Destination",
+      "subtitle": "Launch your idea in an integrated entrepreneurial environment designed to accelerate startup growth, and enjoy an unparalleled productive experience."
+    },
+    "about": {
+      "title": "Wadi Jeddah Innovation Hub.. Where Ideas Grow",
+      "content": "More than just a workspace; we are an integrated entrepreneurial ecosystem supporting innovators and startups. We empower creative minds through exclusive services and intensive programs to accelerate your journey to the future."
+    },
+    "facilities": {
+      "title": "Workspaces That Scale With Your Ambition",
+      "content": "Whether you're a freelancer or an expanding startup, we offer flexible and fully equipped environments:",
+      "list": [
+        "Shared Offices: The perfect choice for flexible work within an interactive community.",
+        "Private Offices: Independent spaces ensuring privacy and focus for your team.",
+        "Event Halls: Smart venues equipped with the latest technologies for successful events."
+      ],
+      "cta": "Discover Spaces & Pricing"
+    },
+    "services": {
+      "title": "An Integrated Ecosystem for Business Growth",
+      "content": "Your success requires more than a desk. We provide all the facilities you need so you can focus solely on your innovation:",
+      "list": [
+        "Digital Infrastructure: High-speed internet with continuous tech support.",
+        "High Security: 24/7 smart access with a comprehensive security system.",
+        "Well-being: Cafe, shared kitchen, recreational spaces, and personal lockers.",
+        "Business Incubator: Mentorship programs opening doors to investment."
+      ],
+      "cta": "Explore Our Programs"
+    },
+    "community": {
+      "title": "Join an Inspiring Innovation Community",
+      "content": "Innovation doesn't happen in isolation! Joining our Hub makes you part of a vibrant community of top innovators and investors. Exchange ideas, build strategic partnerships, and share your success story with us."
+    }
+  },
+  "workspaces": {
+    "hero": {
+      "title": "Flexible & Fully-Equipped Offices for Your Growth",
+      "subtitle": "Choose the space that inspires your productivity at Wadi Jeddah Innovation Hub. Flexible, all-inclusive monthly plans with no hidden setup costs."
+    },
+    "intro": "We provide a complete platform for success with premium workspaces equipped with advanced facilities to help you develop your innovations in a dynamic community.",
+    "pricingTitle": "Flexible Plans for Freelancers & Startups",
+    "plans": {
+      "hotDesk": {
+        "title": "1. Hot Desk",
+        "price": "699",
+        "audience": "Freelancers and mobile professionals.",
+        "desc": "A flexible workspace allowing you to sit at any available spot in our shared areas and enjoy all services.",
+        "cta": "Book a Hot Desk"
+      },
+      "dedicatedDesk": {
+        "title": "2. Dedicated Desk",
+        "price": "999",
+        "audience": "Entrepreneurs needing daily stability.",
+        "desc": "A fixed designated desk giving you stability and a secure place to leave your tools comfortably.",
+        "cta": "Book a Dedicated Desk"
+      },
+      "semiPrivate": {
+        "title": "3. Semi-Private Office",
+        "price": "1299",
+        "audience": "Small teams seeking a balance of privacy and networking.",
+        "desc": "An independent, smartly partitioned workspace ensuring a high degree of privacy and focus.",
+        "cta": "Book Semi-Private Space"
+      },
+      "private1": {
+        "title": "4. Private Office - 1 Desk",
+        "price": "2999",
+        "audience": "CEOs and startup leaders.",
+        "desc": "A fully enclosed, independent office for the highest levels of privacy and focus to host your clients.",
+        "cta": "Book Private Office"
+      },
+      "private2": {
+        "title": "5. Private Office - 2 Desks",
+        "price": "4999",
+        "audience": "Startups in the growth stage.",
+        "desc": "A fully enclosed private office equipped with two integrated desks to boost productivity and collaboration.",
+        "cta": "Book Team Office"
+      }
+    },
+    "amenities": {
+      "title": "Exceptional Amenities Included in All Plans",
+      "list": [
+        "24/7 Access: Secure around-the-clock access all week.",
+        "Fiber Internet: Ultra-fast and reliable connection.",
+        "Smart Devices: Printing and scanning services at your disposal.",
+        "Hospitality Area: Cafe and kitchen providing daily beverages.",
+        "Personal Lockers: Secure storage for your documents and devices.",
+        "Recreational Spaces: Designated areas for relaxation and networking."
+      ]
+    },
+    "cta": {
+      "title": "Shape the Future of Your Project Today!",
+      "button": "Request an Office Tour"
+    }
+  },
+  "events": {
+    "hero": {
+      "title": "Event & Meeting Halls Built for Success",
+      "subtitle": "From board meetings to inspiring workshops; we provide smart spaces with cutting-edge tech to deliver an exceptional experience for your guests."
+    },
+    "meetingRooms": {
+      "title": "Smart Meeting Rooms for Higher Productivity",
+      "price": "100 SAR / Hour",
+      "specs": "Interactive screens, fast internet for video calls, and a focus-enhancing environment with tech support.",
+      "cta": "Book Your Next Meeting"
+    },
+    "eventHalls": {
+      "title": "Event Halls & Theater to Launch Your Initiatives",
+      "hall1": {
+        "title": "Integrated Event Hall 1",
+        "price": "350 SAR / Hour",
+        "specs": "Capacity of 50. Large screen, advanced sound system, and fast internet for streaming."
+      },
+      "hall2": {
+        "title": "Integrated Event Hall 2",
+        "price": "285 SAR / Hour",
+        "specs": "Capacity of 25. The ideal choice for workshops, equipped with a smart interactive screen."
+      },
+      "hall3": {
+        "title": "Grand Space (Both Halls + Theater)",
+        "price": "575 SAR / Hour",
+        "specs": "Combined capacity of 85 with a fully integrated technological ecosystem at your disposal.",
+        "cta": "Book the Grand Space"
+      }
+    },
+    "catering": {
+      "title": "Flexible Hospitality Packages for Your Event",
+      "note": "All packages include premium coffee, sweets, pastries, and water.",
+      "packages": [
+        {"name": "Package One", "desc": "Light and elegant hospitality suitable for quick meetings.", "price": "500"},
+        {"name": "Package Two", "desc": "Wider options providing a distinctive coffee break experience.", "price": "700"},
+        {"name": "Package Three", "desc": "Luxurious and integrated hospitality for major events and VIPs.", "price": "1300"}
+      ]
+    },
+    "cta": {
+      "title": "Host Your Next Event at the Entrepreneurs' Destination",
+      "button": "Book Your Hall Now"
+    }
+  },
+  "incubator": {
+    "hero": {
+      "title": "Wadi Jeddah Incubator 2026: Accelerating Startups",
+      "subtitle": "Turn your idea into an ambitious, scalable product in an incubation program that ensures your full readiness for investment and expansion."
+    },
+    "about": {
+      "title": "Program Pillars: Flexible Funding & Limitless Mentorship",
+      "content": "The optimal model for building investment readiness and overcoming obstacles through milestone funding and an approved plan.",
+      "list": [
+        "Duration: 6 months of intensive work.",
+        "Target Sectors: Biotech, Smart Cities, Food Tech (Priority to AI).",
+        "Target Batch: Only 20 outstanding startups.",
+        "Target Output: Graduating 10 market-ready companies.",
+        "Funding: Milestone-based financial support linked to targets."
+      ]
+    },
+    "support": {
+      "title": "An Integrated Ecosystem Supporting Every Step",
+      "list": [
+        "Milestone Funding: Linked to actual performance.",
+        "Investor Access: Direct channels with Venture Capitals.",
+        "Mentorship: 1-on-1 sessions with industry leaders.",
+        "Workshops: 12 intensive sessions in product development and growth.",
+        "Government Entities: Facilitating relationships and collaboration.",
+        "Market Testing: Pilot environments for your product.",
+        "Full Flexibility: Customized support based on company needs."
+      ]
+    },
+    "strategy": {
+      "title": "Empowering Innovation via Vision 2030",
+      "sections": [
+        {
+          "title": "Faster Growth",
+          "desc": "Organized guidance to reduce market-entry time with high-quality products."
+        },
+        {
+          "title": "Investment Readiness",
+          "desc": "Transforming early startups into commercial entities with proven traction."
+        },
+        {
+          "title": "Supporting the Vision",
+          "desc": "Fostering collaboration between academia and industry to drive the economy."
+        }
+      ],
+      "note": "We support the next generation of scalable companies to achieve national transformation targets."
+    },
+    "cta": {
+      "title": "Turn Your Idea into a Leading Company",
+      "button": "Apply to 2026 Incubator Now"
+    }
+  },
+  "softLanding": {
+    "hero": {
+      "title": "Your Gateway to the Saudi Market",
+      "subtitle": "Integrated services for MISA licensing and legal setup for foreign companies in Jeddah."
+    },
+    "about": {
+      "title": "What is the Soft Landing Program?",
+      "content": "A program that streamlines administrative and legal procedures for international companies to establish a legal entity and grow in the Saudi market via Jeddah."
+    },
+    "offer": {
+      "title": "Legal & Commercial Support | Our Services",
+      "govSupport": "Legal & Government Support",
+      "govList": [
+        "MISA Licensing: Securing your foreign investor license in Jeddah.",
+        "Legal Setup: Complete corporate registration and documentation.",
+        "Government Relations: Facilitating procedures with relevant authorities."
+      ],
+      "growth": "Market Expansion & Growth",
+      "growthList": [
+        "Pilot Projects: Test your product with Saudi partners.",
+        "Investor Access: Matchmaking with Venture Capitals.",
+        "KAU Facilities: Exclusive access to research centers."
+      ]
+    },
+    "cta": {
+      "title": "Start Your Investment Journey",
+      "button": "Talk to an Expansion Expert"
+    }
   }
 }
