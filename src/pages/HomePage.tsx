@@ -7,6 +7,7 @@ import { Button } from '../components/ui/Button'
 import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
+import firstImage from '../../src/assets/images/FirstImage.svg'
 export function HomePage() {
   const { t } = useTranslation()
 
@@ -18,35 +19,33 @@ export function HomePage() {
   return (
     <div className="flex flex-col">
 
-      <div className="bg-black">
-        <section
-          className="relative min-h-screen overflow-hidden rounded-b-3xl"
-          style={{
-            backgroundImage: `url(${heroImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'center',
-            backgroundRepeat: 'no-repeat',
-          }}
-        >
-          {/* Dark overlay */}
-          <div className="absolute inset-0 bg-black/50" />
+      <section
+        className="relative min-h-screen overflow-hidden rounded-b-3xl"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-black/50" />
 
-          {/* Title sits below the fixed logo.
-              Logo centre = 50vh. Adjusted to pull text higher up.
-              Tailwind requires underscores for spaces in calc(). */}
-          <motion.div
-            style={{ opacity: titleOpacity, y: titleY }}
-            className="relative z-10 pt-[calc(50vh_+_100px)] sm:pt-[calc(50vh_+_130px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
-          >
-            <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
-              مجمع وادي جدة للابتكار
-            </h1>
-            <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
-              مكان رواد الأعمال في قلب جدة
-            </h2>
-          </motion.div>
-        </section>
-      </div>
+        {/* Title sits below the fixed logo.
+            Logo centre = 50vh. Adjusted to pull text higher up.
+            Tailwind requires underscores for spaces in calc(). */}
+        <motion.div
+          style={{ opacity: titleOpacity, y: titleY }}
+          className="relative z-10 pt-[calc(50vh_+_100px)] sm:pt-[calc(50vh_+_130px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+        >
+          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
+            مجمع وادي جدة للابتكار
+          </h1>
+          <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
+            مكان رواد الأعمال في قلب جدة
+          </h2>
+        </motion.div>
+      </section>
 
       {/* ── About ─────────────────────────────────────────────────── */}
       <section className="bg-white py-24 sm:py-32">
@@ -82,7 +81,22 @@ export function HomePage() {
               {t('home.facilities.content')}
             </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 mb-12">
+          <div className="h-64 md:h-full min-h-[300px] flex items-center justify-center overflow-hidden mask-wadi">
+            <img src={firstImage} alt="Wadi Jeddah" className="w-full h-full object-cover" />
+          </div>
+        </section>
+      </Container>
+
+      {/* Facilities Section */}
+      <Container>
+        <section className="border border-[var(--color-border)] liquid-glass  mask-wadi p-8 shadow-sm sm:p-12">
+          <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6 text-center max-w-2xl mx-auto">
+            {t('home.facilities.title').replace('## ', '')}
+          </h2>
+          <p className="text-lg text-[var(--color-muted)] text-center mb-10 max-w-3xl mx-auto">
+            {t('home.facilities.content')}
+          </p>
+          <div className="grid md:grid-cols-3 gap-6 mb-10">
             {[0, 1, 2].map((i) => (
               <div key={i} className="mask-wadi border border-[#EAE4E0] p-8 hover:border-[#7A1219] hover:shadow-md transition-all duration-300">
                 <div className="w-10 h-10 rounded-full bg-[rgba(122,18,25,0.08)] flex items-center justify-center mb-6">
