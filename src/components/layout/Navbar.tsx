@@ -1,9 +1,11 @@
 import { useEffect, useState } from 'react'
-import { NavLink } from 'react-router'
+import { NavLink, useLocation } from 'react-router'
 import { useTranslation } from 'react-i18next'
+import { motion, useTransform } from 'framer-motion'
 
 import { appRoutes } from '../../config/routes'
 import { Container } from '../ui/Container'
+import { useScrollProgress } from '../../hooks/useScrollProgress'
 // Language switch temporarily disabled (Arabic-only for now); re-enable later.
 // import { LanguageToggle } from './LanguageToggle'
 import logo from '../../assets/images/LogoWijih.png'
@@ -16,8 +18,18 @@ const navLinkClassName = ({ isActive }: { isActive: boolean }) =>
 
 export function Navbar() {
   const { t } = useTranslation()
+  const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
   const [isMenuOpen, setIsMenuOpen] = useState(false)
+
+  // On the home page the navbar starts hidden and is revealed by scrolling, in
+  // sync with the morphing hero logo (see HeroLogo). On every other page it is
+  // always visible.
+  const isHome = location.pathname === '/'
+  const progress = useScrollProgress()
+  const headerOpacity = useTransform(progress, [0.2, 0.85], [0, 1])
+  const headerY = useTransform(progress, [0, 1], [-24, 0])
+  const headerStyle = isHome ? { opacity: headerOpacity, y: headerY } : undefined
 
   useEffect(() => {
     const updateScrollState = () => {
@@ -33,11 +45,14 @@ export function Navbar() {
   }, [])
 
   return (
-    <header className="fixed  left-0 right-0 z-40 w-full transition-all">
+    <motion.header
+      className="fixed left-0 right-0 z-40 w-full"
+      style={headerStyle}
+    >
       <Container>
         <div
           className={[
-            'liquid-glass transition-all duration-300 overflow-hidden',
+            'navbar-glass transition-all duration-300 overflow-hidden',
             isScrolled
               ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
               : 'border border-[var(--color-border)] shadow-sm',
@@ -57,15 +72,18 @@ export function Navbar() {
               {/* <LanguageToggle /> */}
             </div>
 
-            {/* Center: Logo */}
+            {/* Center: Logo — hidden on home, where the morphing HeroLogo
+                lands in the top-left corner and acts as the brand mark. */}
             <div className="flex justify-center">
-              <NavLink
-                to="/"
-                onClick={() => setIsMenuOpen(false)}
-                className="flex items-center hover:opacity-80 transition-opacity"
-              >
-                <img src={logo} alt="WJIH Logo" className="h-10 w-auto" />
-              </NavLink>
+              {!isHome && (
+                <NavLink
+                  to="/"
+                  onClick={() => setIsMenuOpen(false)}
+                  className="flex items-center hover:opacity-80 transition-opacity"
+                >
+                  <img src={logo} alt="WJIH Logo" className="h-10 w-auto" />
+                </NavLink>
+              )}
             </div>
 
             {/* End side: Navigation links (Desktop) & Menu button (Mobile) */}
@@ -113,6 +131,6 @@ export function Navbar() {
 
         </div>
       </Container>
-    </header>
+    </motion.header>
   )
 }

@@ -3,8 +3,8 @@ export const pageThemes = {
     label: 'Home',
     color: '#D6BAAE',
     bg: '#4A2C2C', // Desaturated Burgundy
-    text: '#FFFFFF',
-    heading: '#FFFFFF',
+    text: '#390100',
+    heading: '#390100',
     muted: '#E6DAD5',
     surface: 'rgba(255,255,255,0.05)',
     border: 'rgba(255,255,255,0.2)',

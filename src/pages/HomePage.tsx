@@ -1,19 +1,29 @@
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
+import { motion, useTransform } from 'framer-motion'
 
 import { pageThemes } from '../config/pageThemes'
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
+import { HeroLogo } from '../components/layout/HeroLogo'
+import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
-
 export function HomePage() {
   const { t } = useTranslation()
   const theme = pageThemes.home
 
+  const progress = useScrollProgress()
+  // Title fades out and lifts as the logo morphs into the navbar.
+  const titleOpacity = useTransform(progress, [0.1, 0.45], [1, 0])
+  const titleY       = useTransform(progress, [0.1, 0.45], [0, -30])
+
   return (
     <div className="flex flex-col gap-16 pb-16 sm:pb-20">
+      {/* Single fixed logo — always visible, morphs to navbar on scroll */}
+      <HeroLogo />
+
       <section
-        className="relative min-h-screen flex items-center overflow-hidden rounded-b-3xl "
+        className="relative min-h-screen overflow-hidden rounded-b-3xl"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
@@ -22,28 +32,30 @@ export function HomePage() {
         }}
       >
         {/* Dark overlay */}
-        <div className="absolute inset-0 bg-black/50"></div>
+        <div className="absolute inset-0 bg-black/50" />
 
-        {/* Content */}
-        <div className="relative z-10 max-w-3xl px-8 sm:px-12 ">
-          <h1 className="text-4xl font-extrabold text-white sm:text-5xl leading-tight mb-6">
+        {/* Title sits below the fixed logo.
+            Logo centre = 50vh. Half-height ≈ 72px mobile / 88px desktop.
+            Tailwind requires underscores for spaces in calc(). */}
+        <motion.div
+          style={{ opacity: titleOpacity, y: titleY }}
+          className="relative z-10 pt-[calc(50vh_+_112px)] sm:pt-[calc(50vh_+_128px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+        >
+          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-5xl leading-tight">
             {t('home.hero.title').replace('# ', '')}
           </h1>
 
-          <p className="text-xl text-white/90 leading-relaxed mb-10">
-            {t('home.hero.subtitle')}
-          </p>
-
-          <div className="flex flex-wrap gap-4">
+          {/* Buttons temporarily hidden
+          <div className="flex flex-wrap gap-4 justify-center mt-8">
             <Button variant="primary" className="text-lg px-8 py-3">
               {t('common.bookNow')}
             </Button>
-
             <Button variant="outline" className="text-lg px-8 py-3">
               {t('common.requestTour')}
             </Button>
           </div>
-        </div>
+          */}
+        </motion.div>
       </section>
 
       {/* About Section */}
@@ -65,7 +77,7 @@ export function HomePage() {
 
       {/* Facilities Section */}
       <Container>
-        <section className="border border-[var(--color-border)] liquid-glass mask-wadi p-8 shadow-sm sm:p-12">
+        <section className="border border-[var(--color-border)] liquid-glass  mask-wadi p-8 shadow-sm sm:p-12">
           <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6 text-center max-w-2xl mx-auto">
             {t('home.facilities.title').replace('## ', '')}
           </h2>
