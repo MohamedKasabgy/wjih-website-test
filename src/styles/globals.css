@@ -186,17 +186,16 @@ a { color: inherit; text-decoration: none; }
     user-select: none;
   }
 
-  /* ── Section divider — gradient line ────────────────────── */
+  /* ── Section divider — image bar ────────────────────── */
   .section-divider {
-    height: 1px;
-    background: linear-gradient(
-      to left,
-      transparent,
-      var(--color-border, #EAE4E0) 20%,
-      var(--color-border, #EAE4E0) 80%,
-      transparent
-    );
+    height: 12px;
+    background-image: url('/src/assets/images/Bar.png');
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     border: none;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
   }
 
   /* ── Logo pulse animation ───────────────────────────────── */
