@@ -23,7 +23,7 @@ export function HeroLogo() {
   useLayoutEffect(() => {
     const measure = () => {
       // Place logo exactly in the center vertically (adjusting slightly up for optical centering)
-      startTopPx.set(window.innerHeight * 0.45)
+      startTopPx.set(window.innerHeight * 0.38)
     }
 
     measure()
