@@ -88,7 +88,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                     layoutId="wjih-logo"
                     src={logo} 
                     alt="WJIH Logo" 
-                    className="h-[72px] sm:h-[90px] w-auto" 
+                    className="h-[72px] sm:h-[90px] w-auto max-w-none object-contain" 
                     transition={{ type: "spring", damping: 12, stiffness: 90 }}
                   />
                 </NavLink>
