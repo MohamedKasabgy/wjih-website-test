@@ -27,6 +27,11 @@ export const appRoutes = [
     path: '/soft-landing',
     labelKey: 'nav.softLanding',
   },
+  {
+    key: 'events',
+    path: '/events',
+    labelKey: 'nav.events',
+  },
 ] as const satisfies readonly AppRoute[]
 
 export const getRouteByPath = (pathname: string) =>
