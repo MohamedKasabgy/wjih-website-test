@@ -61,11 +61,11 @@ export function Navbar() {
               : 'bg-white/80 backdrop-blur-md border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
           ].join(' ')}
         >
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-24 px-4 md:px-8 py-2">
 
-            {/* Start side: First half of links */}
-            <div className="flex justify-start gap-2">
-              <nav aria-label="Primary navigation" className="hidden gap-2 md:flex">
+            {/* Start side: First half of links (Push to end/center) */}
+            <div className="flex justify-end gap-8 px-4">
+              <nav aria-label="Primary navigation" className="hidden gap-8 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
@@ -75,21 +75,21 @@ export function Navbar() {
             </div>
 
             {/* Center: Logo — hidden on home because HeroLogo morphs into this space */}
-            <div className="flex justify-center px-4">
+            <div className="flex justify-center px-6">
               {!isHome && (
                 <NavLink
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
                   className="flex items-center hover:opacity-80 transition-opacity"
                 >
-                  <img src={logo} alt="WJIH Logo" className="h-10 w-auto" />
+                  <img src={logo} alt="WJIH Logo" className="h-20 w-auto scale-110" />
                 </NavLink>
               )}
             </div>
 
-            {/* End side: Second half of links & Mobile Menu Button */}
-            <div className="flex justify-end gap-2 items-center">
-              <nav aria-label="Primary navigation" className="hidden gap-2 md:flex">
+            {/* End side: Second half of links & Mobile Menu Button (Push to start/center) */}
+            <div className="flex justify-start gap-8 px-4 items-center">
+              <nav aria-label="Primary navigation" className="hidden gap-8 md:flex">
                 {appRoutes.slice(2).map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
@@ -100,7 +100,7 @@ export function Navbar() {
               <button
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors ml-2"
+                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors ml-4"
                 type="button"
                 onClick={() => setIsMenuOpen((current) => !current)}
               >
