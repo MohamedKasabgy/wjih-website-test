@@ -7,7 +7,7 @@ export function IncubatorPage() {
   const { t } = useTranslation()
 
   return (
-    <div className="flex flex-col bg-white min-h-screen">
+    <div className="flex flex-col min-h-screen">
 
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#3B0000] via-[#3B0000] to-[#5a1020]">
