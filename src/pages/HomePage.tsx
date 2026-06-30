@@ -64,9 +64,9 @@ export function HomePage() {
           <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
             مجمع وادي جدة للابتكار
           </h1>
-          <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
+          <p className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
             مكان رواد الأعمال في قلب جدة
-          </h2>
+          </p>
         </motion.div>
 
         {/* Scroll Hint */}
