@@ -1,6 +1,7 @@
+import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
-import { motion, useTransform } from 'framer-motion'
+import { motion, useTransform, AnimatePresence } from 'framer-motion'
 
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
@@ -15,6 +16,31 @@ export function HomePage() {
   const progress = useScrollProgress()
   const titleOpacity = useTransform(progress, [0.1, 0.45], [1, 0])
   const titleY       = useTransform(progress, [0.1, 0.45], [0, -30])
+  const scrollHintOpacity = useTransform(progress, [0, 0.1], [1, 0])
+
+  const [showScrollText, setShowScrollText] = useState(false)
+
+  useEffect(() => {
+    let timer: ReturnType<typeof setTimeout>
+    const handleScroll = () => {
+      if (window.scrollY === 0) {
+        timer = setTimeout(() => setShowScrollText(true), 6000)
+      } else {
+        setShowScrollText(false)
+        clearTimeout(timer)
+      }
+    }
+    
+    if (window.scrollY === 0) {
+      timer = setTimeout(() => setShowScrollText(true), 6000)
+    }
+
+    window.addEventListener('scroll', handleScroll)
+    return () => {
+      window.removeEventListener('scroll', handleScroll)
+      clearTimeout(timer)
+    }
+  }, [])
 
   return (
     <div className="flex flex-col pb-16 sm:pb-20">
@@ -41,6 +67,35 @@ export function HomePage() {
           <h2 className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
             مكان رواد الأعمال في قلب جدة
           </h2>
+        </motion.div>
+
+        {/* Scroll Hint */}
+        <motion.div
+          style={{ opacity: scrollHintOpacity }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-10"
+        >
+          <motion.div 
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-white opacity-80"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M19 12l-7 7-7-7"/>
+            </svg>
+          </motion.div>
+          
+          <AnimatePresence>
+            {showScrollText && (
+              <motion.span
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="text-white/90 text-sm font-medium tracking-wide drop-shadow-md"
+              >
+                اسحب للأسفل
+              </motion.span>
+            )}
+          </AnimatePresence>
         </motion.div>
       </section>
 
