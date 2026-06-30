@@ -53,7 +53,7 @@ export function PageLayout() {
         className="absolute inset-0 z-[-1] pointer-events-none" 
         style={{ 
           backgroundImage: `url(${bgImage})`, 
-          backgroundSize: 'auto', 
+          backgroundSize: '960px', 
           backgroundRepeat: 'repeat', 
           backgroundPosition: 'top center',
           filter: 'saturate(1.5)'
