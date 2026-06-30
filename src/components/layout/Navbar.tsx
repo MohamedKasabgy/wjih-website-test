@@ -48,7 +48,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
 
   return (
     <motion.header
-      className="fixed left-0 right-0 z-40 w-full"
+      className="fixed left-0 right-0 z-[70] w-full"
       style={headerStyle}
     >
       <Container>
