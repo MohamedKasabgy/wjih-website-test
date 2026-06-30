@@ -91,7 +91,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                     src={logo} 
                     alt="WJIH Logo" 
                     className="h-20 md:h-24 w-auto" 
-                    transition={{ type: "spring", damping: 15, stiffness: 100 }}
+                    transition={{ type: "spring", damping: 12, stiffness: 90 }}
                   />
                 </NavLink>
               )}

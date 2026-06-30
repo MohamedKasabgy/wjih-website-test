@@ -64,14 +64,18 @@ export function PageLayout() {
       {/* Loading Overlay */}
       <AnimatePresence>
         {isLoading && (
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            transition={{ duration: 0.4 }}
-            className="fixed inset-0 z-[60] flex items-center justify-center bg-white"
-          >
-            <div className="flex flex-col items-center justify-center">
+          <>
+            {/* White Background */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.4 }}
+              className="fixed inset-0 z-[60] bg-white"
+            />
+            
+            {/* Centered Logo */}
+            <div className="fixed inset-0 z-[61] flex items-center justify-center pointer-events-none">
               <motion.img
                 layoutId="wjih-logo"
                 src={Logo}
@@ -86,7 +90,7 @@ export function PageLayout() {
                 }}
               />
             </div>
-          </motion.div>
+          </>
         )}
       </AnimatePresence>
 
