@@ -75,21 +75,6 @@ a {
 
 body {
   margin: 0;
-  background-color: #ffffff;
-  position: relative;
-}
-
-body::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -999;
-  background-image: url('../assets/images/BG.jpg');
-  background-size: auto;
-  background-repeat: repeat;
-  background-position: top center;
-  filter: saturate(1.5);
-  pointer-events: none;
 }
 
 #root {
