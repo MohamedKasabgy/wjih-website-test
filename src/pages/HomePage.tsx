@@ -54,7 +54,6 @@ export function HomePage() {
             backgroundImage: `url(${bgImage})`,
             backgroundSize: 'cover',
             backgroundPosition: 'top center',
-            backgroundAttachment: 'fixed',
           }}
         />
 
