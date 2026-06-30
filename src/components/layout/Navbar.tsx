@@ -65,11 +65,11 @@ export function Navbar() {
             borderEndEndRadius: '9',
           }}
         >
-          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-24 px-4 md:px-8 py-2">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
             {/* Start side: First half of links (Push to end/center) */}
-            <div className="flex justify-end gap-8 px-4">
-              <nav aria-label="Primary navigation" className="hidden gap-8 md:flex">
+            <div className="flex justify-end gap-6 px-4">
+              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
@@ -78,22 +78,22 @@ export function Navbar() {
               </nav>
             </div>
 
-            {/* Center: Logo — hidden on home because HeroLogo morphs into this space */}
-            <div className="flex justify-center px-6">
+            {/* Center: Logo — Fixed width to reserve space, absolute logo to allow it to be larger than the navbar */}
+            <div className="relative flex justify-center w-40 md:w-56 h-full items-center">
               {!isHome && (
                 <NavLink
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center hover:opacity-80 transition-opacity"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
                 >
-                  <img src={logo} alt="WJIH Logo" className="h-20 w-auto scale-110" />
+                  <img src={logo} alt="WJIH Logo" className="h-20 md:h-24 w-auto" />
                 </NavLink>
               )}
             </div>
 
             {/* End side: Second half of links & Mobile Menu Button (Push to start/center) */}
-            <div className="flex justify-start gap-8 px-4 items-center">
-              <nav aria-label="Primary navigation" className="hidden gap-8 md:flex">
+            <div className="flex justify-start gap-6 px-4 items-center">
+              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(2).map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
