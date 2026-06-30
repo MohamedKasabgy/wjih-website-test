@@ -59,7 +59,7 @@ export function HomePage() {
         <div className="absolute inset-0 bg-black/50" />
         <motion.div
           style={{ opacity: titleOpacity, y: titleY }}
-          className="relative z-10 pt-[calc(50vh_+_100px)] sm:pt-[calc(50vh_+_130px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+          className="relative z-10 pt-[calc(38vh_+_138px)] sm:pt-[calc(38vh_+_170px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
         >
           <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
             مجمع وادي جدة للابتكار
