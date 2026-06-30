@@ -37,8 +37,8 @@ export function HeroLogo() {
     return `${start + (32 - start) * (p as number)}px`
   })
 
-  // Much bigger base size now, scale down to 0.15/0.2 to fit the navbar nicely.
-  const scale = useTransform(progress, [0, 1], [1, 0.18])
+  // Much bigger base size now, scale down to 0.28 to fit the newly enlarged navbar logo nicely.
+  const scale = useTransform(progress, [0, 1], [1, 0.28])
 
   // Subtle shadow in the hero that fades away as the logo shrinks into the navbar.
   const filter = useTransform(
