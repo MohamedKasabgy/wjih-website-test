@@ -10,10 +10,10 @@ import { useScrollProgress } from '../../hooks/useScrollProgress'
 // import { LanguageToggle } from './LanguageToggle'
 import logo from '../../assets/images/LogoWijih.png'
 
-const navLinkClassName = ({ isActive }: { isActive: boolean }) =>
+const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [
     'whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-[var(--page-color)]',
-    isActive ? 'text-[var(--page-color)]' : 'text-[var(--color-text)]',
+    isActive ? 'text-[var(--page-color)]' : (isHome ? 'text-[var(--color-text)]' : 'text-[#1E2650]'),
   ].join(' ')
 
 export function Navbar({ isLoading }: { isLoading?: boolean }) {
@@ -71,7 +71,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             <div className="flex justify-end gap-6 px-4">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
-                  <NavLink className={navLinkClassName} key={route.path} to={route.path}>
+                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
                 ))}
@@ -101,7 +101,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             <div className="flex justify-start gap-6 px-4 items-center">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(2).map((route) => (
-                  <NavLink className={navLinkClassName} key={route.path} to={route.path}>
+                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
                 ))}
@@ -127,7 +127,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                 <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
                   {appRoutes.map((route) => (
                     <NavLink
-                      className={navLinkClassName}
+                      className={getNavLinkClassName(isHome)}
                       key={route.path}
                       to={route.path}
                       onClick={() => setIsMenuOpen(false)}
