@@ -1,17 +1,20 @@
 :root {
-  --color-beige: #D6BAAE;
-  --color-main-red: #7A1219;
-  --color-dark-burgundy: #3B0000;
-  --color-orange: #EE7203;
-  --color-navy: #1E2650;
+  /* Brand palette */
+  --color-beige:        #D6BAAE;
+  --color-crimson:      #7A1219;
+  --color-burgundy:     #3B0000;
+  --color-orange:       #EE7203;
+  --color-navy:         #1E2650;
 
-  --color-bg: #F8F5F3;
-  --color-surface: #FFFFFF;
-  --color-text: #1E2650;
-  --color-muted: #5F647A;
-  --color-heading: #3B0000;
-  --color-border: #E6DAD5;
+  /* Base UI */
+  --color-bg:           #FFFFFF;
+  --color-surface:      #FAFAF9;
+  --color-text:         #1E2650;
+  --color-muted:        #5A6480;
+  --color-heading:      #1E2650;
+  --color-border:       #EAE4E0;
 
-  --page-color: var(--color-main-red);
-  --page-color-soft: rgb(122 18 25 / 0.1);
+  /* Page accent defaults (overridden per page) */
+  --page-color:         #7A1219;
+  --page-color-soft:    rgba(122, 18, 25, 0.08);
 }

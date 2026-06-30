@@ -5,64 +5,82 @@ import { appRoutes } from '../../config/routes'
 import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
+import logo from '../../assets/images/LogoWijih.png'
 
 export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="border-t border-[var(--color-border)] liquid-glass py-12 relative z-10 mt-20">
-      <Container className="grid md:grid-cols-3 gap-10 text-sm text-[var(--color-text)]">
-        
-        {/* Brand Section */}
-        <div>
-          <p className="text-xl font-bold text-[var(--color-heading)] mb-4">Wadi Jeddah Innovation Hub</p>
-          <p className="leading-relaxed mb-6">{t('footer.description')}</p>
-          <a
-            className={buttonClasses('primary')}
-            href={createWhatsAppUrl()}
-            rel="noreferrer"
-            target="_blank"
-          >
-            {t('common.contactWhatsapp')}
-          </a>
-        </div>
+    <footer className="bg-[#1E2650] mt-0">
+      {/* Main footer body */}
+      <Container className="pt-16 pb-10">
+        <div className="grid md:grid-cols-3 gap-12 text-sm text-white/70">
 
-        {/* Quick Links */}
-        <div>
-          <h4 className="font-bold text-[var(--color-heading)] text-lg mb-4">{t('footer.quickLinks')}</h4>
-          <nav aria-label="Footer navigation" className="flex flex-col gap-3">
-            {appRoutes.map((route) => (
-              <NavLink
-                className="font-medium text-[var(--color-text)] transition-colors hover:text-[var(--page-color)]"
-                key={route.path}
-                to={route.path}
-              >
-                {t(route.labelKey)}
-              </NavLink>
-            ))}
-          </nav>
-        </div>
+          {/* Brand */}
+          <div>
+            <img src={logo} alt="Wadi Jeddah" className="h-10 w-auto mb-5 brightness-0 invert opacity-90" />
+            <p className="leading-relaxed mb-6 text-white/60">
+              {t('footer.description')}
+            </p>
+            <a
+              className={[buttonClasses('primary'), '!bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12]'].join(' ')}
+              href={createWhatsAppUrl()}
+              rel="noreferrer"
+              target="_blank"
+            >
+              {t('common.contactWhatsapp')}
+            </a>
+          </div>
 
-        {/* Contact Info */}
-        <div>
-          <h4 className="font-bold text-[var(--color-heading)] text-lg mb-4">{t('footer.contactInfo')}</h4>
-          <ul className="flex flex-col gap-3">
-            <li>
-              <span className="font-semibold text-[var(--color-heading)]">{t('footer.phone')}:</span>{' '}
-              <a href="tel:0550268326" className="hover:text-[var(--page-color)] transition-colors">0550268326</a>
-            </li>
-            <li>
-              <span className="font-semibold text-[var(--color-heading)]">{t('footer.email')}:</span>{' '}
-              <a href="mailto:Wjih@wadi-jeddah.com.sa" className="hover:text-[var(--page-color)] transition-colors">Wjih@wadi-jeddah.com.sa</a>
-            </li>
-            <li>
-              <span className="font-semibold text-[var(--color-heading)]">{t('footer.location')}:</span>{' '}
-              {t('footer.locationText')}
-            </li>
-          </ul>
-        </div>
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-bold text-white text-base mb-5">{t('footer.quickLinks')}</h4>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-3">
+              {appRoutes.map((route) => (
+                <NavLink
+                  className="text-white/60 transition-colors hover:text-white font-medium"
+                  key={route.path}
+                  to={route.path}
+                >
+                  {t(route.labelKey)}
+                </NavLink>
+              ))}
+            </nav>
+          </div>
 
+          {/* Contact */}
+          <div>
+            <h4 className="font-bold text-white text-base mb-5">{t('footer.contactInfo')}</h4>
+            <ul className="flex flex-col gap-4">
+              <li>
+                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.phone')}</span>
+                <a href="tel:0550268326" className="text-white/80 hover:text-white transition-colors font-medium">
+                  0550268326
+                </a>
+              </li>
+              <li>
+                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.email')}</span>
+                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/80 hover:text-white transition-colors font-medium">
+                  Wjih@wadi-jeddah.com.sa
+                </a>
+              </li>
+              <li>
+                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.location')}</span>
+                <span className="text-white/80">{t('footer.locationText')}</span>
+              </li>
+            </ul>
+          </div>
+
+        </div>
       </Container>
+
+      {/* Bottom bar */}
+      <div className="border-t border-white/10">
+        <Container className="py-5 flex items-center justify-between text-xs text-white/30">
+          <span>© {new Date().getFullYear()} Wadi Jeddah Innovation Hub</span>
+          <span className="text-[#D6BAAE]/50">مجمع وادي جدة للابتكار</span>
+        </Container>
+      </div>
     </footer>
   )
 }

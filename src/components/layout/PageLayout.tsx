@@ -64,7 +64,7 @@ export function PageLayout() {
         </div>
 
         <Navbar />
-        <main className="">
+        <main>
           <Outlet />
         </main>
         <Footer />

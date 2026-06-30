@@ -13,7 +13,7 @@ import logo from '../../assets/images/LogoWijih.png'
 const navLinkClassName = ({ isActive }: { isActive: boolean }) =>
   [
     'whitespace-nowrap rounded-md px-3 py-2 text-sm font-semibold transition-colors hover:text-[var(--page-color)]',
-    isActive ? 'text-[var(--page-color)]' : 'text-[var(--color-text)]',
+    isActive ? 'text-[var(--page-color)]' : 'text-[var(--color-navy)]',
   ].join(' ')
 
 export function Navbar() {
@@ -44,6 +44,9 @@ export function Navbar() {
     }
   }, [])
 
+  const rightRoutes = appRoutes.slice(0, 3)
+  const leftRoutes = appRoutes.slice(3)
+
   return (
     <motion.header
       className="fixed left-0 right-0 z-40 w-full"
@@ -52,44 +55,40 @@ export function Navbar() {
       <Container>
         <div
           className={[
-            'navbar-glass transition-all duration-300 overflow-hidden',
+            'transition-all duration-500',
             isScrolled
-              ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
-              : 'border border-[var(--color-border)] shadow-sm',
+              ? 'liquid-glass shadow-md border-transparent rounded-[2rem] mt-2 md:mt-3'
+              : 'bg-white/80 backdrop-blur-md border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
           ].join(' ')}
-          style={{
-            // Square corners (no rounding)
-            borderStartStartRadius: '0',
-            borderEndStartRadius: '9',
-            borderStartEndRadius: '0',
-            borderEndEndRadius: '9',
-          }}
         >
-          <div className="grid grid-cols-3 items-center min-h-16 px-6">
+          <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side: Language toggle (temporarily disabled — re-enable later) */}
-            <div className="flex justify-start gap-2">
-              {/* <LanguageToggle /> */}
+            {/* Start side (Right in RTL): First half of links */}
+            <div className="hidden md:flex justify-end items-center pe-6 lg:pe-12">
+              <nav aria-label="Primary navigation" className="flex gap-4 lg:gap-8">
+                {rightRoutes.map((route) => (
+                  <NavLink className={navLinkClassName} key={route.path} to={route.path}>
+                    {t(route.labelKey)}
+                  </NavLink>
+                ))}
+              </nav>
             </div>
 
-            {/* Center: Logo — hidden on home, where the morphing HeroLogo
-                lands in the top-left corner and acts as the brand mark. */}
-            <div className="flex justify-center">
-              {!isHome && (
-                <NavLink
-                  to="/"
-                  onClick={() => setIsMenuOpen(false)}
-                  className="flex items-center hover:opacity-80 transition-opacity"
-                >
-                  <img src={logo} alt="WJIH Logo" className="h-10 w-auto" />
-                </NavLink>
-              )}
+            {/* Center: Logo */}
+            <div className="flex justify-center md:justify-center justify-start z-10">
+              <NavLink
+                to="/"
+                onClick={() => setIsMenuOpen(false)}
+                className="flex items-center hover:opacity-80 transition-opacity"
+              >
+                <img src={logo} alt="WJIH Logo" className="h-16 w-auto drop-shadow-md scale-125 lg:scale-[1.35] transition-transform" />
+              </NavLink>
             </div>
 
-            {/* End side: Navigation links (Desktop) & Menu button (Mobile) */}
-            <div className="flex justify-end">
-              <nav aria-label="Primary navigation" className="hidden gap-1 md:flex">
-                {appRoutes.map((route) => (
+            {/* End side (Left in RTL): Second half of links & Menu button */}
+            <div className="flex justify-end md:justify-start items-center ps-0 md:ps-6 lg:ps-12 w-full">
+              <nav aria-label="Secondary navigation" className="hidden gap-4 lg:gap-8 md:flex">
+                {leftRoutes.map((route) => (
                   <NavLink className={navLinkClassName} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
@@ -99,7 +98,7 @@ export function Navbar() {
               <button
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors"
+                className="ms-auto rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors"
                 type="button"
                 onClick={() => setIsMenuOpen((current) => !current)}
               >

@@ -1,6 +1,7 @@
 @import "tailwindcss";
 @import "./tokens.css";
 
+/* ─── Thmanyah Serif Display — headings ──────────────────────────── */
 @font-face {
   font-family: 'Thmanyah';
   src: url('/fonts/thmanyahserifdisplay-Regular.woff2') format('woff2');
@@ -30,91 +31,90 @@
   font-display: swap;
 }
 
+/* ─── Headings: Thmanyah ─────────────────────────────────────────── */
 @layer base {
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Thmanyah', serif;
+    font-weight: 700;
+    line-height: 1.2;
   }
 }
 
-
-* {
+/* ─── Reset ──────────────────────────────────────────────────────── */
+*, *::before, *::after {
   box-sizing: border-box;
 }
 
 html {
   min-height: 100%;
-  background-color: var(--color-bg, #F8F5F3);
+  background-color: #FFFFFF;
   color: var(--color-text);
-  font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+  font-family: 'IBM Plex Sans Arabic', Inter, ui-sans-serif, system-ui, -apple-system, sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior-y: none;
 }
 
 body {
   min-height: 100%;
   margin: 0;
-  background-color: #ffff;
+  overscroll-behavior-y: none;
+  background-color: #FFFFFF;
 }
 
-button,
-a {
-  font: inherit;
-}
+button, a { font: inherit; }
+a { color: inherit; text-decoration: none; }
 
-a {
-  color: inherit;
-  text-decoration: none;
-}
+#root { min-height: 100svh; }
 
-#root {
-  min-height: 100svh;
-}
-
+/* ─── Utilities ──────────────────────────────────────────────────── */
 @layer utilities {
+
+  /* WJIH brand shape: flat top, rounded bottom-end corners (RTL-aware) */
   .mask-wadi {
+    border-start-start-radius: 4px;
+    border-start-end-radius:   24px;
+    border-end-end-radius:     24px;
+    border-end-start-radius:   24px;
     overflow: hidden;
-    /* Optional subtle border overlay for glass if needed, but LiquidGlass might handle it */
-    border-start-start-radius: 4px;
-    border-start-end-radius: 32px;
-    border-end-end-radius: 32px;
-    border-end-start-radius: 32px;
   }
-  /* Glass effect reserved for the navbar only */
-  .navbar-glass {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-    border-start-start-radius: 4px;
-    border-start-end-radius: 32px;
-    border-end-end-radius: 32px;
-    border-end-start-radius: 32px;
-  }
-  /* Solid (non-glass) card used across page sections */
+
+  /* Subtle glass card — light, minimal */
   .liquid-glass {
-    background: #ffffff;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-    border-start-start-radius: 4px;
-    border-start-end-radius: 32px;
-    border-end-end-radius: 32px;
-    border-end-start-radius: 32px;
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
+    border: 1px solid rgba(234, 228, 224, 0.8);
+    box-shadow: 0 2px 16px 0 rgba(30, 38, 80, 0.06);
   }
+
+  /* Logo animation */
   .animate-logo-pulse {
     animation: logo-pulse 1.4s ease-in-out infinite;
+  }
+
+  /* Accent underline for section labels */
+  .label-accent {
+    display: inline-block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--page-color);
+    padding-bottom: 4px;
+    border-bottom: 2px solid var(--page-color);
+    margin-bottom: 1.25rem;
+  }
+
+  /* Clean divider line */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--color-border), transparent);
   }
 }
 
 @keyframes logo-pulse {
-  0%,
-  100% {
-    transform: scale(0.85);
-  }
-  50% {
-    transform: scale(1.1);
-  }
+  0%, 100% { transform: scale(0.88); }
+  50%       { transform: scale(1.08); }
 }
