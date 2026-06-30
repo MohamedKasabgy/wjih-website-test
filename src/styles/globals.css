@@ -76,26 +76,30 @@ a {
   text-decoration: none;
 }
 
+body {
+  margin: 0;
+  background-color: #ffffff;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -999;
+  background-image: url('../assets/images/BG.jpg');
+  background-size: auto;
+  background-repeat: repeat;
+  background-position: top center;
+  filter: saturate(1.5);
+  pointer-events: none;
+}
+
 #root {
   min-height: 100svh;
   position: relative;
 }
 
-#root::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  z-index: -10;
-  opacity: 1;
-  filter: saturate(1.3);
-  background-image: url('../assets/images/BG.jpg');
-  background-size: auto;
-  background-repeat: repeat;
-  background-position: top center;
-  pointer-events: none;
-}
-
-/* ─── Utilities ──────────────────────────────────────────────────── */
 @layer utilities {
   /* ── Brand corner shape ────────────────────────────────────── */
   .mask-wadi {
