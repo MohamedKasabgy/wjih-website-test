@@ -36,7 +36,6 @@
   }
 }
 
-
 * {
   box-sizing: border-box;
 }
@@ -51,7 +50,7 @@ html {
   background-color: var(--color-bg, #F8F5F3);
   color: var(--color-text);
   font-family:
-    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+    'IBM Plex Sans Arabic', Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -61,7 +60,7 @@ html {
 body {
   min-height: 100%;
   margin: 0;
-  background-color: #ffff;
+  background-color: #fff;
 }
 
 button,
@@ -79,27 +78,49 @@ a {
 }
 
 @layer utilities {
+  /* ── Brand corner shape ────────────────────────────────────── */
   .mask-wadi {
     overflow: hidden;
-    /* Optional subtle border overlay for glass if needed, but LiquidGlass might handle it */
     border-start-start-radius: 4px;
     border-start-end-radius: 32px;
     border-end-end-radius: 32px;
     border-end-start-radius: 32px;
   }
-  /* Glass effect reserved for the navbar only */
+
+  /* ── Navbar glass ──────────────────────────────────────────── */
   .navbar-glass {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(12px) saturate(150%);
-    -webkit-backdrop-filter: blur(12px) saturate(150%);
+    background: rgba(255, 255, 255, 0.65);
+    backdrop-filter: blur(16px) saturate(160%);
+    -webkit-backdrop-filter: blur(16px) saturate(160%);
     border: 1px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 24px 0 rgba(0, 0, 0, 0.06);
     border-start-start-radius: 4px;
     border-start-end-radius: 32px;
     border-end-end-radius: 32px;
     border-end-start-radius: 32px;
   }
-  /* Solid (non-glass) card used across page sections */
+
+  /* ── Section card — elevated white card with brand corners ── */
+  .section-card {
+    background: #ffffff;
+    border: 1px solid rgba(234, 228, 224, 0.6);
+    box-shadow:
+      0 1px 3px rgba(0, 0, 0, 0.04),
+      0 8px 32px rgba(0, 0, 0, 0.03);
+    border-start-start-radius: 4px;
+    border-start-end-radius: 32px;
+    border-end-end-radius: 32px;
+    border-end-start-radius: 32px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  .section-card:hover {
+    box-shadow:
+      0 2px 6px rgba(0, 0, 0, 0.06),
+      0 12px 40px rgba(0, 0, 0, 0.06);
+    transform: translateY(-2px);
+  }
+
+  /* ── Solid (non-glass) card ─────────────────────────────── */
   .liquid-glass {
     background: #ffffff;
     border: 1px solid rgba(255, 255, 255, 0.5);
@@ -109,6 +130,77 @@ a {
     border-end-end-radius: 32px;
     border-end-start-radius: 32px;
   }
+
+  /* ── Hero header gradient background ────────────────────── */
+  .hero-header {
+    position: relative;
+    padding-top: 8rem;
+    padding-bottom: 5rem;
+    overflow: hidden;
+  }
+  .hero-header::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 80% 20%, rgba(255,255,255,0.08) 0%, transparent 60%);
+    pointer-events: none;
+  }
+  .hero-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 120px;
+    background: linear-gradient(to top, rgba(255,255,255,0.06), transparent);
+    pointer-events: none;
+  }
+
+  /* ── Label accent (small uppercase tag) ─────────────────── */
+  .label-accent {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.7rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--page-color, #7A1219);
+    border: 1.5px solid currentColor;
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    margin-bottom: 1.25rem;
+  }
+
+  /* ── Feature number — big accent number for lists ───────── */
+  .feature-number {
+    font-family: 'Thmanyah', serif;
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 1;
+    color: var(--page-color, #7A1219);
+    opacity: 0.15;
+    position: absolute;
+    top: 1rem;
+    left: 1.25rem;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  /* ── Section divider — gradient line ────────────────────── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(
+      to left,
+      transparent,
+      var(--color-border, #EAE4E0) 20%,
+      var(--color-border, #EAE4E0) 80%,
+      transparent
+    );
+    border: none;
+  }
+
+  /* ── Logo pulse animation ───────────────────────────────── */
   .animate-logo-pulse {
     animation: logo-pulse 1.4s ease-in-out infinite;
   }

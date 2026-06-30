@@ -8,17 +8,18 @@ import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
 import aboutImage from '../../src/assets/images/aboutImage.jpeg'
+import bgImage from '../../src/assets/images/BG.svg'
+
 export function HomePage() {
   const { t } = useTranslation()
 
   const progress = useScrollProgress()
-  // Title fades out and lifts as the logo morphs into the navbar.
   const titleOpacity = useTransform(progress, [0.1, 0.45], [1, 0])
   const titleY       = useTransform(progress, [0.1, 0.45], [0, -30])
 
   return (
-    <div className="flex flex-col gap-16 pb-16 sm:pb-20">
-      {/* Single fixed logo — always visible, morphs to navbar on scroll */}
+    <div className="flex flex-col pb-16 sm:pb-20">
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <HeroLogo />
 
       <section
@@ -30,12 +31,7 @@ export function HomePage() {
           backgroundRepeat: 'no-repeat',
         }}
       >
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/50" />
-
-        {/* Title sits below the fixed logo.
-            Logo centre = 50vh. Adjusted to pull text higher up.
-            Tailwind requires underscores for spaces in calc(). */}
         <motion.div
           style={{ opacity: titleOpacity, y: titleY }}
           className="relative z-10 pt-[calc(50vh_+_100px)] sm:pt-[calc(50vh_+_130px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
@@ -49,100 +45,140 @@ export function HomePage() {
         </motion.div>
       </section>
 
-      {/* About Section */}
-      <Container>
-        <section className="grid md:grid-cols-2 gap-12 items-center bg-[#7A1219] rounded-[3rem] p-8 md:p-12 overflow-hidden relative shadow-xl">
-          {/* Decorative Background Shapes */}
-          <div className="absolute -top-32 -right-32 w-96 h-96 bg-[var(--page-color-soft)]/10 rounded-full blur-3xl pointer-events-none" />
-          <div className="absolute -bottom-32 -left-32 w-96 h-96 bg-black/20 rounded-full blur-3xl pointer-events-none" />
+      {/* ── Page Content Wrapper with Background ──────────────── */}
+      <div className="relative">
+        {/* Background Image Container */}
+        <div
+          className="absolute inset-0 z-0 opacity-10 pointer-events-none"
+          style={{
+            backgroundImage: `url(${bgImage})`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'top center',
+            backgroundAttachment: 'fixed',
+          }}
+        />
 
-          <div className="relative z-10 text-white">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 drop-shadow-sm">
-              {t('home.about.title').replace('## ', '')}
+        <div className="relative z-10">
+          {/* ── About ─────────────────────────────────────────────── */}
+          <section className="py-24">
+            <Container>
+              <div className="grid md:grid-cols-2 gap-16 items-center">
+                {/* Image (On the right visually in RTL layout) */}
+                <div className="relative order-2 md:order-1">
+                  <div className="section-card overflow-hidden p-0">
+                    <img
+                      src={aboutImage}
+                      alt="Wadi Jeddah"
+                      className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
+                    />
+                  </div>
+                </div>
+
+                {/* Text (On the left visually in RTL layout) */}
+                <div className="order-1 md:order-2 space-y-6">
+                  <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#D6BAAE] border border-[#D6BAAE] rounded-full px-6 py-2 mb-2">
+                    وادي جدة للابتكار.. حيث تنمو الأفكار
+                  </span>
+                  <h2 className="text-4xl md:text-[3.5rem] font-bold text-[#1E2650] mb-8 leading-[1.2]">
+                    وادي جدة للابتكار.. حيث تنمو<br />الأفكار
+                  </h2>
+                  <p className="text-xl text-[#5A6480] leading-[1.8]">
+                    نحن أكثر من مجرد مساحة عمل؛ نحن بيئة ريادية متكاملة تدعم المبتكرين ورواد الأعمال. نسعى لتمكين العقول المبدعة عبر تقديم خدمات حصرية وبرامج مكثفة تذلل العقبات وتسرّع نمو شركتك لتنطلق نحو المستقبل.
+                  </p>
+                </div>
+              </div>
+            </Container>
+          </section>
+
+      <div className="section-divider mx-8 sm:mx-20" />
+
+      {/* ── Facilities ────────────────────────────────────────── */}
+      <section className="py-24">
+        <Container>
+          <div className="text-center mb-16">
+            <span className="label-accent">{t('home.facilities.title').replace('## ', '')}</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
+              {t('home.facilities.title').replace('## ', '')}
             </h2>
-            <p className="text-lg md:text-xl text-white/90 leading-relaxed font-light">
-              {t('home.about.content')}
+            <p className="text-lg text-[#5A6480] max-w-3xl mx-auto leading-relaxed">
+              {t('home.facilities.content')}
             </p>
           </div>
-          
-          <div className="relative z-10 h-80 md:h-[450px] w-full flex items-center justify-center">
-            {/* The image with brand shape */}
-            <div className="w-full h-full overflow-hidden shadow-2xl mask-wadi bg-black/20">
-              <img src={aboutImage} alt="Wadi Jeddah" className="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
-            </div>
-            {/* Abstract decorative accent */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-4 border-white/20 rounded-[2rem] pointer-events-none -z-10" />
-          </div>
-        </section>
-      </Container>
 
-      {/* Facilities Section */}
-      <Container>
-        <section className="border border-[var(--color-border)] liquid-glass  mask-wadi p-8 shadow-sm sm:p-12">
-          <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6 text-center max-w-2xl mx-auto">
-            {t('home.facilities.title').replace('## ', '')}
-          </h2>
-          <p className="text-lg text-[var(--color-muted)] text-center mb-10 max-w-3xl mx-auto">
-            {t('home.facilities.content')}
-          </p>
-          <div className="grid md:grid-cols-3 gap-6 mb-10">
+          <div className="grid md:grid-cols-3 gap-8 mb-12">
             {[0, 1, 2].map((i) => (
-              <div key={i} className="border border-[var(--color-border)] p-6 bg-[var(--color-surface)] hover:border-[var(--page-color)] transition-colors">
-                <p className="text-[var(--color-text)] leading-relaxed">
+              <div key={i} className="section-card relative p-8 pt-14">
+                <span className="feature-number">{String(i + 1).padStart(2, '0')}</span>
+                <p className="text-[#1E2650] leading-relaxed text-lg">
                   {t(`home.facilities.list.${i}` as any)}
                 </p>
               </div>
             ))}
           </div>
+
           <div className="text-center">
             <Link to="/workspaces">
-              <Button variant="primary">{t('home.facilities.cta')}</Button>
+              <Button variant="primary" className="text-base px-10 py-4">{t('home.facilities.cta')}</Button>
             </Link>
           </div>
-        </section>
-      </Container>
+        </Container>
+      </section>
 
-      {/* Services Section */}
-      <Container>
-        <section className="py-12">
-          <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6">
-            {t('home.services.title').replace('## ', '')}
-          </h2>
-          <p className="text-lg text-[var(--color-muted)] mb-10 max-w-3xl">
-            {t('home.services.content')}
-          </p>
-          <div className="grid sm:grid-cols-2 gap-6 mb-10">
+      <div className="section-divider mx-8 sm:mx-20" />
+
+      {/* ── Services ──────────────────────────────────────────── */}
+      <section className="py-24 bg-[#FAFAF9]">
+        <Container>
+          <div className="mb-16">
+            <span className="label-accent">{t('home.services.title').replace('## ', '')}</span>
+            <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
+              {t('home.services.title').replace('## ', '')}
+            </h2>
+            <p className="text-lg text-[#5A6480] max-w-3xl leading-relaxed">
+              {t('home.services.content')}
+            </p>
+          </div>
+
+          <div className="grid sm:grid-cols-2 gap-8 mb-12">
             {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="flex gap-4 p-4 border border-[var(--color-border)] liquid-glass mask-wadi">
-                <div className="w-10 h-10 rounded-full bg-[var(--page-color-soft)] flex-shrink-0 flex items-center justify-center text-[var(--page-color)] font-bold">
-                  {i + 1}
-                </div>
-                <p className="text-[var(--color-text)] pt-2 leading-relaxed">
+              <div key={i} className="section-card relative p-8 pt-16 group">
+                <span className="feature-number group-hover:opacity-25 transition-opacity">{String(i + 1).padStart(2, '0')}</span>
+                <p className="text-[#1E2650] leading-relaxed text-lg">
                   {t(`home.services.list.${i}` as any)}
                 </p>
               </div>
             ))}
           </div>
-          <Link to="/incubator">
-            <Button variant="outline">{t('home.services.cta')}</Button>
-          </Link>
-        </section>
-      </Container>
 
-      {/* Community Section */}
-      <Container>
-        <section className="border border-[var(--page-color)] bg-[var(--page-color-soft)] liquid-glass mask-wadi p-8 text-center sm:p-12 mb-20">
-          <h2 className="text-3xl font-bold text-[var(--color-heading)] mb-6">
+          <Link to="/incubator">
+            <Button variant="outline" className="text-base px-10 py-4">{t('home.services.cta')}</Button>
+          </Link>
+        </Container>
+      </section>
+
+      {/* ── Community CTA ─────────────────────────────────────── */}
+      <section className="bg-[#1E2650] py-24 relative overflow-hidden">
+        {/* Decorative circles */}
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/[0.02] rounded-full -translate-y-1/2 translate-x-1/3" />
+        <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/[0.03] rounded-full translate-y-1/2 -translate-x-1/3" />
+
+        <Container className="relative z-10 text-center">
+          <span className="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#D6BAAE] border border-[#D6BAAE]/30 rounded-full px-4 py-1.5 mb-6">
+            مجتمع وادي جدة
+          </span>
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 max-w-3xl mx-auto leading-tight">
             {t('home.community.title').replace('## ', '')}
           </h2>
-          <p className="text-lg text-[var(--color-text)] mb-8 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             {t('home.community.content')}
           </p>
-          <Button variant="primary" className="text-lg px-8 py-3">
+          <Button variant="primary" className="text-lg px-10 py-4 !bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12]">
             {t('common.joinCommunity')}
           </Button>
-        </section>
-      </Container>
+        </Container>
+      </section>
+        </div> {/* End of Page Content Wrapper */}
+      </div>
     </div>
   )
 }
