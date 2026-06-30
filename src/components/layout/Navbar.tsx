@@ -16,7 +16,7 @@ const navLinkClassName = ({ isActive }: { isActive: boolean }) =>
     isActive ? 'text-[var(--page-color)]' : 'text-[var(--color-text)]',
   ].join(' ')
 
-export function Navbar() {
+export function Navbar({ isLoading }: { isLoading?: boolean }) {
   const { t } = useTranslation()
   const location = useLocation()
   const [isScrolled, setIsScrolled] = useState(false)
@@ -80,13 +80,19 @@ export function Navbar() {
 
             {/* Center: Logo — Fixed width to reserve space, absolute logo to allow it to be larger than the navbar */}
             <div className="relative flex justify-center w-40 md:w-56 h-full items-center">
-              {!isHome && (
+              {!isHome && !isLoading && (
                 <NavLink
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
                 >
-                  <img src={logo} alt="WJIH Logo" className="h-20 md:h-24 w-auto" />
+                  <motion.img 
+                    layoutId="wjih-logo"
+                    src={logo} 
+                    alt="WJIH Logo" 
+                    className="h-20 md:h-24 w-auto" 
+                    transition={{ type: "spring", damping: 15, stiffness: 100 }}
+                  />
                 </NavLink>
               )}
             </div>
