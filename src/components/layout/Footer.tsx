@@ -14,10 +14,10 @@ export function Footer() {
     <footer className="bg-[#1E2650] mt-0">
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-4 text-base text-white/80">
+        <div className="flex flex-col md:flex-row justify-center md:gap-24 lg:gap-32 gap-12 text-base text-white/80">
 
           {/* Brand */}
-          <div>
+          <div className="max-w-sm">
             <img src={logo} alt="Wadi Jeddah" className="h-16 w-auto mb-6 brightness-0 invert opacity-90" />
             <p className="leading-relaxed mb-8 text-white/70 text-lg">
               {t('footer.description')}

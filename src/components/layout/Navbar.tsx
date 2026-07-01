@@ -61,7 +61,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             'navbar-glass transition-all duration-500 ease-out',
             isScrolled
               ? 'liquid-glass shadow-md border-transparent rounded-[2rem] mt-2 md:mt-3'
-              : 'bg-white/80 backdrop-blur-md border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
+              : 'bg-white/40 backdrop-blur-lg border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
           ].join(' ')}
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
