@@ -2,11 +2,11 @@ import { useTranslation } from 'react-i18next'
 
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
-import eventsHeroImage from '../assets/images/eventsHero.jpg'
 import meetingRoomImage from '../assets/images/meetingRoom.jpg'
 import eventHall2Image from '../assets/images/eventHall2.jpg'
 import eventHall1Image from '../assets/images/eventHall1.jpg'
 import eventHall3Image from '../assets/images/eventHall3.jpg'
+import graph2 from '../assets/images/graph2.png'
 
 const hallImages: Partial<Record<'hall1' | 'hall2' | 'hall3', string>> = {
   hall1: eventHall1Image,
@@ -21,25 +21,38 @@ export function EventsPage() {
     <div className="flex flex-col">
 
       {/* ── Hero Header ──────────────────────────────────────── */}
-      <div className="hero-header bg-gradient-to-br from-[#3B0000] via-[#7A1219] to-[#EE7203]">
-        <img
-          src={eventsHeroImage}
-          alt=""
-          aria-hidden="true"
-          className="absolute inset-0 h-full w-full object-cover"
-        />
-        {/* Warm-only brand tint over the photo (deep maroon → crimson → orange,
-            the Events page's own theme colour) — no navy/blue in the mix. */}
-        <div className="absolute inset-0 bg-gradient-to-br from-[#3B0000]/92 via-[#7A1219]/78 to-[#EE7203]/55" />
+      <div className=" pb-4">
+        <Container className="pt-10">
+          <div className="section-card relative overflow-hidden py-14 sm:py-20 px-6 sm:px-12">
+            {/* Decorative curve — docked at the top-left edge, same treatment as
+                the Home page's Community CTA section. */}
+            <div className="absolute -left-8 top-4 pointer-events-none">
+              <img
+                src={graph2}
+                alt=""
+                aria-hidden="true"
+                className="w-40 sm:w-56 md:w-72 h-auto mix-blend-multiply opacity-70"
+              />
+            </div>
+            {/* Smaller mirrored copy docked at the end (right) edge. */}
+            <div className="absolute -right-4 top-40 pointer-events-none">
+              <img
+                src={graph2}
+                alt=""
+                aria-hidden="true"
+                className="w-20 sm:w-28 md:w-36 h-auto mix-blend-multiply scale-x-[-1]"
+              />
+            </div>
 
-        <Container className="relative z-10">
-
-          <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
-            {t('events.hero.title')}
-          </h1>
-          <p className="text-xl sm:text-2xl text-white/85 leading-relaxed max-w-2xl">
-            {t('events.hero.subtitle')}
-          </p>
+            <div className="relative z-10 text-center">
+              <h1 className="text-5xl sm:text-6xl font-black text-[#1E2650] leading-tight mb-6 max-w-3xl mx-auto">
+                {t('events.hero.title')}
+              </h1>
+              <p className="text-xl sm:text-2xl text-[#5A6480] leading-relaxed max-w-2xl mx-auto">
+                {t('events.hero.subtitle')}
+              </p>
+            </div>
+          </div>
         </Container>
       </div>
 
