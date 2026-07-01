@@ -58,7 +58,7 @@ export function HomePage() {
       >
         <div className="absolute inset-0 bg-black/50" />
         <motion.div
-          style={{ opacity: titleOpacity, y: titleY }}
+          style={{ opacity: titleOpacity, y: titleY, willChange: 'opacity, transform' }}
           className="relative z-10 pt-[calc(38vh_+_138px)] sm:pt-[calc(38vh_+_170px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
         >
           <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
@@ -71,7 +71,7 @@ export function HomePage() {
 
         {/* Scroll Hint */}
         <motion.div
-          style={{ opacity: scrollHintOpacity }}
+          style={{ opacity: scrollHintOpacity, willChange: 'opacity' }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-10"
         >
           <motion.div
@@ -111,6 +111,7 @@ export function HomePage() {
               <div className="section-card overflow-hidden p-0">
                 <img
                   src={aboutImage}
+                  loading="lazy"
                   alt="Wadi Jeddah"
                   className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
                 />

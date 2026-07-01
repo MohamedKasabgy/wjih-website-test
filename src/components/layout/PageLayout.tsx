@@ -95,6 +95,7 @@ export function PageLayout() {
                 initial={{ scaleY: 0.8 }}
                 animate={{ scaleY: [0.8, 1.2, 1, 0.9, 1] }}
                 exit={{ scaleY: [1, 1.2, 0.8] }}
+                style={{ willChange: 'transform' }}
                 transition={{ 
                   layout: { type: "spring", damping: 18, stiffness: 110 },
                   scaleY: { duration: 0.6, ease: "easeInOut" }

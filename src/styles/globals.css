@@ -64,6 +64,14 @@ html {
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Hide scrollbar for an app-like premium feel, but keep functionality */
+::-webkit-scrollbar {
+  width: 0px;
+  background: transparent;
 }
 
 body {

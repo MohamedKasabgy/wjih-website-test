@@ -50,7 +50,7 @@ export function HeroLogo() {
     <motion.div
       aria-hidden
       className="pointer-events-none fixed z-[80] left-1/2"
-      style={{ top, x: '-50%', y: '-50%', scale }}
+      style={{ top, x: '-50%', y: '-50%', scale, willChange: 'transform, top' }}
     >
       <div className="relative flex justify-center items-center">
         {/* Base: red logo (revealed as the white layer fades) */}
