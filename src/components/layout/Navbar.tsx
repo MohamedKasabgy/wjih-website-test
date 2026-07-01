@@ -5,10 +5,11 @@ import { motion, useTransform } from 'framer-motion'
 
 import { appRoutes } from '../../config/routes'
 import { Container } from '../ui/Container'
+import { Button } from '../ui/Button'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 // Language switch temporarily disabled (Arabic-only for now); re-enable later.
 // import { LanguageToggle } from './LanguageToggle'
-import logo from '../../assets/images/LogoWijih.png'
+import logoDarkRed from '../../assets/images/NewLogoDarkRed.svg'
 
 const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [
@@ -65,19 +66,19 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side: First half of links (Push to end/center) */}
-            <div className="flex justify-end gap-6 px-4">
-              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
-                {appRoutes.slice(0, 2).map((route) => (
-                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
+            {/* Start side (Right): 3 links distributed evenly */}
+            <nav aria-label="Primary navigation" className="hidden md:flex justify-between items-center w-full px-4 lg:px-8">
+              {appRoutes.slice(0, 3).map((route) => (
+                <div key={route.path} className="flex-1 flex justify-center">
+                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
-                ))}
-              </nav>
-            </div>
+                </div>
+              ))}
+            </nav>
 
-            {/* Center: Logo — Fixed width to reserve space, absolute logo to allow it to be larger than the navbar */}
-            <div className="relative flex justify-center w-40 md:w-56 h-full items-center">
+            {/* Center: Logo */}
+            <div className="relative flex justify-center w-32 sm:w-40 h-full items-center">
               {!isHome && !isLoading && (
                 <NavLink
                   to="/"
@@ -86,7 +87,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                 >
                   <motion.img 
                     layoutId="wjih-logo"
-                    src={logo} 
+                    src={logoDarkRed} 
                     alt="WJIH Logo" 
                     className="h-[72px] sm:h-[90px] w-auto max-w-none object-contain" 
                     transition={{ type: "spring", damping: 12, stiffness: 90 }}
@@ -95,16 +96,26 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
               )}
             </div>
 
-            {/* End side: Second half of links & Mobile Menu Button (Push to start/center) */}
-            <div className="flex justify-start gap-6 px-4 items-center">
-              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
-                {appRoutes.slice(2).map((route) => (
-                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
+            {/* End side (Left): 2 links + login button distributed evenly */}
+            <div className="flex justify-end md:justify-between items-center w-full px-4 lg:px-8">
+              {appRoutes.slice(3).map((route) => (
+                <div key={route.path} className="hidden md:flex flex-1 justify-center">
+                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
-                ))}
-              </nav>
+                </div>
+              ))}
 
+              <div className="hidden md:flex flex-1 justify-center">
+                <Button
+                  variant="primary"
+                  className="!px-6 !py-2.5 text-sm shrink-0"
+                >
+                  {t('common.login')}
+                </Button>
+              </div>
+
+              {/* Mobile menu toggle */}
               <button
                 aria-expanded={isMenuOpen}
                 aria-label={isMenuOpen ? t('common.close') : t('common.menu')}

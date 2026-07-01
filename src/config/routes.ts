@@ -18,9 +18,9 @@ export const appRoutes = [
     labelKey: 'nav.workspaces',
   },
   {
-    key: 'incubator',
-    path: '/incubator',
-    labelKey: 'nav.incubator',
+    key: 'events',
+    path: '/events',
+    labelKey: 'nav.events',
   },
   {
     key: 'softLanding',
@@ -28,9 +28,9 @@ export const appRoutes = [
     labelKey: 'nav.softLanding',
   },
   {
-    key: 'events',
-    path: '/events',
-    labelKey: 'nav.events',
+    key: 'incubator',
+    path: '/incubator',
+    labelKey: 'nav.incubator',
   },
 ] as const satisfies readonly AppRoute[]
 
