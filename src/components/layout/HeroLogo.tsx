@@ -38,8 +38,8 @@ export function HeroLogo() {
     return `${start + (32 - start) * (p as number)}px`
   })
 
-  // Much bigger base size now, scale down to 0.22 to fit the navbar nicely.
-  const scale = useTransform(progress, [0, 1], [1, 0.22])
+  // Much bigger base size now, scale down to 0.16 to fit the navbar nicely.
+  const scale = useTransform(progress, [0, 1], [1, 0.16])
 
   // Cross-fade: white logo in the hero → original full-colour logo in the navbar.
   const whiteOpacity = useTransform(progress, [0, 0.6], [1, 0])
