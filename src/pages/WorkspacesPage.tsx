@@ -2,25 +2,6 @@ import { useTranslation } from 'react-i18next'
 
 import { Container } from '../components/ui/Container'
 import { Button } from '../components/ui/Button'
-import { Container } from '../components/ui/Container'
-import { createWhatsAppUrl } from '../lib/whatsapp'
-import heroImage from '../assets/images/heroImage.jpeg'
-
-const workspacePlanKeys = ['hotDesk', 'dedicatedDesk', 'semiPrivate', 'private1', 'private2'] as const
-const workspaceOptionKeys = ['hotDesk', 'dedicatedDesk', 'privateOffice', 'meetingRooms', 'eventSpaces'] as const
-const amenityIndexes = [0, 1, 2, 3, 4, 5, 6, 7] as const
-const overviewHighlightIndexes = [0, 1, 2] as const
-
-const openWhatsApp = (message: string) => {
-  window.open(createWhatsAppUrl(message), '_blank', 'noopener,noreferrer')
-}
-
-const scrollToOptions = () => {
-  document.getElementById('workspace-options')?.scrollIntoView({
-    behavior: 'smooth',
-    block: 'start',
-  })
-}
 
 export function WorkspacesPage() {
   const { t } = useTranslation()
