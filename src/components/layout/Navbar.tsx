@@ -70,16 +70,10 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side: Login Button and First half of links */}
-            <div className="flex justify-between items-center w-full px-4 gap-6">
-              <Button
-                variant="primary"
-                className="hidden md:inline-flex !px-6 !py-2.5 text-sm shrink-0"
-              >
-                {t('common.login')}
-              </Button>
+            {/* Start side: First half of links (Push to end/center) */}
+            <div className="flex justify-end gap-6 px-4">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
-                {appRoutes.slice(0, 2).map((route) => (
+                {appRoutes.slice(0, 3).map((route) => (
                   <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
@@ -106,25 +100,34 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
               )}
             </div>
 
-            {/* End side: Second half of links & Mobile Menu Button (Push to start/center) */}
-            <div className="flex justify-start gap-6 px-4 items-center">
+            {/* End side: Second half of links, Login Button & Mobile Menu (Push nav to start/center, button to end/far left) */}
+            <div className="flex justify-between items-center w-full px-4 gap-6">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
-                {appRoutes.slice(2).map((route) => (
+                {appRoutes.slice(3).map((route) => (
                   <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
                     {t(route.labelKey)}
                   </NavLink>
                 ))}
               </nav>
 
-              <button
-                aria-expanded={isMenuOpen}
-                aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
-                className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors ml-4"
-                type="button"
-                onClick={() => setIsMenuOpen((current) => !current)}
-              >
-                {isMenuOpen ? t('common.close') : t('common.menu')}
-              </button>
+              <div className="flex items-center gap-4">
+                <Button
+                  variant="primary"
+                  className="hidden md:inline-flex !px-6 !py-2.5 text-sm shrink-0"
+                >
+                  {t('common.login')}
+                </Button>
+
+                <button
+                  aria-expanded={isMenuOpen}
+                  aria-label={isMenuOpen ? t('common.close') : t('common.menu')}
+                  className="rounded-md border border-[var(--color-border)] bg-[var(--color-surface)] px-3 py-1.5 text-sm font-semibold text-[var(--color-text)] md:hidden hover:bg-[var(--page-color-soft)] transition-colors ml-4"
+                  type="button"
+                  onClick={() => setIsMenuOpen((current) => !current)}
+                >
+                  {isMenuOpen ? t('common.close') : t('common.menu')}
+                </button>
+              </div>
             </div>
 
           </div>
