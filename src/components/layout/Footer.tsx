@@ -14,23 +14,13 @@ export function Footer() {
 
   return (
     <footer className="bg-[#1E2650] mt-0">
-      {/* Partners Bar */}
-      <div className="bg-white py-12 rounded-t-[3rem] shadow-sm">
-        <Container>
-          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
-            <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-24 w-auto object-contain" />
-            <img src={logoKau} alt="KAU" className="h-16 md:h-24 w-auto object-contain" />
-            <img src={logoCic} alt="CIC" className="h-16 md:h-24 w-auto object-contain" />
-          </div>
-        </Container>
-      </div>
 
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
-        <div className="flex flex-col md:flex-row justify-between md:items-start gap-12 text-base text-white/80">
+        <div className="flex flex-col md:flex-row justify-between md:items-center gap-12 text-base text-white/80">
 
           {/* Brand */}
-          <div className="max-w-md">
+          <div className="max-w-sm">
             <img src={logo} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto mb-6 brightness-0 invert opacity-90" />
             <p className="leading-relaxed mb-8 text-white/70 text-lg">
               {t('footer.description')}
@@ -43,6 +33,13 @@ export function Footer() {
             >
               {t('common.contactWhatsapp')}
             </a>
+          </div>
+
+          {/* Partners */}
+          <div className="flex flex-col md:flex-col items-center justify-center gap-10 md:gap-12 flex-1">
+            <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90" />
+            <img src={logoKau} alt="KAU" className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90" />
+            <img src={logoCic} alt="CIC" className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-90" />
           </div>
 
           {/* Contact */}
