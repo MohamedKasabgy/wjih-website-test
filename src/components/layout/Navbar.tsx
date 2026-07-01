@@ -9,7 +9,7 @@ import { Button } from '../ui/Button'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 // Language switch temporarily disabled (Arabic-only for now); re-enable later.
 // import { LanguageToggle } from './LanguageToggle'
-import logo from '../../assets/images/NewLogo.svg'
+import logoDarkRed from '../../assets/images/NewLogoDarkRed.svg'
 
 const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [
@@ -73,9 +73,11 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             {/* Start side (Right): 3 links distributed evenly */}
             <nav aria-label="Primary navigation" className="hidden md:flex justify-between items-center w-full px-4 lg:px-8">
               {appRoutes.slice(0, 3).map((route) => (
-                <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
-                  {t(route.labelKey)}
-                </NavLink>
+                <div key={route.path} className="flex-1 flex justify-center">
+                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
+                    {t(route.labelKey)}
+                  </NavLink>
+                </div>
               ))}
             </nav>
 
@@ -87,19 +89,11 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                   onClick={() => setIsMenuOpen(false)}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
                 >
-                  <motion.div 
+                  <motion.img 
                     layoutId="wjih-logo"
-                    className="h-[72px] w-[128px] sm:h-[90px] sm:w-[160px] bg-[#5A0D12]"
-                    style={{
-                      WebkitMaskImage: `url(${logo})`,
-                      WebkitMaskSize: 'contain',
-                      WebkitMaskRepeat: 'no-repeat',
-                      WebkitMaskPosition: 'center',
-                      maskImage: `url(${logo})`,
-                      maskSize: 'contain',
-                      maskRepeat: 'no-repeat',
-                      maskPosition: 'center'
-                    }}
+                    src={logoDarkRed} 
+                    alt="WJIH Logo" 
+                    className="h-[72px] sm:h-[90px] w-auto max-w-none object-contain" 
                     transition={{ type: "spring", damping: 12, stiffness: 90 }}
                   />
                 </NavLink>
@@ -109,17 +103,21 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             {/* End side (Left): 2 links + login button distributed evenly */}
             <div className="flex justify-end md:justify-between items-center w-full px-4 lg:px-8">
               {appRoutes.slice(3).map((route) => (
-                <NavLink className={({isActive}) => `${getNavLinkClassName(isHome)({isActive})} hidden md:flex`} key={route.path} to={route.path}>
-                  {t(route.labelKey)}
-                </NavLink>
+                <div key={route.path} className="hidden md:flex flex-1 justify-center">
+                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
+                    {t(route.labelKey)}
+                  </NavLink>
+                </div>
               ))}
 
-              <Button
-                variant="primary"
-                className="hidden md:inline-flex !px-6 !py-2.5 text-sm shrink-0"
-              >
-                {t('common.login')}
-              </Button>
+              <div className="hidden md:flex flex-1 justify-center">
+                <Button
+                  variant="primary"
+                  className="!px-6 !py-2.5 text-sm shrink-0"
+                >
+                  {t('common.login')}
+                </Button>
+              </div>
 
               {/* Mobile menu toggle */}
               <button

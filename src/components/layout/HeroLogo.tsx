@@ -2,7 +2,8 @@ import { useLayoutEffect } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 import { useScrollProgress } from '../../hooks/useScrollProgress'
-import logo from '../../assets/images/NewLogo.svg'
+import logoDarkRed from '../../assets/images/NewLogoDarkRed.svg'
+import logoWhite from '../../assets/images/NewLogo.svg'
 
 /**
  * Fixed morphing logo.
@@ -40,10 +41,10 @@ export function HeroLogo() {
   // Much bigger base size now, scale down to 0.28 to fit the newly enlarged navbar logo nicely.
   const scale = useTransform(progress, [0, 1], [1, 0.28])
 
-  // Removed the drop-shadow filter based on user feedback
+  // Cross-fade: white logo in the hero → original full-colour logo in the navbar.
+  const whiteOpacity = useTransform(progress, [0, 0.6], [1, 0])
 
-  // Transition color from pure white to #5A0D12 as it scrolls up
-  const backgroundColor = useTransform(progress, [0, 0.6], ['#FFFFFF', '#5A0D12'])
+  const imgClass = 'h-64 w-auto max-w-[80vw] select-none sm:h-80'
 
   return (
     <motion.div
@@ -51,21 +52,17 @@ export function HeroLogo() {
       className="pointer-events-none fixed z-[80] left-1/2"
       style={{ top, x: '-50%', y: '-50%', scale }}
     >
-      <motion.div 
-        layoutId="wjih-logo"
-        className="h-64 w-[455px] max-w-[80vw] sm:h-80 sm:w-[568px]"
-        style={{ 
-          backgroundColor,
-          WebkitMaskImage: `url(${logo})`,
-          WebkitMaskSize: 'contain',
-          WebkitMaskRepeat: 'no-repeat',
-          WebkitMaskPosition: 'center',
-          maskImage: `url(${logo})`,
-          maskSize: 'contain',
-          maskRepeat: 'no-repeat',
-          maskPosition: 'center'
-        }}
-      />
+      <div className="relative flex justify-center items-center">
+        {/* Base: red logo (revealed as the white layer fades) */}
+        <motion.img layoutId="wjih-logo" src={logoDarkRed} alt="" className={imgClass} />
+        {/* Overlay: white version, fades out on scroll */}
+        <motion.img
+          src={logoWhite}
+          alt=""
+          style={{ opacity: whiteOpacity }}
+          className={`absolute inset-0 m-auto ${imgClass}`}
+        />
+      </div>
     </motion.div>
   )
 }
