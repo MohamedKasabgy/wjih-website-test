@@ -38,9 +38,9 @@ export function Footer() {
             
             {/* Partners */}
             <div className="flex flex-row items-center gap-4 lg:gap-8 w-full mt-8 md:mt-12">
-              <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
-              <img src={logoKau} alt="KAU" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
-              <img src={logoCic} alt="CIC" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
+              <img src={logoWjih} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
+              <img src={logoKau} alt="KAU" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
+              <img src={logoCic} alt="CIC" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
             </div>
           </div>
 
