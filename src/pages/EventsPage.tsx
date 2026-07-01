@@ -12,7 +12,6 @@ export function EventsPage() {
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#1E2650] via-[#1E2650] to-[#2a3368]">
         <Container className="relative z-10">
-          <span className="label-accent !text-[#EE7203] !border-[#EE7203]/40">قاعات الفعاليات</span>
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
             {t('events.hero.title')}
           </h1>
@@ -36,7 +35,6 @@ export function EventsPage() {
           <div className="section-card p-10 sm:p-14">
             <div className="flex flex-col md:flex-row md:items-center justify-between gap-10">
               <div>
-                <span className="label-accent" style={{ color: '#EE7203', borderColor: 'rgba(238,114,3,0.3)' }}>غرف الاجتماعات</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-[#1E2650] mb-4">
                   {t('events.meetingRooms.title').replace('## ', '')}
                 </h2>
@@ -63,7 +61,6 @@ export function EventsPage() {
       <section className="bg-[#FAFAF9] py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent" style={{ color: '#EE7203', borderColor: 'rgba(238,114,3,0.3)' }}>قاعات الفعاليات</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('events.eventHalls.title').replace('## ', '')}
             </h2>
@@ -108,7 +105,6 @@ export function EventsPage() {
       <section className="py-24">
         <Container>
           <div className="mb-16">
-            <span className="label-accent" style={{ color: '#EE7203', borderColor: 'rgba(238,114,3,0.3)' }}>الضيافة</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-4">
               {t('events.catering.title').replace('## ', '')}
             </h2>

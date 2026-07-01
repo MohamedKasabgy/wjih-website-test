@@ -203,14 +203,12 @@ body {
 
   /* ── Section divider — image bar ────────────────────── */
   .section-divider {
-    height: 24px;
+    height: 26px;
     background-image: url('../assets/images/Bar.jpg');
     background-size: contain;
     background-position: center left;
     background-repeat: repeat-x;
     border: none;
-    margin-top: 4rem;
-    margin-bottom: 4rem;
     width: 100%;
   }
 

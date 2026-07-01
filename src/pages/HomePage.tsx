@@ -116,11 +116,8 @@ export function HomePage() {
 
                 {/* Text (On the left visually in RTL layout) */}
                 <div className="order-1 md:order-2 space-y-6">
-                  <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#D6BAAE] border border-[#D6BAAE] rounded-full px-6 py-2 mb-2">
-                    وادي جدة للابتكار.. حيث تنمو الأفكار
-                  </span>
                   <h2 className="text-4xl md:text-[3.5rem] font-bold text-[#1E2650] mb-8 leading-[1.2]">
-                    وادي جدة للابتكار.. حيث تنمو<br />الأفكار
+                    وادي جدة للابتكار.. حيث تنمو الأفكار
                   </h2>
                   <p className="text-xl text-[#5A6480] leading-[1.8]">
                     نحن أكثر من مجرد مساحة عمل؛ نحن بيئة ريادية متكاملة تدعم المبتكرين ورواد الأعمال. نسعى لتمكين العقول المبدعة عبر تقديم خدمات حصرية وبرامج مكثفة تذلل العقبات وتسرّع نمو شركتك لتنطلق نحو المستقبل.
@@ -133,10 +130,9 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Facilities ────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-10">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent">{t('home.facilities.title').replace('## ', '')}</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.facilities.title').replace('## ', '')}
             </h2>
@@ -170,7 +166,6 @@ export function HomePage() {
       <section className="py-24 bg-[#FAFAF9]">
         <Container>
           <div className="mb-16">
-            <span className="label-accent">{t('home.services.title').replace('## ', '')}</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.services.title').replace('## ', '')}
             </h2>
@@ -203,9 +198,7 @@ export function HomePage() {
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/[0.03] rounded-full translate-y-1/2 -translate-x-1/3" />
 
         <Container className="relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#D6BAAE] border border-[#D6BAAE]/30 rounded-full px-4 py-1.5 mb-6">
-            مجتمع وادي جدة
-          </span>
+          
           <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 max-w-3xl mx-auto leading-tight">
             {t('home.community.title').replace('## ', '')}
           </h2>

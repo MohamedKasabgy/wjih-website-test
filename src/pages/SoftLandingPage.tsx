@@ -12,7 +12,6 @@ export function SoftLandingPage() {
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#1E2650] via-[#1E2650] to-[#2a3368]">
         <Container className="relative z-10">
-          <span className="label-accent !text-[#EE7203] !border-[#EE7203]/40">Soft Landing Program</span>
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
             {t('softLanding.hero.title')}
           </h1>
@@ -34,9 +33,7 @@ export function SoftLandingPage() {
       <section className="py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent" style={{ color: '#1E2650', borderColor: 'rgba(30,38,80,0.3)' }}>
-              {t('softLanding.about.title').replace('## ', '')}
-            </span>
+           
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('softLanding.about.title').replace('## ', '')}
             </h2>
@@ -59,9 +56,7 @@ export function SoftLandingPage() {
       <section className="bg-[#FAFAF9] py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent" style={{ color: '#1E2650', borderColor: 'rgba(30,38,80,0.3)' }}>
-              {t('softLanding.offer.title').replace('## ', '')}
-            </span>
+           
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('softLanding.offer.title').replace('## ', '')}
             </h2>
@@ -92,9 +87,7 @@ export function SoftLandingPage() {
                   {[0, 1, 2].map((i) => (
                     <li key={i} className="flex gap-4 items-start">
                       <div className="mt-2 w-2 h-2 rounded-full bg-[#1E2650] flex-shrink-0" />
-                      <span className="text-[#1E2650] leading-relaxed">
-                        {t(`softLanding.offer.enList.${i}` as any)}
-                      </span>
+                     
                     </li>
                   ))}
                 </ul>
