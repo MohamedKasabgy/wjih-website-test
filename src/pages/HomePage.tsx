@@ -2,8 +2,8 @@ import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { motion, useTransform, AnimatePresence } from 'framer-motion'
-
 import { Container } from '../components/ui/Container'
+import { Wifi, ShieldCheck, Coffee, Rocket } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
@@ -162,31 +162,55 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Services ──────────────────────────────────────────── */}
-      <section className="py-24 bg-[#5A0D12]">
-        <Container>
-          <div className="mb-16">
+      <section className="py-24 bg-[#5A0D12] relative overflow-hidden">
+        {/* Subtle white grid background */}
+        <div 
+          className="absolute inset-0 opacity-20 pointer-events-none" 
+          style={{ 
+            backgroundImage: 'linear-gradient(rgba(255,255,255,0.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.2) 1px, transparent 1px)', 
+            backgroundSize: '60px 60px',
+            maskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)',
+            WebkitMaskImage: 'radial-gradient(circle at center, black 30%, transparent 80%)'
+          }} 
+        />
+        
+        <Container className="relative z-10">
+          <div className="mb-16 text-center">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('home.services.title').replace('## ', '')}
             </h2>
-            <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
+            <p className="text-lg text-white/80 max-w-3xl mx-auto leading-relaxed">
               {t('home.services.content')}
             </p>
           </div>
 
-          <div className="grid sm:grid-cols-2 gap-8 mb-12">
-            {[0, 1, 2, 3].map((i) => (
-              <div key={i} className="section-card relative p-8 pt-16 group">
-                <span className="feature-number text-[#5A0D12] !opacity-100 transition-opacity">{String(i + 1).padStart(2, '0')}</span>
-                <p className="text-[#1E2650] leading-relaxed text-lg">
-                  {t(`home.services.list.${i}` as any)}
-                </p>
-              </div>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[0, 1, 2, 3].map((i) => {
+              const Icon = [Wifi, ShieldCheck, Coffee, Rocket][i];
+              return (
+                <div key={i} className="section-card relative p-8 group flex flex-col h-full overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+                  {/* Number in the top right corner */}
+                  <span className="absolute top-4 start-5 text-4xl font-black text-[#5A0D12]/10 transition-colors group-hover:text-[#5A0D12]/20">
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  
+                  <div className="mb-8 mt-4 flex items-center justify-center w-16 h-16 rounded-2xl bg-[#5A0D12]/5 text-[#5A0D12] group-hover:bg-[#5A0D12]/10 transition-colors">
+                    <Icon size={32} strokeWidth={1.5} />
+                  </div>
+                  
+                  <p className="text-[#1E2650] leading-relaxed text-lg font-medium relative z-10">
+                    {t(`home.services.list.${i}` as any)}
+                  </p>
+                </div>
+              );
+            })}
           </div>
 
-          <div className="text-center mt-12">
+          <div className="text-center mt-16">
             <Link to="/incubator">
-              <Button variant="outline" className="text-base px-10 py-4">{t('home.services.cta')}</Button>
+              <Button className="bg-white text-[#5A0D12] hover:bg-white/90 border-transparent text-base font-bold px-10 py-4 shadow-md">
+                {t('home.services.cta')}
+              </Button>
             </Link>
           </div>
         </Container>
