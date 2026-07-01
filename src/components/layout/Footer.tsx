@@ -6,12 +6,25 @@ import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
 import logo from '../../assets/images/NewLogo.svg'
-
+import logoWjih from '../../assets/logos/WJIH.png'
+import logoKau from '../../assets/logos/KAU.png'
+import logoCic from '../../assets/logos/CIC.png'
 export function Footer() {
   const { t } = useTranslation()
 
   return (
     <footer className="bg-[#1E2650] mt-0">
+      {/* Partners Bar */}
+      <div className="bg-white py-12 rounded-t-[3rem] shadow-sm">
+        <Container>
+          <div className="flex flex-wrap justify-center items-center gap-12 md:gap-24">
+            <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-24 w-auto object-contain" />
+            <img src={logoKau} alt="KAU" className="h-16 md:h-24 w-auto object-contain" />
+            <img src={logoCic} alt="CIC" className="h-16 md:h-24 w-auto object-contain" />
+          </div>
+        </Container>
+      </div>
+
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
         <div className="flex flex-col md:flex-row justify-between md:items-start gap-12 text-base text-white/80">
