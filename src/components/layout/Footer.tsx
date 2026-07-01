@@ -20,26 +20,28 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-12 text-base text-white/80">
 
           {/* Brand */}
-          <div className="max-w-sm">
+          <div className="max-w-md">
             <img src={logo} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto mb-6 brightness-0 invert opacity-90" />
             <p className="leading-relaxed mb-8 text-white/70 text-lg">
               {t('footer.description')}
             </p>
-            <a
-              className={[buttonClasses('primary'), '!bg-[#25D366] !border-[#25D366] hover:!bg-[#1ebd59] !text-white text-lg px-8 py-3'].join(' ')}
-              href={createWhatsAppUrl()}
-              rel="noreferrer"
-              target="_blank"
-            >
-              {t('common.contactWhatsapp')}
-            </a>
-          </div>
-
-          {/* Partners */}
-          <div className="flex flex-row items-center justify-center gap-4 lg:gap-8 flex-[1.5] w-full mt-8 md:mt-0">
-            <img src={logoWjih} alt="Wadi Jeddah" className="h-24 md:h-40 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
-            <img src={logoKau} alt="KAU" className="h-24 md:h-40 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
-            <img src={logoCic} alt="CIC" className="h-24 md:h-40 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
+            <div className="mb-10">
+              <a
+                className={[buttonClasses('primary'), '!bg-[#25D366] !border-[#25D366] hover:!bg-[#1ebd59] !text-white text-lg px-8 py-3'].join(' ')}
+                href={createWhatsAppUrl()}
+                rel="noreferrer"
+                target="_blank"
+              >
+                {t('common.contactWhatsapp')}
+              </a>
+            </div>
+            
+            {/* Partners */}
+            <div className="flex flex-row items-center gap-4 lg:gap-8 w-full mt-8 md:mt-12">
+              <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
+              <img src={logoKau} alt="KAU" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
+              <img src={logoCic} alt="CIC" className="h-16 md:h-24 w-auto object-contain brightness-0 invert opacity-90 shrink min-w-0" />
+            </div>
           </div>
 
           {/* Contact */}
