@@ -33,22 +33,22 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="text-right">
+          <div className="text-right md:flex-1 md:pr-12">
             <h4 className="font-bold text-white text-xl mb-6">{t('footer.contactInfo')}</h4>
-            <ul className="flex flex-col gap-5 text-lg">
-              <li>
+            <ul className="flex flex-col md:flex-row md:items-start gap-8 lg:gap-12 text-lg">
+              <li className="flex-1">
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.phone')}</span>
                 <a href="tel:0550268326" className="text-white/90 hover:text-white transition-colors font-medium">
                   0550268326
                 </a>
               </li>
-              <li>
+              <li className="flex-1">
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.email')}</span>
-                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/90 hover:text-white transition-colors font-medium">
+                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/90 hover:text-white transition-colors font-medium break-all">
                   Wjih@wadi-jeddah.com.sa
                 </a>
               </li>
-              <li>
+              <li className="flex-1 min-w-[200px]">
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.location')}</span>
                 <span className="text-white/90">{t('footer.locationText')}</span>
                 <iframe
@@ -59,7 +59,7 @@ export function Footer() {
                   marginHeight={0}
                   marginWidth={0}
                   src="https://maps.google.com/maps?q=Wadi%20Jeddah&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  className="rounded-lg opacity-80 hover:opacity-100 transition-opacity mt-4 w-full max-w-[280px]"
+                  className="rounded-lg opacity-80 hover:opacity-100 transition-opacity mt-4 w-full"
                 ></iframe>
               </li>
             </ul>
