@@ -86,11 +86,11 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                   >
                     {t(route.labelKey)}
                   </NavLink>
-                </div>
               ))}
-            </nav>
+	              </nav>
+	            </div>
 
-            {/* Center: Logo */}
+	            {/* Center: Logo */}
             <div className="relative flex justify-center w-32 sm:w-40 h-full items-center">
               {!isHome && !isLoading && (
                 <NavLink
@@ -130,10 +130,10 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                   >
                     {t(route.labelKey)}
                   </NavLink>
-                </div>
-              ))}
+	              ))}
+	              </nav>
 
-              <div className="hidden md:flex flex-1 justify-center">
+	              <div className="hidden md:flex flex-1 justify-center">
                 <Button
                   variant="primary"
                   className="!px-6 !py-2.5 text-sm shrink-0"
