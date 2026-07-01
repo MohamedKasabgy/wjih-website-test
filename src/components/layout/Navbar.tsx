@@ -69,8 +69,14 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side: First half of links (Push to end/center) */}
-            <div className="flex justify-end gap-6 px-4">
+            {/* Start side: Login Button and First half of links */}
+            <div className="flex justify-between items-center w-full px-4 gap-6">
+              <button
+                className="hidden md:inline-flex px-6 py-2.5 text-sm font-bold text-white rounded-md transition-all hover:opacity-90 shrink-0"
+                style={{ backgroundColor: '#5A6480' }}
+              >
+                {t('common.login')}
+              </button>
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
                   <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
