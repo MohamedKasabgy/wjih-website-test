@@ -100,8 +100,8 @@ export function HomePage() {
       </section>
 
       {/* ── About ─────────────────────────────────────────────── */}
-          <section className="py-24">
-            <Container>
+          <section className="py-24 ">
+            <Container className="bg-white">
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 {/* Image (On the right visually in RTL layout) */}
                 <div className="relative order-2 md:order-1">
