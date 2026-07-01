@@ -139,7 +139,7 @@ export function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.facilities.title').replace('## ', '')}
             </h2>
-            <p className="text-lg text-[#5A6480] max-w-3xl mx-auto leading-relaxed">
+            <p className="text-lg text-[#1E2650] max-w-3xl mx-auto leading-relaxed">
               {t('home.facilities.content')}
             </p>
           </div>
@@ -177,7 +177,7 @@ export function HomePage() {
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.services.title').replace('## ', '')}
             </h2>
-            <p className="text-lg text-[#5A6480] max-w-3xl leading-relaxed">
+            <p className="text-lg text-[#1E2650] max-w-3xl leading-relaxed">
               {t('home.services.content')}
             </p>
           </div>

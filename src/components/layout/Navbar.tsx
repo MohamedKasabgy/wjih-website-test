@@ -73,7 +73,16 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             <div className="flex justify-end gap-6 px-4">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
-                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
+                  <NavLink 
+                    className={getNavLinkClassName(isHome)} 
+                    key={route.path} 
+                    to={route.path}
+                    onClick={() => {
+                      if (window.location.pathname === route.path) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }
+                    }}
+                  >
                     {t(route.labelKey)}
                   </NavLink>
                 ))}
@@ -85,7 +94,12 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
               {!isHome && !isLoading && (
                 <NavLink
                   to="/"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    if (window.location.pathname === '/') {
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
                 >
                   <motion.img 
@@ -103,7 +117,16 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             <div className="flex justify-start gap-6 px-4 items-center">
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(2).map((route) => (
-                  <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
+                  <NavLink 
+                    className={getNavLinkClassName(isHome)} 
+                    key={route.path} 
+                    to={route.path}
+                    onClick={() => {
+                      if (window.location.pathname === route.path) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }
+                    }}
+                  >
                     {t(route.labelKey)}
                   </NavLink>
                 ))}
@@ -132,7 +155,12 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                       className={getNavLinkClassName(isHome)}
                       key={route.path}
                       to={route.path}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        if (window.location.pathname === route.path) {
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }
+                      }}
                     >
                       {t(route.labelKey)}
                     </NavLink>
