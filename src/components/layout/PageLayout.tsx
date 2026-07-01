@@ -94,7 +94,6 @@ export function PageLayout() {
                 className="h-28 md:h-[135px] w-auto"
                 initial={{ scaleY: 0.8 }}
                 animate={{ scaleY: [0.8, 1.2, 1, 0.9, 1] }}
-                exit={{ scaleY: [1, 1.2, 0.8] }}
                 style={{ willChange: 'transform' }}
                 transition={{ 
                   layout: { type: "spring", damping: 18, stiffness: 110 },

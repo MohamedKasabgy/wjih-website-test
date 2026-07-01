@@ -54,7 +54,7 @@ export function HeroLogo() {
     >
       <div className="relative flex justify-center items-center">
         {/* Base: red logo (revealed as the white layer fades) */}
-        <motion.img layoutId="wjih-logo" src={logoDarkRed} alt="" className={imgClass} />
+        <motion.img src={logoDarkRed} alt="" className={imgClass} />
         {/* Overlay: white version, fades out on scroll */}
         <motion.img
           src={logoWhite}
