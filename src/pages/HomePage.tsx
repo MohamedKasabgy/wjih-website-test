@@ -162,13 +162,13 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Services ──────────────────────────────────────────── */}
-      <section className="py-24 bg-[#FAFAF9]">
+      <section className="py-24 bg-[#5A0D12]">
         <Container>
           <div className="mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
               {t('home.services.title').replace('## ', '')}
             </h2>
-            <p className="text-lg text-[#5A6480] max-w-3xl leading-relaxed">
+            <p className="text-lg text-white/80 max-w-3xl leading-relaxed">
               {t('home.services.content')}
             </p>
           </div>
