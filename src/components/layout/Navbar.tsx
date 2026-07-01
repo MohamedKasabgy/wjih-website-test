@@ -5,6 +5,7 @@ import { motion, useTransform } from 'framer-motion'
 
 import { appRoutes } from '../../config/routes'
 import { Container } from '../ui/Container'
+import { Button } from '../ui/Button'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 // Language switch temporarily disabled (Arabic-only for now); re-enable later.
 // import { LanguageToggle } from './LanguageToggle'
@@ -71,12 +72,12 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
 
             {/* Start side: Login Button and First half of links */}
             <div className="flex justify-between items-center w-full px-4 gap-6">
-              <button
-                className="hidden md:inline-flex px-6 py-2.5 text-sm font-bold text-white rounded-md transition-all hover:opacity-90 shrink-0"
-                style={{ backgroundColor: '#5A6480' }}
+              <Button
+                variant="primary"
+                className="hidden md:inline-flex !px-6 !py-2.5 text-sm !bg-[#5A6480] !border-[#5A6480] hover:!bg-[#464f69] shrink-0"
               >
                 {t('common.login')}
-              </button>
+              </Button>
               <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
                 {appRoutes.slice(0, 2).map((route) => (
                   <NavLink className={getNavLinkClassName(isHome)} key={route.path} to={route.path}>
