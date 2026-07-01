@@ -14,16 +14,16 @@ export function Footer() {
     <footer className="bg-[#1E2650] mt-0">
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
-        <div className="grid md:grid-cols-3 gap-12 text-sm text-white/70">
+        <div className="grid md:grid-cols-3 gap-8 lg:gap-4 text-base text-white/80">
 
           {/* Brand */}
           <div>
-            <img src={logo} alt="Wadi Jeddah" className="h-10 w-auto mb-5 brightness-0 invert opacity-90" />
-            <p className="leading-relaxed mb-6 text-white/60">
+            <img src={logo} alt="Wadi Jeddah" className="h-16 w-auto mb-6 brightness-0 invert opacity-90" />
+            <p className="leading-relaxed mb-8 text-white/70 text-lg">
               {t('footer.description')}
             </p>
             <a
-              className={[buttonClasses('primary'), '!bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12]'].join(' ')}
+              className={[buttonClasses('primary'), '!bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12] text-lg px-8 py-3'].join(' ')}
               href={createWhatsAppUrl()}
               rel="noreferrer"
               target="_blank"
@@ -33,12 +33,12 @@ export function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div>
-            <h4 className="font-bold text-white text-base mb-5">{t('footer.quickLinks')}</h4>
-            <nav aria-label="Footer navigation" className="flex flex-col gap-3">
+          <div className="md:justify-self-center">
+            <h4 className="font-bold text-white text-xl mb-6">{t('footer.quickLinks')}</h4>
+            <nav aria-label="Footer navigation" className="flex flex-col gap-4 text-lg">
               {appRoutes.map((route) => (
                 <NavLink
-                  className="text-white/60 transition-colors hover:text-white font-medium"
+                  className="text-white/70 transition-colors hover:text-white font-medium"
                   key={route.path}
                   to={route.path}
                 >
@@ -49,24 +49,24 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div>
-            <h4 className="font-bold text-white text-base mb-5">{t('footer.contactInfo')}</h4>
-            <ul className="flex flex-col gap-4">
+          <div className="md:justify-self-end text-right">
+            <h4 className="font-bold text-white text-xl mb-6">{t('footer.contactInfo')}</h4>
+            <ul className="flex flex-col gap-5 text-lg">
               <li>
-                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.phone')}</span>
-                <a href="tel:0550268326" className="text-white/80 hover:text-white transition-colors font-medium">
+                <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.phone')}</span>
+                <a href="tel:0550268326" className="text-white/90 hover:text-white transition-colors font-medium">
                   0550268326
                 </a>
               </li>
               <li>
-                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.email')}</span>
-                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/80 hover:text-white transition-colors font-medium">
+                <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.email')}</span>
+                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/90 hover:text-white transition-colors font-medium">
                   Wjih@wadi-jeddah.com.sa
                 </a>
               </li>
               <li>
-                <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.location')}</span>
-                <span className="text-white/80">{t('footer.locationText')}</span>
+                <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.location')}</span>
+                <span className="text-white/90">{t('footer.locationText')}</span>
               </li>
             </ul>
           </div>
