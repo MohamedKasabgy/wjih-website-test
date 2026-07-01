@@ -9,6 +9,7 @@ import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
 import aboutImage from '../../src/assets/images/aboutImage.jpeg'
+import graph2 from '../assets/images/graph2.png'
 
 export function HomePage() {
   const { t } = useTranslation()
@@ -43,26 +44,35 @@ export function HomePage() {
   }, [])
 
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col pb-16 sm:pb-20">
+      {/* ── Hero ─────────────────────────────────────────────── */}
       <HeroLogo />
 
-      {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden">
-        {/* Background Image / Video */}
-        <div className="absolute inset-0 z-0">
-          <img
-            src={heroImage}
-            alt="Wadi Jeddah Innovation Hub"
-            className="w-full h-full object-cover"
-          />
-        </div>
-
-        {/* Overlay */}
-        <div className="absolute inset-0 bg-black/50 z-0" />
+      <section
+        className="relative min-h-screen overflow-hidden"
+        style={{
+          backgroundImage: `url(${heroImage})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/50" />
+        <motion.div
+          style={{ opacity: titleOpacity, y: titleY }}
+          className="relative z-10 pt-[calc(38vh_+_138px)] sm:pt-[calc(38vh_+_170px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
+        >
+          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
+            مجمع وادي جدة للابتكار
+          </h1>
+          <p className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
+            مكان رواد الأعمال في قلب جدة
+          </p>
+        </motion.div>
 
         {/* Scroll Hint */}
         <motion.div
-          style={{ opacity: scrollHintOpacity, willChange: 'opacity' }}
+          style={{ opacity: scrollHintOpacity }}
           className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-10"
         >
           <motion.div
@@ -102,7 +112,6 @@ export function HomePage() {
               <div className="section-card overflow-hidden p-0">
                 <img
                   src={aboutImage}
-                  loading="lazy"
                   alt="Wadi Jeddah"
                   className="w-full h-[450px] object-cover hover:scale-105 transition-transform duration-700"
                 />
@@ -125,7 +134,7 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Facilities ────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-15">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
@@ -194,19 +203,35 @@ export function HomePage() {
       </section>
 
       {/* ── Community CTA ─────────────────────────────────────── */}
-      <section className="bg-[#1E2650] py-24 relative overflow-hidden">
-        {/* Decorative circles */}
-        <div className="absolute top-0 right-0 w-96 h-96 bg-white/[0.02] rounded-full -translate-y-1/2 translate-x-1/3" />
-        <div className="absolute bottom-0 left-0 w-72 h-72 bg-white/[0.03] rounded-full translate-y-1/2 -translate-x-1/3" />
+      <section className="bg-white py-24 relative overflow-hidden">
+        
+          {/* Decorative graphic — docked at the top-left edge of THIS container
+              (same start edge as the text below), not the raw section edge. */}
+              
+          <div className="absolute -left-8 top-4 pointer-events-none">
+            <img
+              src={graph2}
+              alt=""
+              className="w-40 sm:w-56 md:w-72 h-auto mix-blend-multiply opacity-70"
+              aria-hidden="true"
+            />
+          </div>
+
+          {/* Decorative graphic — smaller copy docked at the end (right) edge. */}
+          <div className="absolute -right-4 top-80 pointer-events-none">
+            <img
+              src={graph2}
+              alt=""
+              className="w-20 sm:w-28 md:w-36 h-auto mix-blend-multiply  scale-x-[-1]"
+              aria-hidden="true"
+            />
+          </div>
 
         <Container className="relative z-10 text-center">
-          <span className="inline-flex items-center gap-2 text-[0.7rem] font-bold tracking-[0.12em] uppercase text-[#D6BAAE] border border-[#D6BAAE]/30 rounded-full px-4 py-1.5 mb-6">
-            مجتمع وادي جدة
-          </span>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 max-w-3xl mx-auto leading-tight">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#761020] mb-8 max-w-3xl mx-auto leading-tight">
             {t('home.community.title').replace('## ', '')}
           </h2>
-          <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-[#1e2650] mb-10 max-w-2xl mx-auto leading-relaxed">
             {t('home.community.content')}
           </p>
           <div className="flex justify-center">

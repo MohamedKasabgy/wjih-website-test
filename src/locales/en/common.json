@@ -66,10 +66,59 @@
   "workspaces": {
     "hero": {
       "title": "Flexible & Fully-Equipped Offices for Your Growth",
-      "subtitle": "Choose the space that inspires your productivity at Wadi Jeddah Innovation Hub. Flexible, all-inclusive monthly plans with no hidden setup costs."
+      "subtitle": "Choose the space that inspires your productivity at Wadi Jeddah Innovation Hub. Flexible, all-inclusive monthly plans with no hidden setup costs.",
+      "primaryCta": "Contact on WhatsApp",
+      "secondaryCta": "Explore Options",
+      "visualLabel": "Wadi Jeddah Innovation Hub",
+      "visualTitle": "An integrated workspace for founders and startup teams",
+      "visualMeta": "Workspaces, meetings, and events within one innovation community."
     },
     "intro": "We provide a complete platform for success with premium workspaces equipped with advanced facilities to help you develop your innovations in a dynamic community.",
-    "pricingTitle": "Flexible Plans for Freelancers & Startups",
+    "overview": {
+      "eyebrow": "More than a desk",
+      "title": "A workspace built for focus, collaboration, and growth",
+      "content": "Wadi Jeddah workspaces are not just offices; they bring flexible work, meetings, events, and entrepreneurial community into one complete environment. They support freelancers, startups, and teams looking for a professional base inside an active innovation ecosystem.",
+      "highlights": [
+        "A professional base inside Wadi Jeddah Innovation Hub",
+        "Flexible plans for individuals and teams",
+        "Close to an entrepreneurial community and networking opportunities"
+      ]
+    },
+    "options": {
+      "title": "Choose the workspace that fits your next move",
+      "subtitle": "Flexible options from daily work seats to private areas, meetings, and event spaces.",
+      "items": {
+        "hotDesk": {
+          "title": "Hot Desks",
+          "desc": "Flexible daily work seating inside an active environment and connected community.",
+          "meta": "High flexibility"
+        },
+        "dedicatedDesk": {
+          "title": "Dedicated Desks",
+          "desc": "A fixed desk that gives you more stability and a clear daily work base.",
+          "meta": "Daily consistency"
+        },
+        "privateOffice": {
+          "title": "Private Offices",
+          "desc": "More private areas for small teams and companies in their growth stage.",
+          "meta": "Privacy and focus"
+        },
+        "meetingRooms": {
+          "title": "Meeting Rooms",
+          "desc": "Equipped rooms for meetings, presentations, and focused workshops.",
+          "meta": "Ready to book"
+        },
+        "eventSpaces": {
+          "title": "Event Spaces",
+          "desc": "A suitable setting for gatherings, workshops, and initiative launches.",
+          "meta": "Events and community"
+        }
+      },
+      "cta": "Request details"
+    },
+    "pricingTitle": "Clear Monthly Plans",
+    "priceUnit": "SAR / month",
+    "audienceLabel": "Best for",
     "plans": {
       "hotDesk": {
         "title": "1. Hot Desk",
@@ -108,20 +157,25 @@
       }
     },
     "amenities": {
-      "title": "Exceptional Amenities Included in All Plans",
+      "title": "Facilities and services that improve the workday",
+      "subtitle": "The essential details your team needs to work with confidence and ease inside the hub.",
       "list": [
-        "24/7 Access: Secure around-the-clock access all week.",
-        "Fiber Internet: Ultra-fast and reliable connection.",
-        "Smart Devices: Printing and scanning services at your disposal.",
-        "Hospitality Area: Cafe and kitchen providing daily beverages.",
+        "High-speed internet: Reliable connectivity for meetings and daily work.",
+        "Technical support: Practical help so you can stay focused on your work.",
+        "Comprehensive security: Safe access and a reassuring work environment.",
+        "Printing and scanning: Essential office services available when needed.",
         "Personal Lockers: Secure storage for your documents and devices.",
-        "Recreational Spaces: Designated areas for relaxation and networking."
+        "Coffee area: A calm space for breaks and quick conversations.",
+        "Entrepreneurial community: Opportunities to connect with founders and innovators.",
+        "Flexible work environment: Options that fit your working style and team size."
       ]
     },
     "cta": {
       "title": "Shape the Future of Your Project Today!",
-      "button": "Request an Office Tour"
-    }
+      "content": "Talk to us on WhatsApp to choose the right workspace, get the details, or book a tour at Wadi Jeddah Innovation Hub.",
+      "button": "Book a Tour on WhatsApp"
+    },
+    "whatsappMessage": "Hello, I would like to learn more about the workspaces at Wadi Jeddah Innovation Hub and book a tour."
   },
   "events": {
     "hero": {

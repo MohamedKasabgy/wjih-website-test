@@ -47,6 +47,9 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
     }
   }, [])
 
+  const rightRoutes = appRoutes.slice(0, 3)
+  const leftRoutes = appRoutes.slice(3)
+
   return (
     <motion.header
       className="fixed left-0 right-0 z-[70] w-full"
@@ -57,16 +60,9 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
           className={[
             'navbar-glass transition-all duration-500 ease-out',
             isScrolled
-              ? 'shadow-lg shadow-[var(--page-color-soft)] border-transparent'
-              : 'border border-[var(--color-border)] shadow-sm',
+              ? 'liquid-glass shadow-md border-transparent rounded-[2rem] mt-2 md:mt-3'
+              : 'bg-white/80 backdrop-blur-md border border-[#EAE4E0] shadow-sm rounded-b-[2rem] rounded-t-none',
           ].join(' ')}
-          style={{
-            // Square corners (no rounding)
-            borderStartStartRadius: '0',
-            borderEndStartRadius: '9',
-            borderStartEndRadius: '0',
-            borderEndEndRadius: '9',
-          }}
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
