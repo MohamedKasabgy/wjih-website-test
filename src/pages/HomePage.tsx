@@ -43,7 +43,7 @@ export function HomePage() {
   }, [])
 
   return (
-    <div className="flex flex-col pb-16 sm:pb-20">
+    <div className="flex flex-col">
       {/* ── Hero ─────────────────────────────────────────────── */}
       <HeroLogo />
 
@@ -133,7 +133,7 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Facilities ────────────────────────────────────────── */}
-      <section className="py-15">
+      <section className="py-24">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
@@ -229,4 +229,3 @@ export function HomePage() {
     </div>
   )
 }
-ma
