@@ -67,7 +67,7 @@ export function PageLayout() {
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
           opacity: 0.25,
-          filter: 'blur(10px)',
+          filter: 'blur(5px)',
           transform: 'scale(1.1)' // Prevent blurred edges from showing white
         }}
       />
