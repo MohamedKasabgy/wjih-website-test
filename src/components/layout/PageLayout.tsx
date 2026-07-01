@@ -6,7 +6,7 @@ import { getRouteByPath } from '../../config/routes'
 import { pageThemes } from '../../config/pageThemes'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
-import Logo from '../../assets/images/NewLogoRed.svg'
+import Logo from '../../assets/images/NewLogoDarkRed.svg'
 import bgImage from '../../assets/images/NewBG.png'
 
 type ThemeStyle = CSSProperties & {
