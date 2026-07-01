@@ -119,9 +119,21 @@ export function HomePage() {
 
             {/* Text (On the left visually in RTL layout) */}
             <div className="order-1 md:order-2 space-y-6">
-              <h2 className="text-4xl md:text-[3.5rem] font-bold text-[#1E2650] mb-8 leading-[1.2]">
-                وادي جدة للابتكار.. حيث تنمو<br />الأفكار
-              </h2>
+              <h2 className="text-4xl md:text-[3.5rem] font-bold mb-8 leading-[1.2]">
+  <span className="text-[#7A1219]">
+    مجمع وادي جدة للابتكار.. 
+  </span>{' '}<br />
+  <span className="inline-block -translate-x-9 text-[#1E2650] ml-2">
+   حيث
+    </span> 
+  <span className="inline-block -translate-x-10 text-[#EE7203]">
+       تنمو
+  </span>
+  <br />
+  <span className="inline-block -translate-x-60 text-[#1E2650]">
+    الأفكار
+  </span>
+</h2>
               <p className="text-xl text-[#5A6480] leading-[1.8]">
                 نحن أكثر من مجرد مساحة عمل؛ نحن بيئة ريادية متكاملة تدعم المبتكرين ورواد الأعمال. نسعى لتمكين العقول المبدعة عبر تقديم خدمات حصرية وبرامج مكثفة تذلل العقبات وتسرّع نمو شركتك لتنطلق نحو المستقبل.
               </p>
