@@ -6,20 +6,12 @@ import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
 import logo from '../../assets/images/NewLogo.svg'
-import barImage from '../../assets/images/Bar.jpg'
 
 export function Footer() {
   const { t } = useTranslation()
 
   return (
     <footer className="bg-[#1E2650] mt-0">
-      {/* Partners Bar */}
-      <div className="bg-white py-12 rounded-t-[3rem] shadow-sm">
-        <Container>
-          <img src={barImage} alt="Partners" className="w-full max-w-5xl mx-auto h-auto object-contain" />
-        </Container>
-      </div>
-
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
         <div className="flex flex-col md:flex-row justify-between md:items-start gap-12 text-base text-white/80">
