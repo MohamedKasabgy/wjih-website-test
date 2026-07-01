@@ -32,7 +32,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
   const progress = useScrollProgress()
   const headerOpacity = useTransform(progress, [0.2, 0.85], [0, 1])
   const headerY = useTransform(progress, [0, 1], [-24, 0])
-  const headerStyle = isHome ? { opacity: headerOpacity, y: headerY, willChange: 'opacity, transform' } : undefined
+  const headerStyle = isHome ? { opacity: headerOpacity, y: headerY } : undefined
 
   useEffect(() => {
     const updateScrollState = () => {
