@@ -74,7 +74,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
             <div className="flex justify-between items-center w-full px-4 gap-6">
               <Button
                 variant="primary"
-                className="hidden md:inline-flex !px-6 !py-2.5 text-sm !bg-[#5A6480] !border-[#5A6480] hover:!bg-[#464f69] shrink-0"
+                className="hidden md:inline-flex !px-6 !py-2.5 text-sm shrink-0"
               >
                 {t('common.login')}
               </Button>
