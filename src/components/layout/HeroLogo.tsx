@@ -19,12 +19,12 @@ export function HeroLogo() {
   const progress = useScrollProgress()
 
   // Logo centre Y, in px — updated after mount and on resize.
-  const startTopPx = useMotionValue(window.innerHeight * 0.4)
+  const startTopPx = useMotionValue(window.innerHeight * 0.5)
 
   useLayoutEffect(() => {
     const measure = () => {
-      // Place logo exactly in the center vertically (adjusting slightly up for optical centering)
-      startTopPx.set(window.innerHeight * 0.38)
+      // Place logo exactly in the center vertically
+      startTopPx.set(window.innerHeight * 0.5)
     }
 
     measure()

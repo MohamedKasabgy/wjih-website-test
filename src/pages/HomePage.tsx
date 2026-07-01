@@ -57,17 +57,7 @@ export function HomePage() {
         }}
       >
         <div className="absolute inset-0 bg-black/50" />
-        <motion.div
-          style={{ opacity: titleOpacity, y: titleY, willChange: 'opacity, transform' }}
-          className="relative z-10 pt-[calc(38vh_+_138px)] sm:pt-[calc(38vh_+_170px)] px-8 sm:px-12 text-center max-w-3xl mx-auto"
-        >
-          <h1 data-hero-title className="text-4xl font-extrabold text-white sm:text-6xl leading-tight mb-4 drop-shadow-md">
-            مجمع وادي جدة للابتكار
-          </h1>
-          <p className="text-xl sm:text-2xl font-medium text-white/90 drop-shadow-sm max-w-2xl mx-auto">
-            مكان رواد الأعمال في قلب جدة
-          </p>
-        </motion.div>
+        {/* Text removed so logo can be centered alone */}
 
         {/* Scroll Hint */}
         <motion.div
