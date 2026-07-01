@@ -2,7 +2,8 @@ import { useLayoutEffect } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 import { useScrollProgress } from '../../hooks/useScrollProgress'
-import logo from '../../assets/images/LogoWijih.png'
+import logoDarkRed from '../../assets/images/NewLogoDarkRed.svg'
+import logoWhite from '../../assets/images/NewLogo.svg'
 
 /**
  * Fixed morphing logo.
@@ -40,13 +41,6 @@ export function HeroLogo() {
   // Much bigger base size now, scale down to 0.28 to fit the newly enlarged navbar logo nicely.
   const scale = useTransform(progress, [0, 1], [1, 0.28])
 
-  // Subtle shadow in the hero that fades away as the logo shrinks into the navbar.
-  const filter = useTransform(
-    progress,
-    [0, 0.6],
-    ['drop-shadow(0 10px 18px rgba(0,0,0,0.30))', 'drop-shadow(0 0 0 rgba(0,0,0,0))'],
-  )
-
   // Cross-fade: white logo in the hero → original full-colour logo in the navbar.
   const whiteOpacity = useTransform(progress, [0, 0.6], [1, 0])
 
@@ -56,17 +50,17 @@ export function HeroLogo() {
     <motion.div
       aria-hidden
       className="pointer-events-none fixed z-[80] left-1/2"
-      style={{ top, x: '-50%', y: '-50%', scale, filter }}
+      style={{ top, x: '-50%', y: '-50%', scale, willChange: 'transform, top' }}
     >
-      <div className="relative">
-        {/* Base: original full-colour logo (revealed as the white layer fades) */}
-        <motion.img layoutId="wjih-logo" src={logo} alt="" className={imgClass} />
+      <div className="relative flex justify-center items-center">
+        {/* Base: red logo (revealed as the white layer fades) */}
+        <motion.img src={logoDarkRed} alt="" className={imgClass} />
         {/* Overlay: white version, fades out on scroll */}
         <motion.img
-          src={logo}
+          src={logoWhite}
           alt=""
           style={{ opacity: whiteOpacity }}
-          className={`absolute inset-0 [filter:brightness(0)_invert(1)] ${imgClass}`}
+          className={`absolute inset-0 m-auto ${imgClass}`}
         />
       </div>
     </motion.div>

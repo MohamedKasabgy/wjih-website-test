@@ -5,7 +5,7 @@ import { appRoutes } from '../../config/routes'
 import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
-import logo from '../../assets/images/LogoWijih.png'
+import logo from '../../assets/images/NewLogo.svg'
 
 export function Footer() {
   const { t } = useTranslation()
