@@ -20,7 +20,7 @@ export function Footer() {
         <div className="flex flex-col md:flex-row justify-between md:items-center gap-12 text-base text-white/80">
 
           {/* Brand */}
-          <div className="max-w-md">
+          <div className="max-w-xl">
             <img src={logo} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto mb-6 brightness-0 invert opacity-90" />
             <p className="leading-relaxed mb-8 text-white/70 text-lg">
               {t('footer.description')}
@@ -35,12 +35,12 @@ export function Footer() {
                 {t('common.contactWhatsapp')}
               </a>
             </div>
-            
+
             {/* Partners */}
-            <div className="flex flex-row items-center gap-4 lg:gap-8 w-full mt-8 md:mt-12">
-              <img src={logoWjih} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
-              <img src={logoKau} alt="KAU" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
-              <img src={logoCic} alt="CIC" className="h-24 md:h-32 w-auto object-contain shrink min-w-0" />
+            <div className="flex flex-row items-center w-full mt-8 md:mt-12 -mx-6">
+              <img src={logoWjih} alt="Wadi Jeddah" className="h-40 md:h-56 w-auto object-contain shrink-0 -mx-4" />
+              <img src={logoKau} alt="KAU" className="h-40 md:h-56 w-auto object-contain shrink-0 -mx-6" />
+              <img src={logoCic} alt="CIC" className="h-32 md:h-48 w-auto object-contain shrink-0 -mx-6" />
             </div>
           </div>
 
