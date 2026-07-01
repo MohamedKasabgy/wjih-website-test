@@ -13,9 +13,9 @@ export function Footer() {
   const { t } = useTranslation()
 
   return (
-    <footer className="z-10 relative mt-12 mb-4 md:mb-8">
+    <footer className="z-10 relative mt-12">
       <Container>
-        <div className="navbar-glass shadow-md border-transparent rounded-[2rem] overflow-hidden">
+        <div className="navbar-glass shadow-md border-transparent overflow-hidden">
           
           {/* Main footer body */}
           <div className="pt-16 pb-10 px-6 md:px-12">
@@ -72,7 +72,7 @@ export function Footer() {
                       scrolling="no"
                       marginHeight={0}
                       marginWidth={0}
-                      src="https://maps.google.com/maps?q=Wadi%20Jeddah&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                      src="https://maps.google.com/maps?q=21.497723,39.2314&t=&z=19&ie=UTF8&iwloc=&output=embed"
                       className="rounded-lg opacity-80 hover:opacity-100 transition-opacity mt-4 w-full max-w-[280px]"
                     ></iframe>
                   </li>

@@ -3,12 +3,11 @@ import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router'
 import { motion, useTransform, AnimatePresence } from 'framer-motion'
 import { Container } from '../components/ui/Container'
-import { Wifi, ShieldCheck, Coffee, Rocket } from 'lucide-react'
 import { Button } from '../components/ui/Button'
 import { HeroLogo } from '../components/layout/HeroLogo'
 import { useScrollProgress } from '../hooks/useScrollProgress'
 import heroImage from '../../src/assets/images/heroImage.jpeg'
-import aboutImage from '../../src/assets/images/aboutImage.jpeg'
+import aboutImage from '../../src/assets/images/aboutImageCompressed.jpg'
 import graph2 from '../assets/images/graph2.png'
 
 export function HomePage() {
@@ -96,9 +95,9 @@ export function HomePage() {
       {/* ── About ─────────────────────────────────────────────── */}
       <section className="py-24 bg-white">
         <Container >
-          <div className="grid md:grid-cols-2 gap-16 items-center">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
             {/* Image (On the right visually in RTL layout) */}
-            <div className="relative order-2 md:order-1">
+            <div className="relative order-2 lg:order-1">
               <div className="section-card overflow-hidden p-0">
                 <img
                   src={aboutImage}
@@ -109,9 +108,9 @@ export function HomePage() {
             </div>
 
             {/* Text (On the left visually in RTL layout) */}
-            <div className="order-1 md:order-2 space-y-6">
+            <div className="order-1 lg:order-2 space-y-6">
               <h2 className="text-4xl md:text-[3.5rem] font-bold text-[#1E2650] mb-8 leading-[1.2]">
-                وادي جدة للابتكار.. حيث تنمو<br />الأفكار
+                <span className="text-[#7A1219]">مجمع وادي جدة للابتكار</span>..<br /> حيث تنمو الأفكار
               </h2>
               <p className="text-xl text-[#5A6480] leading-[1.8]">
                 نحن أكثر من مجرد مساحة عمل؛ نحن بيئة ريادية متكاملة تدعم المبتكرين ورواد الأعمال. نسعى لتمكين العقول المبدعة عبر تقديم خدمات حصرية وبرامج مكثفة تذلل العقبات وتسرّع نمو شركتك لتنطلق نحو المستقبل.
@@ -142,7 +141,7 @@ export function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 mb-12 relative z-10">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="section-card relative p-8 pt-14">
-                  <span className="feature-number text-[#5A0D12] !opacity-100">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="feature-number text-[#5A0D12] !opacity-100" style={{ left: 'auto', right: '1.25rem' }}>{String(i + 1).padStart(2, '0')}</span>
                   <p className="text-[#1E2650] leading-relaxed text-lg">
                     {t(`home.facilities.list.${i}` as any)}
                   </p>
@@ -159,10 +158,10 @@ export function HomePage() {
         </Container>
       </section>
 
-      <div className="section-divider" />
+      <div className="section-divider mb-1" />
 
       {/* ── Services ──────────────────────────────────────────── */}
-      <section className="py-24 bg-[#5A0D12] relative overflow-hidden">
+      <section className=" py-24 bg-[#5A0D12] relative overflow-hidden">
         {/* Subtle white grid background */}
         <div 
           className="absolute inset-0 opacity-20 pointer-events-none" 
@@ -185,30 +184,23 @@ export function HomePage() {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
-            {[0, 1, 2, 3].map((i) => {
-              const Icon = [Wifi, ShieldCheck, Coffee, Rocket][i];
-              return (
-                <div key={i} className="section-card relative p-8 group flex flex-col h-full overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
-                  {/* Number in the top right corner */}
-                  <span className="absolute top-4 start-5 text-4xl font-black text-[#5A0D12]/10 transition-colors group-hover:text-[#5A0D12]/20">
-                    {String(i + 1).padStart(2, '0')}
-                  </span>
-                  
-                  <div className="mb-8 mt-4 flex items-center justify-center w-16 h-16 rounded-2xl bg-[#5A0D12]/5 text-[#5A0D12] group-hover:bg-[#5A0D12]/10 transition-colors">
-                    <Icon size={32} strokeWidth={1.5} />
-                  </div>
-                  
-                  <p className="text-[#1E2650] leading-relaxed text-lg font-medium relative z-10">
-                    {t(`home.services.list.${i}` as any)}
-                  </p>
-                </div>
-              );
-            })}
+            {[0, 1, 2, 3].map((i) => (
+              <div key={i} className="section-card relative p-8 group flex flex-col h-full overflow-hidden transition-transform hover:-translate-y-1 hover:shadow-lg">
+                {/* Number in the top right corner */}
+                <span className="absolute top-4 start-5 text-4xl font-black text-[#5A0D12] !opacity-100">
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+
+                <p className="mt-14 text-[#1E2650] leading-relaxed text-lg font-medium relative z-10">
+                  {t(`home.services.list.${i}` as any)}
+                </p>
+              </div>
+            ))}
           </div>
 
           <div className="text-center mt-16">
             <Link to="/incubator">
-              <Button className="bg-white text-[#5A0D12] hover:bg-white/90 border-transparent text-base font-bold px-10 py-4 shadow-md">
+              <Button className="bg-white !text-[#5A0D12] hover:bg-white/90 border-transparent text-base font-bold px-10 py-4 shadow-md">
                 {t('home.services.cta')}
               </Button>
             </Link>
@@ -232,7 +224,7 @@ export function HomePage() {
         </div>
 
         {/* Decorative graphic — smaller copy docked at the end (right) edge. */}
-        <div className="absolute -right-4 top-80 pointer-events-none">
+        <div className="absolute -right-4 top-60 pointer-events-none">
           <img
             src={graph2}
             alt=""

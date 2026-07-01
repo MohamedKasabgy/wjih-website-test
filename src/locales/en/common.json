@@ -193,18 +193,20 @@
       "hall1": {
         "title": "Integrated Event Hall 1",
         "price": "350 SAR / Hour",
-        "specs": "Capacity of 50. Large screen, advanced sound system, and fast internet for streaming."
+        "specs": "Capacity of 50. Large screen, advanced sound system, and fast internet for streaming.",
+        "cta": "Book This Hall"
       },
       "hall2": {
         "title": "Integrated Event Hall 2",
         "price": "285 SAR / Hour",
-        "specs": "Capacity of 25. The ideal choice for workshops, equipped with a smart interactive screen."
+        "specs": "Capacity of 25. The ideal choice for workshops, equipped with a smart interactive screen.",
+        "cta": "Book This Hall"
       },
       "hall3": {
         "title": "Grand Space (Both Halls + Theater)",
         "price": "575 SAR / Hour",
         "specs": "Combined capacity of 85 with a fully integrated technological ecosystem at your disposal.",
-        "cta": "Book the Grand Space"
+        "cta": "Book This Hall"
       }
     },
     "catering": {

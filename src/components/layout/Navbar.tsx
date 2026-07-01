@@ -83,7 +83,7 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                 <NavLink
                   to="/"
                   onClick={() => setIsMenuOpen(false)}
-                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
+                  className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[calc(50%-6px)] flex items-center hover:opacity-80 transition-opacity z-50"
                 >
                   <motion.img 
                     layoutId="wjih-logo"
