@@ -4,8 +4,6 @@ import { motion, AnimatePresence } from 'framer-motion'
 
 import { getRouteByPath } from '../../config/routes'
 import { pageThemes } from '../../config/pageThemes'
-import { ScrollToTop } from './ScrollToTop'
-import { PageTransition } from './PageTransition'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
 import Logo from '../../assets/images/NewLogoRed.svg'
