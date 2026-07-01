@@ -7,7 +7,7 @@ import { pageThemes } from '../../config/pageThemes'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
 import Logo from '../../assets/images/LogoWijih.png'
-import bgImage from '../../assets/images/BG.jpg'
+import bgImage from '../../assets/images/NewBG.png'
 
 type ThemeStyle = CSSProperties & {
   '--page-color': string
@@ -60,13 +60,15 @@ export function PageLayout() {
     <div className="min-h-svh bg-white text-[var(--color-text)] transition-colors duration-500 relative z-0" style={themeStyle}>
       {/* Global Background Layer */}
       <div
-        className="absolute inset-0 z-[-1] pointer-events-none"
+        className="fixed inset-0 z-[-1] pointer-events-none"
         style={{
           backgroundImage: `url(${bgImage})`,
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-          opacity: 0.15
+          opacity: 0.25,
+          filter: 'blur(10px)',
+          transform: 'scale(1.1)' // Prevent blurred edges from showing white
         }}
       />
 
