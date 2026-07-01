@@ -6,12 +6,20 @@ import { createWhatsAppUrl } from '../../lib/whatsapp'
 import { buttonClasses } from '../ui/buttonStyles'
 import { Container } from '../ui/Container'
 import logo from '../../assets/images/NewLogo.svg'
+import barImage from '../../assets/images/Bar.jpg'
 
 export function Footer() {
   const { t } = useTranslation()
 
   return (
     <footer className="bg-[#1E2650] mt-0">
+      {/* Partners Bar */}
+      <div className="bg-white py-12 rounded-t-[3rem] shadow-sm">
+        <Container>
+          <img src={barImage} alt="Partners" className="w-full max-w-5xl mx-auto h-auto object-contain" />
+        </Container>
+      </div>
+
       {/* Main footer body */}
       <Container className="pt-16 pb-10">
         <div className="flex flex-col md:flex-row justify-between md:items-start gap-12 text-base text-white/80">
@@ -33,22 +41,22 @@ export function Footer() {
           </div>
 
           {/* Contact */}
-          <div className="text-right md:flex-1 md:pr-12">
+          <div className="text-right">
             <h4 className="font-bold text-white text-xl mb-6">{t('footer.contactInfo')}</h4>
-            <ul className="flex flex-col md:flex-row md:items-start gap-8 lg:gap-12 text-lg">
-              <li className="flex-1">
+            <ul className="flex flex-col gap-5 text-lg">
+              <li>
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.phone')}</span>
                 <a href="tel:0550268326" className="text-white/90 hover:text-white transition-colors font-medium">
                   0550268326
                 </a>
               </li>
-              <li className="flex-1">
+              <li>
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.email')}</span>
-                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/90 hover:text-white transition-colors font-medium break-all">
+                <a href="mailto:Wjih@wadi-jeddah.com.sa" className="text-white/90 hover:text-white transition-colors font-medium">
                   Wjih@wadi-jeddah.com.sa
                 </a>
               </li>
-              <li className="flex-1 min-w-[200px]">
+              <li>
                 <span className="block text-sm font-bold uppercase tracking-wider text-white/50 mb-1">{t('footer.location')}</span>
                 <span className="text-white/90">{t('footer.locationText')}</span>
                 <iframe
@@ -59,7 +67,7 @@ export function Footer() {
                   marginHeight={0}
                   marginWidth={0}
                   src="https://maps.google.com/maps?q=Wadi%20Jeddah&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                  className="rounded-lg opacity-80 hover:opacity-100 transition-opacity mt-4 w-full"
+                  className="rounded-lg opacity-80 hover:opacity-100 transition-opacity mt-4 w-full max-w-[280px]"
                 ></iframe>
               </li>
             </ul>
