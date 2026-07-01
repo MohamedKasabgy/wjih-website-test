@@ -48,7 +48,7 @@ export function HomePage() {
       <HeroLogo />
 
       <section
-        className="relative min-h-screen overflow-hidden rounded-b-3xl"
+        className="relative min-h-screen overflow-hidden"
         style={{
           backgroundImage: `url(${heroImage})`,
           backgroundSize: 'cover',
@@ -100,8 +100,8 @@ export function HomePage() {
       </section>
 
       {/* ── About ─────────────────────────────────────────────── */}
-          <section className="py-24 ">
-            <Container className="bg-white">
+          <section className="py-24 bg-white">
+            <Container >
               <div className="grid md:grid-cols-2 gap-16 items-center">
                 {/* Image (On the right visually in RTL layout) */}
                 <div className="relative order-2 md:order-1">
@@ -116,9 +116,7 @@ export function HomePage() {
 
                 {/* Text (On the left visually in RTL layout) */}
                 <div className="order-1 md:order-2 space-y-6">
-                  <span className="inline-flex items-center gap-2 text-xs font-bold tracking-widest text-[#D6BAAE] border border-[#D6BAAE] rounded-full px-6 py-2 mb-2">
-                    وادي جدة للابتكار.. حيث تنمو الأفكار
-                  </span>
+
                   <h2 className="text-4xl md:text-[3.5rem] font-bold text-[#1E2650] mb-8 leading-[1.2]">
                     وادي جدة للابتكار.. حيث تنمو<br />الأفكار
                   </h2>
