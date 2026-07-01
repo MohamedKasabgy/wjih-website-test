@@ -133,7 +133,7 @@ export function HomePage() {
       <div className="section-divider" />
 
       {/* ── Facilities ────────────────────────────────────────── */}
-      <section className="py-24">
+      <section className="py-15">
         <Container>
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
@@ -151,7 +151,7 @@ export function HomePage() {
             <div className="grid md:grid-cols-3 gap-8 mb-12 relative z-10">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="section-card relative p-8 pt-14">
-                  <span className="feature-number">{String(i + 1).padStart(2, '0')}</span>
+                  <span className="feature-number text-[#5A0D12] !opacity-100">{String(i + 1).padStart(2, '0')}</span>
                   <p className="text-[#1E2650] leading-relaxed text-lg">
                     {t(`home.facilities.list.${i}` as any)}
                   </p>
@@ -185,7 +185,7 @@ export function HomePage() {
           <div className="grid sm:grid-cols-2 gap-8 mb-12">
             {[0, 1, 2, 3].map((i) => (
               <div key={i} className="section-card relative p-8 pt-16 group">
-                <span className="feature-number group-hover:opacity-25 transition-opacity">{String(i + 1).padStart(2, '0')}</span>
+                <span className="feature-number text-[#5A0D12] !opacity-100 transition-opacity">{String(i + 1).padStart(2, '0')}</span>
                 <p className="text-[#1E2650] leading-relaxed text-lg">
                   {t(`home.services.list.${i}` as any)}
                 </p>
@@ -193,9 +193,11 @@ export function HomePage() {
             ))}
           </div>
 
-          <Link to="/incubator">
-            <Button variant="outline" className="text-base px-10 py-4">{t('home.services.cta')}</Button>
-          </Link>
+          <div className="text-center mt-12">
+            <Link to="/incubator">
+              <Button variant="outline" className="text-base px-10 py-4">{t('home.services.cta')}</Button>
+            </Link>
+          </div>
         </Container>
       </section>
 
@@ -215,9 +217,13 @@ export function HomePage() {
           <p className="text-lg text-white/70 mb-10 max-w-2xl mx-auto leading-relaxed">
             {t('home.community.content')}
           </p>
-          <Button variant="primary" className="text-lg px-10 py-4 !bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12]">
-            {t('common.joinCommunity')}
-          </Button>
+          <div className="flex justify-center">
+            <Button
+              variant="primary"
+              className="text-lg px-10 py-4 !bg-[#7A1219] !border-[#7A1219] hover:!bg-[#5a0d12]"
+            >            {t('common.joinCommunity')}
+            </Button>
+          </div>
         </Container>
       </section>
     </div>
