@@ -47,56 +47,50 @@ export function HomePage() {
       <HeroLogo />
 
       {/* ── Hero ──────────────────────────────────────────────── */}
-      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden bg-white">
-        {/* Wrapper to constrain width and add padding, matching Navbar */}
-        <div className="absolute inset-0 pt-0 w-full max-w-[1400px] mx-auto px-4 sm:px-6 md:px-8">
-          {/* The actual rounded hero card */}
-          <div className="relative w-full h-full overflow-hidden rounded-b-[32px] sm:rounded-b-[40px]">
-            {/* Background Image / Video */}
-            <div className="absolute inset-0 z-0">
-              <img
-                src={heroImage}
-                alt="Wadi Jeddah Innovation Hub"
-                className="w-full h-full object-cover"
-              />
-            </div>
-
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-black/50 z-0" />
-
-            {/* Scroll Hint */}
-            <motion.div
-              style={{ opacity: scrollHintOpacity, willChange: 'opacity' }}
-              className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-10"
-            >
-              <motion.div
-                animate={{ y: [0, 10, 0] }}
-                transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                className="text-white opacity-80"
-              >
-                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M12 5v14M19 12l-7 7-7-7" />
-                </svg>
-              </motion.div>
-
-              <AnimatePresence>
-                {showScrollText && (
-                  <motion.span
-                    initial={{ opacity: 0, y: -10 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    exit={{ opacity: 0, y: -10 }}
-                    className="text-white/90 text-sm font-medium tracking-wide drop-shadow-md"
-                  >
-                    اسحب للأسفل
-                  </motion.span>
-                )}
-              </AnimatePresence>
-            </motion.div>
-
-            {/* White Fade Gradient */}
-            <div className="absolute bottom-0 left-0 right-0 h-8 sm:h-12 bg-gradient-to-t from-white/70 to-transparent pointer-events-none z-0" />
-          </div>
+      <section className="relative min-h-[100svh] flex flex-col justify-center overflow-hidden">
+        {/* Background Image / Video */}
+        <div className="absolute inset-0 z-0">
+          <img
+            src={heroImage}
+            alt="Wadi Jeddah Innovation Hub"
+            className="w-full h-full object-cover"
+          />
         </div>
+
+        {/* Overlay */}
+        <div className="absolute inset-0 bg-black/50 z-0" />
+
+        {/* Scroll Hint */}
+        <motion.div
+          style={{ opacity: scrollHintOpacity, willChange: 'opacity' }}
+          className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 pointer-events-none z-10"
+        >
+          <motion.div
+            animate={{ y: [0, 10, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+            className="text-white opacity-80"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M12 5v14M19 12l-7 7-7-7" />
+            </svg>
+          </motion.div>
+
+          <AnimatePresence>
+            {showScrollText && (
+              <motion.span
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -10 }}
+                className="text-white/90 text-sm font-medium tracking-wide drop-shadow-md"
+              >
+                اسحب للأسفل
+              </motion.span>
+            )}
+          </AnimatePresence>
+        </motion.div>
+
+        {/* White Fade Gradient */}
+        <div className="absolute bottom-0 left-0 right-0 h-8 sm:h-12 bg-gradient-to-t from-white to-transparent pointer-events-none z-0" />
       </section>
 
       {/* ── About ─────────────────────────────────────────────── */}
