@@ -53,16 +53,13 @@ export function HomePage() {
           {/* The actual rounded hero card */}
           <div className="relative w-full h-full overflow-hidden rounded-b-[32px] sm:rounded-b-[40px]">
             {/* Background Image / Video */}
-            <motion.div
-              style={{ y: backgroundY, willChange: 'transform' }}
-              className="absolute inset-0 z-0"
-            >
+            <div className="absolute inset-0 z-0">
               <img
                 src={heroImage}
                 alt="Wadi Jeddah Innovation Hub"
                 className="w-full h-full object-cover"
               />
-            </motion.div>
+            </div>
 
             {/* Overlay */}
             <div className="absolute inset-0 bg-black/50 z-0" />
