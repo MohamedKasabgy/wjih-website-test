@@ -9,7 +9,7 @@ import { Button } from '../ui/Button'
 import { useScrollProgress } from '../../hooks/useScrollProgress'
 // Language switch temporarily disabled (Arabic-only for now); re-enable later.
 // import { LanguageToggle } from './LanguageToggle'
-import logo from '../../assets/images/LogoWijih.png'
+import logo from '../../assets/images/NewLogoRed.svg'
 
 const getNavLinkClassName = (isHome: boolean) => ({ isActive }: { isActive: boolean }) =>
   [

@@ -2,7 +2,7 @@ import { useLayoutEffect } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 import { useScrollProgress } from '../../hooks/useScrollProgress'
-import logo from '../../assets/images/LogoWijih.png'
+import logo from '../../assets/images/NewLogoRed.svg'
 
 /**
  * Fixed morphing logo.
