@@ -36,10 +36,10 @@ export function Footer() {
           </div>
 
           {/* Partners */}
-          <div className="flex flex-col md:flex-col items-center justify-center gap-10 md:gap-12 flex-1">
-            <img src={logoWjih} alt="Wadi Jeddah" className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90" />
-            <img src={logoKau} alt="KAU" className="h-16 md:h-20 w-auto object-contain brightness-0 invert opacity-90" />
-            <img src={logoCic} alt="CIC" className="h-12 md:h-16 w-auto object-contain brightness-0 invert opacity-90" />
+          <div className="flex flex-row flex-wrap items-center justify-center gap-6 flex-1">
+            <img src={logoWjih} alt="Wadi Jeddah" className="h-24 md:h-32 w-auto object-contain brightness-0 invert opacity-90" />
+            <img src={logoKau} alt="KAU" className="h-24 md:h-32 w-auto object-contain brightness-0 invert opacity-90" />
+            <img src={logoCic} alt="CIC" className="h-24 md:h-32 w-auto object-contain brightness-0 invert opacity-90" />
           </div>
 
           {/* Contact */}
