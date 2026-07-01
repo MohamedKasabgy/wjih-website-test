@@ -6,7 +6,7 @@ import { getRouteByPath } from '../../config/routes'
 import { pageThemes } from '../../config/pageThemes'
 import { Footer } from './Footer'
 import { Navbar } from './Navbar'
-import Logo from '../../assets/images/NewLogoDarkRed.svg'
+import Logo from '../../assets/images/NewLogo.svg'
 import bgImage from '../../assets/images/NewBG.png'
 
 type ThemeStyle = CSSProperties & {
@@ -87,11 +87,19 @@ export function PageLayout() {
             
             {/* Centered Logo */}
             <div className="fixed inset-0 z-[80] flex items-center justify-center pointer-events-none">
-              <motion.img
+              <motion.div
                 layoutId="wjih-logo"
-                src={Logo}
-                alt="Wijih Logo"
-                className="w-48 md:w-60 h-auto"
+                className="w-48 h-[108px] md:w-60 md:h-[135px] bg-[#5A0D12]"
+                style={{
+                  WebkitMaskImage: `url(${Logo})`,
+                  WebkitMaskSize: 'contain',
+                  WebkitMaskRepeat: 'no-repeat',
+                  WebkitMaskPosition: 'center',
+                  maskImage: `url(${Logo})`,
+                  maskSize: 'contain',
+                  maskRepeat: 'no-repeat',
+                  maskPosition: 'center'
+                }}
                 initial={{ scaleY: 0.8 }}
                 animate={{ scaleY: [0.8, 1.2, 1, 0.9, 1] }}
                 exit={{ scaleY: [1, 1.2, 0.8] }}

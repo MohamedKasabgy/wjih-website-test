@@ -2,8 +2,7 @@ import { useLayoutEffect } from 'react'
 import { motion, useMotionValue, useTransform } from 'framer-motion'
 
 import { useScrollProgress } from '../../hooks/useScrollProgress'
-import logoDarkRed from '../../assets/images/NewLogoDarkRed.svg'
-import logoWhite from '../../assets/images/NewLogo.svg'
+import logo from '../../assets/images/NewLogo.svg'
 
 /**
  * Fixed morphing logo.
@@ -43,10 +42,8 @@ export function HeroLogo() {
 
   // Removed the drop-shadow filter based on user feedback
 
-  // Cross-fade: white logo in the hero → original full-colour logo in the navbar.
-  const whiteOpacity = useTransform(progress, [0, 0.6], [1, 0])
-
-  const imgClass = 'h-64 w-auto max-w-[80vw] select-none sm:h-80'
+  // Transition color from pure white to #5A0D12 as it scrolls up
+  const backgroundColor = useTransform(progress, [0, 0.6], ['#FFFFFF', '#5A0D12'])
 
   return (
     <motion.div
@@ -54,17 +51,21 @@ export function HeroLogo() {
       className="pointer-events-none fixed z-[80] left-1/2"
       style={{ top, x: '-50%', y: '-50%', scale }}
     >
-      <div className="relative">
-        {/* Base: original full-colour logo (revealed as the white layer fades) */}
-        <motion.img layoutId="wjih-logo" src={logoDarkRed} alt="" className={imgClass} />
-        {/* Overlay: white version, fades out on scroll */}
-        <motion.img
-          src={logoWhite}
-          alt=""
-          style={{ opacity: whiteOpacity }}
-          className={`absolute inset-0 ${imgClass}`}
-        />
-      </div>
+      <motion.div 
+        layoutId="wjih-logo"
+        className="h-64 w-[455px] max-w-[80vw] sm:h-80 sm:w-[568px]"
+        style={{ 
+          backgroundColor,
+          WebkitMaskImage: `url(${logo})`,
+          WebkitMaskSize: 'contain',
+          WebkitMaskRepeat: 'no-repeat',
+          WebkitMaskPosition: 'center',
+          maskImage: `url(${logo})`,
+          maskSize: 'contain',
+          maskRepeat: 'no-repeat',
+          maskPosition: 'center'
+        }}
+      />
     </motion.div>
   )
 }
