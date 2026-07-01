@@ -136,7 +136,6 @@ export function HomePage() {
       <section className="py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent">{t('home.facilities.title').replace('## ', '')}</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.facilities.title').replace('## ', '')}
             </h2>
@@ -145,8 +144,12 @@ export function HomePage() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 mb-12">
-            {[0, 1, 2].map((i) => (
+          <div className="relative">
+            {/* Aesthetic connecting line behind the cards */}
+            <div className="hidden md:block absolute top-1/2 left-8 right-8 h-[2px] -translate-y-1/2 z-0 border-t-2 border-dashed border-[#7A1219]/20" />
+            
+            <div className="grid md:grid-cols-3 gap-8 mb-12 relative z-10">
+              {[0, 1, 2].map((i) => (
               <div key={i} className="section-card relative p-8 pt-14">
                 <span className="feature-number">{String(i + 1).padStart(2, '0')}</span>
                 <p className="text-[#1E2650] leading-relaxed text-lg">
@@ -154,9 +157,10 @@ export function HomePage() {
                 </p>
               </div>
             ))}
+            </div>
           </div>
 
-          <div className="text-center">
+          <div className="text-center mt-12">
             <Link to="/workspaces">
               <Button variant="primary" className="text-base px-10 py-4">{t('home.facilities.cta')}</Button>
             </Link>
@@ -170,7 +174,6 @@ export function HomePage() {
       <section className="py-24 bg-[#FAFAF9]">
         <Container>
           <div className="mb-16">
-            <span className="label-accent">{t('home.services.title').replace('## ', '')}</span>
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-6">
               {t('home.services.title').replace('## ', '')}
             </h2>

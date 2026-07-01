@@ -12,7 +12,7 @@ export function WorkspacesPage() {
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#1E2650] via-[#1E2650] to-[#2a3368]">
         <Container className="relative z-10">
-          <span className="label-accent !text-[#D6BAAE] !border-[#D6BAAE]/40">مساحات العمل</span>
+
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
             {t('workspaces.hero.title').replace('# ', '')}
           </h1>
@@ -41,7 +41,7 @@ export function WorkspacesPage() {
       <section className="py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent">الخطط والأسعار</span>
+
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('workspaces.pricingTitle').replace('## ', '')}
             </h2>
@@ -56,9 +56,7 @@ export function WorkspacesPage() {
                     : ''
                 }`}
               >
-                {idx === 2 && (
-                  <span className="label-accent !text-xs !mb-4">الأكثر طلباً</span>
-                )}
+
                 <h3 className="text-xl font-bold text-[#1E2650] mb-3">
                   {t(`workspaces.plans.${planKey}.title` as any).replace(/### \d+\. /, '')}
                 </h3>
@@ -92,7 +90,7 @@ export function WorkspacesPage() {
       <section className="bg-[#FAFAF9] py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent">المرافق والخدمات</span>
+
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('workspaces.amenities.title').replace('## ', '')}
             </h2>

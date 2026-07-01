@@ -63,9 +63,9 @@ export function PageLayout() {
         className="absolute inset-0 z-[-1] pointer-events-none"
         style={{
           backgroundImage: `url(${bgImage})`,
-          backgroundSize: '100% auto',
-          backgroundRepeat: 'repeat',
-          backgroundPosition: 'top center',
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
           opacity: 0.15
         }}
       />

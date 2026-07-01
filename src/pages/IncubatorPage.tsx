@@ -12,7 +12,7 @@ export function IncubatorPage() {
       {/* ── Hero Header ──────────────────────────────────────── */}
       <div className="hero-header bg-gradient-to-br from-[#3B0000] via-[#3B0000] to-[#5a1020]">
         <Container className="relative z-10">
-          <span className="label-accent !text-[#D6BAAE] !border-[#D6BAAE]/40">حاضنة وادي جدة</span>
+
           <h1 className="text-5xl sm:text-6xl font-black text-white leading-tight mb-6 max-w-3xl">
             {t('incubator.hero.title').replace('# ', '')}
           </h1>
@@ -35,9 +35,7 @@ export function IncubatorPage() {
         <Container>
           <div className="grid md:grid-cols-2 gap-16 items-start">
             <div>
-              <span className="label-accent" style={{ color: '#3B0000', borderColor: 'rgba(59,0,0,0.3)' }}>
-                {t('incubator.about.title').replace('## ', '')}
-              </span>
+
               <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] mb-8 leading-tight">
                 {t('incubator.about.title').replace('## ', '')}
               </h2>
@@ -69,7 +67,7 @@ export function IncubatorPage() {
       <section className="bg-[#FAFAF9] py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent" style={{ color: '#3B0000', borderColor: 'rgba(59,0,0,0.3)' }}>منظومة الدعم</span>
+
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650]">
               {t('incubator.support.title').replace('## ', '')}
             </h2>
@@ -95,7 +93,7 @@ export function IncubatorPage() {
       <section className="py-24">
         <Container>
           <div className="text-center mb-16">
-            <span className="label-accent" style={{ color: '#3B0000', borderColor: 'rgba(59,0,0,0.3)' }}>الاستراتيجية</span>
+
             <h2 className="text-4xl md:text-5xl font-bold text-[#1E2650] max-w-3xl mx-auto leading-tight">
               {t('incubator.strategy.title').replace('## ', '')}
             </h2>
