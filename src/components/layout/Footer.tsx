@@ -1,5 +1,5 @@
 import { useTranslation } from 'react-i18next'
-import { NavLink } from 'react-router'
+import { Link, NavLink } from 'react-router'
 
 import { appRoutes } from '../../config/routes'
 import { createWhatsAppUrl } from '../../lib/whatsapp'
@@ -18,7 +18,22 @@ export function Footer() {
 
           {/* Brand */}
           <div>
-            <img src={logo} alt="Wadi Jeddah" className="h-10 w-auto mb-5 brightness-0 invert opacity-90" />
+            <Link 
+              to="/" 
+              aria-label="العودة للصفحة الرئيسية" 
+              className="inline-block mb-5"
+              onClick={() => {
+                if (window.location.pathname === '/') {
+                  window.scrollTo({ top: 0, behavior: 'smooth' })
+                }
+              }}
+            >
+  <img
+    src={logo}
+    alt="Wadi Jeddah"
+    className="h-28 w-auto brightness-0 invert opacity-90"
+  />
+</Link>
             <p className="leading-relaxed mb-6 text-white/60">
               {t('footer.description')}
             </p>
@@ -41,6 +56,11 @@ export function Footer() {
                   className="text-white/60 transition-colors hover:text-white font-medium"
                   key={route.path}
                   to={route.path}
+                  onClick={() => {
+                    if (window.location.pathname === route.path) {
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  }}
                 >
                   {t(route.labelKey)}
                 </NavLink>
@@ -54,9 +74,12 @@ export function Footer() {
             <ul className="flex flex-col gap-4">
               <li>
                 <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.phone')}</span>
-                <a href="tel:0550268326" className="text-white/80 hover:text-white transition-colors font-medium">
-                  0550268326
-                </a>
+                <a
+  href="tel:+966550268326"
+  className="inline-block text-white/80 hover:text-white transition-colors font-medium [direction:ltr] [unicode-bidi:isolate]"
+>
+  +966 55 026 8326
+</a>
               </li>
               <li>
                 <span className="block text-xs font-bold uppercase tracking-wider text-white/40 mb-1">{t('footer.email')}</span>

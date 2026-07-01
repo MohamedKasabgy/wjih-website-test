@@ -66,23 +66,37 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
         >
           <div className="grid grid-cols-[1fr_auto_1fr] items-center min-h-16 px-4 md:px-8">
 
-            {/* Start side (Right): 3 links distributed evenly */}
-            <nav aria-label="Primary navigation" className="hidden md:flex justify-between items-center w-full px-4 lg:px-8">
-              {appRoutes.slice(0, 3).map((route) => (
-                <div key={route.path} className="flex-1 flex justify-center">
-                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
+            {/* Start side: First half of links (Push to end/center) */}
+            <div className="flex justify-end gap-6 px-4">
+              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
+                {appRoutes.slice(0, 2).map((route) => (
+                  <NavLink 
+                    className={getNavLinkClassName(isHome)} 
+                    key={route.path} 
+                    to={route.path}
+                    onClick={() => {
+                      if (window.location.pathname === route.path) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }
+                    }}
+                  >
                     {t(route.labelKey)}
                   </NavLink>
-                </div>
               ))}
-            </nav>
+	              </nav>
+	            </div>
 
-            {/* Center: Logo */}
+	            {/* Center: Logo */}
             <div className="relative flex justify-center w-32 sm:w-40 h-full items-center">
               {!isHome && !isLoading && (
                 <NavLink
                   to="/"
-                  onClick={() => setIsMenuOpen(false)}
+                  onClick={() => {
+                    setIsMenuOpen(false)
+                    if (window.location.pathname === '/') {
+                      window.scrollTo({ top: 0, behavior: 'smooth' })
+                    }
+                  }}
                   className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 flex items-center hover:opacity-80 transition-opacity z-50"
                 >
                   <motion.img 
@@ -96,17 +110,26 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
               )}
             </div>
 
-            {/* End side (Left): 2 links + login button distributed evenly */}
-            <div className="flex justify-end md:justify-between items-center w-full px-4 lg:px-8">
-              {appRoutes.slice(3).map((route) => (
-                <div key={route.path} className="hidden md:flex flex-1 justify-center">
-                  <NavLink className={getNavLinkClassName(isHome)} to={route.path}>
+            {/* End side: Second half of links & Mobile Menu Button (Push to start/center) */}
+            <div className="flex justify-start gap-6 px-4 items-center">
+              <nav aria-label="Primary navigation" className="hidden gap-6 md:flex">
+                {appRoutes.slice(2).map((route) => (
+                  <NavLink 
+                    className={getNavLinkClassName(isHome)} 
+                    key={route.path} 
+                    to={route.path}
+                    onClick={() => {
+                      if (window.location.pathname === route.path) {
+                        window.scrollTo({ top: 0, behavior: 'smooth' })
+                      }
+                    }}
+                  >
                     {t(route.labelKey)}
                   </NavLink>
-                </div>
-              ))}
+	              ))}
+	              </nav>
 
-              <div className="hidden md:flex flex-1 justify-center">
+	              <div className="hidden md:flex flex-1 justify-center">
                 <Button
                   variant="primary"
                   className="!px-6 !py-2.5 text-sm shrink-0"
@@ -139,7 +162,12 @@ export function Navbar({ isLoading }: { isLoading?: boolean }) {
                       className={getNavLinkClassName(isHome)}
                       key={route.path}
                       to={route.path}
-                      onClick={() => setIsMenuOpen(false)}
+                      onClick={() => {
+                        setIsMenuOpen(false)
+                        if (window.location.pathname === route.path) {
+                          window.scrollTo({ top: 0, behavior: 'smooth' })
+                        }
+                      }}
                     >
                       {t(route.labelKey)}
                     </NavLink>
