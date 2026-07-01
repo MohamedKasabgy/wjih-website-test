@@ -89,7 +89,7 @@ export function HomePage() {
         </motion.div>
 
         {/* White Fade Gradient */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 sm:h-24 bg-gradient-to-t from-white/30 to-transparent pointer-events-none z-0" />
+        <div className="absolute bottom-0 left-0 right-0 h-8 sm:h-12 bg-gradient-to-t from-white/70 to-transparent pointer-events-none z-0" />
       </section>
 
       {/* ── About ─────────────────────────────────────────────── */}
